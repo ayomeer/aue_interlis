@@ -1,0 +1,60 @@
+INTERLIS 2.3;
+
+/* !!------------------------------------------------------------------------------
+ * !! Version    | wer | Aenderung
+ * !!------------------------------------------------------------------------------
+ * !! 2021-02-02 | STP | Initialversion Publikationsdatenmodell Grundwasservorkommen
+ */
+!!@ technicalContact="mailto:geoinformation@gl.ch"
+MODEL GL_Grundwasservorkommen_Publikation_V1 (de) AT "https://www.gl.ch" VERSION "2021-02-02"  =
+  IMPORTS Units,GeometryCHLV95_V1;
+
+  TOPIC GW =
+    OID AS INTERLIS.UUIDOID;
+
+    /** Grundwasservorkommen (ohne offizielles Datenmodell)
+     */
+    CLASS Grundwasservorkommen =
+      /** Fläche [Aren] */ Flaeche_a: 0..999999999 [Units.a];
+      /** Vorkommen: Grundwasser erhärtet/vermutet */ Vorkommen: MANDATORY (Grundwasser_erhaertet,Grundwasser_vermutet);
+      /** Beschluss durch Behörde */ Behoerde: TEXT;
+      /** Beschlussdatum */ Beschluss: INTERLIS.XMLDate;
+      /** zuständige Fachstelle */ Datenherr: TEXT;
+      /** Plangrundlage Digitalisierung */ Plangrundlage: TEXT;
+      /** letztes Mutationsdatum */ Mutationsdatum: INTERLIS.XMLDate;
+      /** Bemerkung */ Bemerkung: TEXT;
+      /** Geometrie: Polygon */ Geometrie: MANDATORY GeometryCHLV95_V1.Surface;
+    END Grundwasservorkommen;
+
+    /** Grundwasservorkommen: Isohypsen (gemäss erweitertem Datenmodell Bund - Kanton)
+     */
+    CLASS Isohypse =
+      /** massgeblicher Grundwasserstand */ Grundwasserstand: MANDATORY (Niedrigstwasserstand,Niedrigwasserstand,Mittelwasserstand,Hochwasserstand,Hoechsthochwasserstand,unbestimmt);
+      /** Bezugs-Druckniveau */ Druckniveau: MANDATORY (frei,gespannt,unbestimmt);
+      /** Kote in Meter über Meer */ Kote: MANDATORY -200.0 ..   5000.0 [INTERLIS.m];
+      /** Geometrie: LineString */ Geometrie: MANDATORY POLYLINE WITH (STRAIGHTS) VERTEX GeometryCHLV95_V1.Coord2;
+    END Isohypse;
+
+    /** Grundwasser- und Quellfassungen (ohne offizielles Datenmodell)
+     */
+    CLASS GWQuellfassungen =
+      /** Klassierung nach Schüttungsmenge */ Schuettungsmenge: MANDATORY (QF_0_bis_5,QF_6_bis_25,QF_26_bis_100,QF_101_bis_250,QF_251_bis_1000,QF_1001_bis_5000,QF_5001_bis_10000,QF_10001_bis_50000,QF_unbekannt,GWF_unbekannt);
+      /** Beschluss durch Behörde */ Behoerde: TEXT;
+      /** Beschlussdatum */ Beschluss: INTERLIS.XMLDate;
+      /** zuständige Fachstelle */ Datenherr: TEXT;
+      /** Plangrundlage Digitalisierung */ Plangrundlage: TEXT;
+      /** letztes Mutationsdatum */ Mutationsdatum: INTERLIS.XMLDate;
+      /** Bemerkung */ Bemerkung: TEXT;
+      /** Geometrie: Point */ Geometrie: MANDATORY GeometryCHLV95_V1.Coord2;
+    END GWQuellfassungen;
+    
+    /** Erdsonden-Ausschlussbereich
+     */
+    CLASS Erdsonden_Ausschlussbereich = 
+      /** Art-Bezeichnung */ Art: TEXT;
+      /** Geometrie: MultiPolygon */ Geometrie: MANDATORY GeometryCHLV95_V1.MultiSurface;      
+    END Erdsonden_Ausschlussbereich;
+
+  END GW;
+
+END GL_Grundwasservorkommen_Publikation_V1.

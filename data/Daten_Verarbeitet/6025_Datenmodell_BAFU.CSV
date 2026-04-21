@@ -1,0 +1,233 @@
+6025: Datenmodell BAFU;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;
+Lage (Geometrie);X Koordinaten;Y Koordinaten;Höhe;Identifikator;Name;Grundwasserleiter_Typ;Quelltyp;Fassungsart;Nutzungszustand;Trinkwasser;Zweck;Notwasserversrogung;Öffentliches Interesse;Schüttung minimal;Schüttung mittel;Schüttung maximal
+;2716850;1222370;1262;GL_640;Brunnen oberer Sonnenberg;Kluft;;gefasst.unbestimmt;genutzt;nein;Tränkewasser;nein;nein;;;
+;2717870;1222995;1134;;Hüttenwasser Sonnenberg;Kluft;;gefasst.unbestimmt;genutzt;nein;Tränkewasser;nein;nein;;;
+;2718450;1221640;1420;GL_214;Quelle Unter-Niederen;Kluft;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;8.6;;
+;2718490;1221650;1417;GL_715;Quelle Unter-Niederen;Kluft;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;0.6;;
+;2717410;1221475;1362;GL_213;Hüttenwasser Bühls;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2717220;1221435;1344;;Quelle Keller Hütte Büels;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink- und Brauchwasser;ja;ja;2.6;;
+;2717258;1221758;1212;;Quelle Tannboden;Lockergestein;;ungefasst;genutzt;ja;Trink- und Brauchwasser;ja;ja;160;220;280
+;2717306;1201438;1778;;;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2735290;1197960;1700;;;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;15;20;25
+;2735750;1197400;1975;;;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;20;24;25
+;2736200;1198200;2100;;;Kluft;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;90;108;120
+;2734819;1200510;1947;;;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2733977;1199505;1789;;;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2733226;1198506;1344;;;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2729343;1199630;2023;;;gemischt;;ungefasst;genutzt;nein;Tränkewasser;nein;nein;;200;
+;2729643;1199906;1974;;;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink- und Tränkewasser;nein;nein;;100;
+;2730106;1199643;1730;;;gemischt;;gefasst.unbestimmt;genutzt;nein;Tränkewasser;nein;nein;5;11;20
+;2730790;1199423;1425;;;Lockergestein;;gefasst.unbestimmt;genutzt;nein;Tränkewasser;nein;nein;25;35;50
+;2736412;1200261;1970;;;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2736431;1200369;1992;;;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2736171;1199743;1848;;;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2735652;1199556;1843;;;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2734674;1198550;1393;;;gemischt;;gefasst.unbestimmt;genutzt;nein;Tränkewasser;nein;nein;;;
+;2726390;1194725;1559;GL_287;Quelle Rinderboden;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2725000;1195520;2070;GL_1068;Quelle Wichlenmatt;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink- und Tränkewasser;nein;ja;;;
+;2730361;1197876;1485;;;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2728872;1195200;1297;;;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2727510;1195760;1730;GL_290;Quelle Obtrittweg;gemischt;;gefasst.unbestimmt;genutzt;nein;Tränkewasser;nein;nein;;;
+;2727540;1195900;1780;GL_288;Quelle Chamm Ost;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink- und Brauchwasser;nein;ja;;;
+;2727520;1195900;1780;GL_289;Quelle Chamm West;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink- und Brauchwasser;nein;ja;;;
+;2729224;1195982;1221;;;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2727448;1194705;1401;GL_286;Quelle Nesslenboden;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2733570;1205320;2025;GL_971;Quelle Fitter-Chamm Ober Stafel;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2733110;1204690;1820;GL_972;Quelle Wasserböden;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2732370;1205340;1730;GL_973;Quelle Trosboden;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2728500;1202800;2060;GL_1037;Quelle Siwellen;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2728136;1203610;1919;;;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2733400;1208020;1550;GL_693;Quelle Plättli;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2734610;1210352;2040;;;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2733330;1209740;2010;GL_1028;Quelle Alp Lüser;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2732720;1207400;1550;GL_1032;Quelle Schwammhütte;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2725670;1213100;1405;GL_32;Elmerplätzquelle;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2726065;1213035;1510;GL_35;Mittelstafel-Quelle;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2727170;1212956;1951;;;Kluft;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2726930;1212718;1882;;;Kluft;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2726905;1212667;1877;;;Kluft;;gefasst.unbestimmt;genutzt;nein;Tränkewasser;nein;nein;;;
+;2726338;1212896;1629;;;Karst;;gefasst.unbestimmt;genutzt;nein;Tränkewasser;nein;nein;;;
+;2726920;1213783;1824;GL_950;Quelle Obere Fronalp;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2726838;1214088;1836;GL_948;Quelle Fronalpstock 1;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2726838;1214088;1836;GL_949;Quelle Fronalpstock 2;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2727697;1217751;1443;;Quelle Stäfäli;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;4;38;100
+;2727843;1217559;1565;;Quelle Fandliloch;Kluft;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;3;7;10
+;2712092;1209292;1136;;Quelle Schartli;gemischt;;gefasst.unbestimmt;genutzt;nein;Tränkewasser;nein;nein;;2;
+;2712464;1210284;1561;;Quelle Oberstafel;gemischt;;gefasst.unbestimmt;genutzt;nein;Tränkewasser;nein;nein;;2;
+;2712394;1210784;1791;;Quelle Oberalp;Karst;;gefasst.unbestimmt;genutzt;nein;Tränkewasser;nein;nein;;;
+;2713500;1207330;1470;;Hinter Schlattalpli Unter Stafel;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink- und Brauchwasser;nein;ja;;;
+;2713905;1207270;1680;;Hinter Schlattalp Ober Stafel Schacht 1;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink- und Brauchwasser;nein;ja;;;
+;2713915;1207240;1682;;Hinter Schlattalp Ober Stafel Schacht 2;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink- und Brauchwasser;nein;ja;;;
+;2714775;1207330;2130;;;Karst;;gefasst.unbestimmt;genutzt;nein;Tränkewasser;nein;nein;;;
+;2713800;1207395;1650;;;Lockergestein;;gefasst.unbestimmt;genutzt;nein;Tränkewasser;nein;nein;;;
+;2714325;1204770;1710;GL_846;Dräcklochstafel;gemischt;;gefasst.unbestimmt;genutzt;nein;Brauch- und Tränkewasser;nein;nein;;;
+;2712925;1207525;1060;GL_840;Quelle Chlüstalden;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2713630;1204552;1840;;;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2714770;1211280;1715;GL_847;Ober Längenegg 2;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2716660;1211135;1690;GL_654;Quelle Ober Rueggis;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink- und Tränkewasser;nein;ja;;;
+;2720375;1209380;1180;GL_233;Gleiter Quellen;Kluft;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2720405;1209287;1180;;Gleiter Quellen;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2720053;1211022;890;GL_232;Löntschbort-Quelle;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2716200;1211320;1630;GL_848;Unter Längenegg;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2714980;1211435;1760;GL_238;Ober Längenegg 1;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2719437;1208794;1550;GL_838;Quelle Vorder Schlattalp;gemischt;;gefasst.unbestimmt;genutzt;nein;Tränkewasser;nein;nein;;;
+;2719731;1209616;1200;GL_837;Quelle Tschingel;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2714980;1206110;1405;GL_858;Alp Wärben;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2714900;1205200;1610;GL_859;Quelle Alp Zeinen 1;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2714850;1205200;1600;GL_860;Quelle Alp Zeinen 2;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2718540;1213174;2160;GL_655;Quelle Schijen;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink- und Brauchwasser;nein;ja;;;
+;2717990;1212370;1770;GL_656;Quelle Dejen;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2717685;1211560;1595;GL_653;Quelle Loch;Kluft;;gefasst.unbestimmt;genutzt;nein;Tränkewasser;nein;nein;;;
+;2718125;1210917;1193;GL_237;Quelle Ober Herberig;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2714200;1205740;1260;GL_652;Quelle Chäseren;Karst;;gefasst.unbestimmt;genutzt;ja;Trink- und Brauchwasser;nein;ja;;;
+;2715860;1205950;1820;GL_845;Bächi;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink- und Brauchwasser;nein;ja;;;
+;2724670;1203305;1410;GL_806;Alp Auen Ober Stafel;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2725430;1199510;1960;GL_810;Quelle Chamm;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2725300;1199870;1745;GL_811;Quelle Ratzmatt;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2724780;1201955;1425;GL_807;Quelle Ennetseewen Aueren;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2715559;1192073;1860;GL_910;Quelle Burg;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink- und Brauchwasser;nein;ja;;;
+;2718560;1192870;1564;GL_904;Widderquelle;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink- und Tränkewasser;ja;ja;48;56;68
+;2718700;1192300;1700;GL_905;Obstafelquelle;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;78;80;82
+;2716158;1193356;1460;GL_911;Quelle Chäsboden;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink- und Brauchwasser;nein;ja;;;
+;2715546;1191890;1790;GL_909;Quelle Ober Stäfeli;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink- und Brauchwasser;nein;ja;;;
+;2716955;1193363;1255;GL_908;Quelle beim Stutz;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2715980;1195110;1750;GL_918;Quelle Chameralp Ober Stafel;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2716320;1195950;1295;GL_902;Quelle Chameralp;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2717100;1195817;1177;;;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2720267;1196553;1667;;;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2721690;1195970;1430;GL_914;Quelle Mittel Durnachtal Stäfeli;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2714900;1197500;1900;GL_921;Quelle Ortstafel;Karst;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2715720;1197260;1580;GL_920;Oelle Ober Friteren;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2716780;1198380;1740;GL916;Quelle Rieter Ortsstafel;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2717210;1198275;1500;GL_917;Quelle Rietberg Mittel Stafel;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2715249;1189100;1445;;;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2713570;1188030;2020;GL_834;Quelle Obersand;Karst;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2716240;1193700;1615;GL_912;Quelle Bäreboden;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink- und Tränkewasser;nein;ja;;;
+;2715608;1193900;1839;;Quelle Fisetenalp;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink- und Tränkewasser;nein;ja;;;
+;2720260;1195240;1830;GL_906;Alp Bächi Ober Stafel;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2718718;1195170;974;GL_899;Quelle Oberzaun;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2722040;1195340;1400;GL_913;Quelle Alp Hinter Durnachtal;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2715630;1188030;1620;GL_903;Quelle Hintersand;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2718480;1202500;1695;GL_661;Quelle Bösbächi Ober Stafel E;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch, Kühl- und Tränkewasser;nein;ja;;;
+;2718130;1203200;1505;GL_659;Quelle Tierbrunnen;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2720050;1203480;1160;GL_878;Quelle Bösbächi Unter Stafel;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2724670;1199430;1867;GL_791;Alphütte Ängi;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2723680;1200425;1723;GL_793;Diestalstafel;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2724410;1197950;2015;GL_1054;Chüetal Alp;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2729340;1201640;1625;GL_321;Quelle Berglialp Ober Stafel;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;12;19;24
+;2729970;1201660;1420;GL_319;Quelle Schluchenwald;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;24;26;30
+;2730441;1202362;1603;GL_320;Quelle Rietboden;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;18;22;25
+;2733433;1203289;1381;;Sulzweid Unterstafel;gemischt;;gefasst.unbestimmt;genutzt;nein;Tränkewasser;nein;nein;5;6;8
+;2733960;1204180;1845;GL_318;Quelle Vorderegg-Oberstafel;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2735270;1203880;1550;GL_323;Quelle Unter Stafel Vorderegg;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2734755;1204420;1845;GL_1022;Quelle Hinteregg Ober Stafel 1;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2735390;1203940;1525;GL_324;Quelle Hinteregg Unter Stafel;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2736980;1203680;1940;GL_326;Quelle Riseten Ober Stafel 1;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2736980;1203685;1940;GL_983;Quelle Riseten Ober Stafel 2;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2736990;1203670;1940;GL_984;Quelle Riseten Ober Stafel 3;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2736750;1204270;1750;GL_327;Quelle Riseten Mittel Stafel 1;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2735900;1203810;1445;GL_328;Quelle Riseten Unter Stafel;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2733191;1202065;1189;;;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2733756;1202174;1331;;;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2734140;1201870;1541;;;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2727146;1217494;1562;GL_143;Obere Nüenalp 2;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2727119;1217299;1599;GL_144;Obere Nüenalp 1;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2726255;1217429;1328;;Quelle Untere Nüenalp 2;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2726255;1217429;1328;GL_707;Quelle Untere Nüenalp 1;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2727340;1215580;1380;GL_159;Hofaelpli;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink- und Tränkewasser;nein;ja;15;24;32
+;2726946;1216118;1258;;;Lockergestein;;gefasst.unbestimmt;genutzt;nein;Tränkewasser;nein;nein;20;48;80
+;2727612;1215902;1608;;;Karst;;gefasst.unbestimmt;genutzt;nein;Tränkewasser;nein;nein;14;27;35
+;2731869;1217652;1308;GL_388;Kaltenbrunnen;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink- und Tränkewasser;nein;ja;;;
+;2732120;1216614;1528;GL_389;Rietboden;Karst;;gefasst.unbestimmt;genutzt;ja;Trink- und Tränkewasser;nein;ja;;;
+;2732380;1216320;1611;GL_387;Alp Bigligen;Kluft;;gefasst.unbestimmt;genutzt;ja;Trink- und Tränkewasser;nein;ja;;;
+;2717375;1216634;1203;GL_163;Brunnmettlen;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2716209;1217378;1474;GL_673;Quelle Ahornen-Alp;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2717633;1214058;1608;GL_669;Quelle Grappli;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2718186;1214279;1708;;;Kluft;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;8;
+;2718196;1214217;1711;;;Karst;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;10;
+;2718157;1214225;1704;;;Karst;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2718535;1214306;1793;;;Kluft;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;10;
+;2720090;1214008;1958;;;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2718299;1215771;1021;GL_672;Quelle Kreuzegg-Alp;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2718878;1216776;1116;GL_675;Quelle Enzian-Alp;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2715376;1212685;1596;GL_665;Lachenalp;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2717804;1215356;1062;GL_162;Kaltenbrünnen;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2719375;1213125;1965;GL_646;Auern Oberstafel, Gumen;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Kühlwasser;nein;ja;;;
+;2719895;1212895;1750;GL_647;Auern Mittelstafel;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink- und Brauchwasser;nein;ja;;;
+;2719650;1212640;1765;GL_786;Chängel;gemischt;;gefasst.unbestimmt;genutzt;nein;Tränkewasser;nein;nein;;;
+;2720700;1213010;1550;GL_648;Auern Unterstafel;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink- und Brauchwasser;nein;ja;;;
+;2716354;1220901;1424;;Quelle Blossenalp;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink- und Tränkewasser;nein;ja;;;
+;2716987;1221129;1440;GL_606;Quelle Muosalp;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2716522;1220138;1369;GL_997;Quelle Flüealp;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2717696;1220829;1286;GL_1004;Quelle Planggenböden;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2717276;1219247;1464;GL_819;;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink- und Tränkewasser;nein;ja;25;53;66
+;2716791;1219408;1524;;;Lockergestein;;gefasst.unbestimmt;genutzt;nein;Tränkewasser;nein;nein;5;7;8
+;2716872;1218660;1334;GL_818;Quelle Hinter Schwändi;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink- und Tränkewasser;nein;ja;54;68;102
+;2716418;1218747;1425;;;Lockergestein;;gefasst.unbestimmt;genutzt;nein;Tränkewasser;nein;nein;;9;
+;2716673;1218656;1372;;;Lockergestein;;gefasst.unbestimmt;genutzt;nein;Tränkewasser;nein;nein;51;67;96
+;2717500;1219320;1450;GL_821;Quelle Winteregg;Lockergestein;;gefasst.unbestimmt;genutzt;nein;Tränkewasser;nein;nein;5;6;7
+;2731190;1216790;1520;GL_691;Quelle Gleiter;gemischt;;gefasst.unbestimmt;genutzt;nein;Tränkewasser;nein;nein;2;2;3
+;2731670;1216830;1650;GL_692;Quelle Alp Firz a;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink- und Tränkewasser;nein;ja;2;2;3
+;2731980;1215350;1811;GL_690;Quelle Gsponlauihütte;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink- und Brauchwasser;nein;ja;;7;
+;2731610;1215250;1800;GL_776;Quelle Schloss;gemischt;;gefasst.unbestimmt;genutzt;nein;Tränkewasser;nein;nein;;2;
+;2730850;1214910;1740;GL_778;Quelle Rotmen;gemischt;;gefasst.unbestimmt;genutzt;nein;Tränkewasser;nein;nein;;13;
+;2731040;1216160;1580;GL_779;Quelle Gschi b;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2731020;1216170;1580;GL_780;Quelle Gschi c;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2731020;1216165;1580;GL_781;Quelle Gschi d;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2729630;1213430;1775;GL_1055;Obermürtschen;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;32;41;54
+;2731620;1214510;1510;GL_1056;Untermürtschen;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;8;25;48
+;2731775;1213777;1850;;;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;8;11;14
+;2729170;1217030;1574;;Quelle Tränggeli;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;9;11;13
+;2729299;1216762;1680;;Quelle Planggä;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;0.2;0.8;1
+;2721925;1207230;1300;GL_739;Guppen Mittelstafel;Lockergestein;;gefasst.unbestimmt;genutzt;nein;Tränkewasser;nein;nein;;;
+;2720698;1206380;1785;GL_740;Guppen Oberstafel;Karst;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2727290;1202610;2040;GL_731;WV Gandbütz - Seebödeli;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2727110;1204125;1702;GL_732;WV Nüenhütte;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2725750;1204110;920;GL_373;Nüenhüttli;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2726760;1200015;1810;GL_728;Niederenalp;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2726560;1202920;1670;GL_730;Quelle Mettmenalp;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2726265;1200015;1950;GL_727;Niederenalp;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2728530;1209120;2064;GL_923;Quelle Ober Fessis;Karst;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2727620;1208380;1735;GL_18;Quelle Cheienwald;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2726985;1207750;1380;GL_19;Quelle Träge;gemischt;;gefasst.unbestimmt;genutzt;nein;Tränkewasser;nein;nein;;;
+;2736140;1206320;1640;GL_317;Quelle Werbenhütte;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2736320;1205600;1630;GL_325;Quelle Stollenruns Alp Krauchtal Unter Stafel;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2735700;1207180;1640;GL_316;Quelle Steinhüttli;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2736015;1207946;1849;GL_315;Quelle Stutzhütte;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2721520;1197000;1252;;;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2722227;1196091;1397;;;Lockergestein;;gefasst.unbestimmt;genutzt;nein;Brauch- und Tränkewasser;nein;nein;;;
+;2721970;1196060;1320;GL_828;Quelle Längsstafel;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2723095;1196435;1930;GL_504;Quelle Alp Durnachtal;Kluft;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2723420;1199870;1630;GL_478;Quelle Ruesdili;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2723530;1199825;1632;;;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2723280;1198980;1503;GL_1057;Alp Mettmen Rüti;Lockergestein;;gefasst.unbestimmt;genutzt;nein;Tränkewasser;nein;nein;;;
+;2721700;1198855;1710;GL_505;Hälsli;Kluft;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2721865;1198360;1965;GL_826;Saasberg;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2722895;1197850;2103;;;Kluft;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2727870;1218670;1176;GL_933;Quelle Allmeindli;Kluft;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2718820;1219580;1508;GL_822;Quelle Ober Lochegg (Stall);Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink- und Brauchwasser;nein;ja;;;
+;2718780;1219570;1500;GL_823;Quelle Ober Lochegg (Hütte);Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink- und Brauchwasser;nein;ja;;;
+;2718135;1219180;1336;GL_824;Quelle Sunnestafel;Kluft;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;114;
+;2716360;1200160;1620;GL_868;Quelle Schuler Brach Ober Stafel;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2717515;1199645;1254;GL_874;Quelle Schiesser Alp Bräch Unter Stafel;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2716495;1200180;1605;GL_523;Quelle Schiesser Bräch Ober Stafel;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2720000;1204030;1430;GL_662;Quelle Ryetlenchöpf;Lockergestein;;gefasst.unbestimmt;genutzt;nein;Tränkewasser;nein;nein;;;
+;2720430;1204120;1340;GL_877;Quelle Unterstafel;Lockergestein;;gefasst.unbestimmt;genutzt;nein;Tränkewasser;nein;nein;;;
+;2720387;1204990;1511;GL_876;Fahnenplangge;Lockergestein;;gefasst.unbestimmt;genutzt;nein;Tränkewasser;nein;nein;;;
+;2720290;1205486;1487;GL_1052;Quelle Geissblanke;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2717415;1219323;1461;;;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink- und Brauchwasser;nein;ja;5;7;8
+;2711588;1210335;1649;;;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink- und Brauchwasser;nein;ja;;;
+;2719606;1219654;1465;GL_177;Anggeloch-Quelle;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink- und Brauchwasser;nein;ja;;;
+;2720340;1219837;1203;GL_257;Quelle Kohlplatz 2;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink- und Brauchwasser;nein;ja;;;
+;2728545;1216982;1102;;;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2727846;1214669;1561;;;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2727241;1214370;1758;;;gemischt;;gefasst.unbestimmt;genutzt;nein;Tränkewasser;nein;nein;;;
+;2728241;1213930;1717;;;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;
+;2727800;1214000;1667;;;gemischt;;gefasst.unbestimmt;genutzt;nein;Tränkewasser;nein;nein;;;
+;2727868;1213953;1666;;;gemischt;;gefasst.unbestimmt;genutzt;nein;Tränkewasser;nein;nein;;;
+;2727731;1213672;1779;;;Kluft;;gefasst.unbestimmt;genutzt;nein;Tränkewasser;nein;nein;;;
+;2728818;1214157;1671;;;Lockergestein;;gefasst.unbestimmt;genutzt;nein;Tränkewasser;nein;nein;;;
+;2729272;1195100;1239;;;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink- und Brauchwasser;nein;ja;;;
+;2728324;1192467;1826;;;gemischt;;gefasst.unbestimmt;genutzt;ja;Trink- und Brauchwasser;nein;ja;;;
+;2717515;1199560;1236;;;Lockergestein;;gefasst.unbestimmt;genutzt;ja;Trink-, Brauch und Tränkewasser;nein;ja;;;

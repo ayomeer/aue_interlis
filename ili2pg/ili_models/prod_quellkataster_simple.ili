@@ -1,0 +1,109 @@
+INTERLIS 2.3;
+
+MODEL Prod_Quellkataster_V1
+  AT "https://dummy.com"
+  VERSION "2026-04-07" =
+
+  !! Modelle importieren, in welche später exportiert werden muss
+  IMPORTS Grundwasseraustritte_V2_0, GeometryCHLV95_V1;
+  IMPORTS Units;
+
+  TOPIC Grundwasseraustritte =
+
+    DOMAIN 
+      NumericOK = 0 .. 2999;
+      NumericSchachtueberstand = 0 .. 1000 [Units.cm];
+
+    CLASS Quelle =
+      !! --- MGDM Attributen -------------------------------------------------------- !!
+      !! (Kopiert von Grundwasseraustritte_V2_0.Grundwasseraustritte.Quelle)
+
+      Identifikator : MANDATORY Grundwasseraustritte_V2_0.IdentifikatorTyp;
+      Name : TEXT*255;
+      Grundwasserleiter_Typ : MANDATORY(Lockergestein,Kluft,Karst,gemischt,unbestimmt);
+      Quelltyp: TEXT*255;
+      Fassungsart : MANDATORY (ungefasst,
+                               gefasst(
+                                 direkt, 
+                                 Fassungsstrang, 
+                                 Fassungsstollen, 
+                                 unbestimmt)
+                              );
+      Nutzungszustand : Grundwasseraustritte_V2_0.Grundwasseraustritte.Nutzungszustand;
+      Trinkwasser : Grundwasseraustritte_V2_0.JaNeinUnbestimmt;
+      Zweck : TEXT*255;
+      Oeffentliches_Interesse : Grundwasseraustritte_V2_0.JaNeinUnbestimmt;
+      Schuettung_minimal: MANDATORY Grundwasseraustritte_V2_0.LiterMinute; 
+      Schuettung_mittel:  MANDATORY Grundwasseraustritte_V2_0.LiterMinute; 
+      Schuettung_maximal: MANDATORY Grundwasseraustritte_V2_0.LiterMinute; 
+      Zustroembereich_erforderlich : Grundwasseraustritte_V2_0.JaNeinUnbestimmt;
+      Geometrie : MANDATORY GeometryCHLV95_V1.Coord2;
+      Name_WV : TEXT*255;
+
+      !! --- Interen Attributen ----------------------------------------------------- !!
+      !! Identifikation
+      Ordnungs_Nr: TEXT*255;
+    
+      !! Position
+      Ortschaft: TEXT*255;
+      Postleitzahl: TEXT*255;
+      ParzNr: TEXT*255;
+      Hoehe: 0 .. 2999 [INTERLIS.m]; !! <- alpquellen höhe hier rein?
+      Lagegenauigkeit: TEXT*255;
+      
+      !! Fassung
+      Schachtueberstand: 0 .. 1000 [Units.cm];
+      Fassungsart_beschreibung: TEXT*255;
+      Fassungsabdeckung: TEXT*255;
+      Fassungszustand: TEXT*255;
+      Schachttyp: TEXT*255;
+      Anzahl_Zuleitungen: 0..99;
+      Schloss: BOOLEAN;
+      Fassungseigentuemer: TEXT*255;
+
+      !! Verwendung
+      Verwendungsart: TEXT*255;
+      Verwendungszweck_beschreibung: TEXT*255;
+      Notwasserversorgung: (ja, nein, unbestimmt);
+
+      !! WVA 
+      WVA_Nutzung: BOOLEAN;
+      WVA_Nutzung_ergaenzen: BOOLEAN;
+      WVA_Nutzung_streichen: BOOLEAN;
+      WVA_Nutzung_lage_neu: BOOLEAN; 
+
+      !! Datenherkunft
+      Datenherkunft: TEXT*255;
+      Aufgenommen_durch: TEXT*255; 
+      Erhebungsdatum: INTERLIS.XMLDate;
+      Feldbegehung: INTERLIS.XMLDate;
+      Objektbereinigung: INTERLIS.XMLDate; !! really need this?
+
+      !! Andere
+      Schutzzone_erforderlich: BOOLEAN;
+      Kontaktperson: TEXT*255;
+      Bemerkungen: MTEXT*1023;
+    END Quelle; !! End Class
+
+    !! CLASS Messdaten_intern =
+    !!   Entnahmedatum: INTERLIS.XMLDate;
+    !!   !! Entnahme: Uhrzeit;
+    !!   Witterung: (leichter Regen, 
+    !!               starker Regen,
+    !!               Sommergewitter,
+    !!               Schneefall,
+    !!               Tauwetter,
+    !!               Nebel,
+    !!               trocken,
+    !!               schön);
+    !!   Schuettungsmenge
+    !!   Wassertemperatur
+    !!   pH-Wert
+    !!   Sauerstoff
+    !!   Sauerstoffsättigung
+    !!   Chemische Analysen
+    !!   Bemerkungen
+    !! END Messdaten_intern;
+
+  END Grundwasseraustritte; !! End Topic
+END Prod_Quellkataster_V1. !! End Model

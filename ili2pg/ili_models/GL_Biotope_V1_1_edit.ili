@@ -1,0 +1,532 @@
+INTERLIS 2.3;
+
+/** Kantonales Geodatenmodell 
+ * BIOTOPE
+ * (ID kGeoIV 6-GL, 9-GL)
+ *
+ * 2021-06-10: Initialimplementation, Version 1.0
+ * 2021-07-08: Bereinigungen und Anpassungen, Version 1.1
+ */
+!!@ technicalContact=mailto:geoinformation@gl.ch
+!!@ furtherInformation=https://models.geo.gl.ch/pdf/GL_Biotope_V1.pdf
+MODEL GL_Biotope_V1_1 (de)
+AT "http://geo.gl.ch"
+VERSION "2019-02-27"  =
+  IMPORTS GeometryCHLV95_V1,CatalogueObjects_V1,LocalisationCH_V1,CHAdminCodes_V1,Units,GL_Basis_Geometrie_V1;
+
+  /** Hier sind Referenzen und Erweiterungen zu verschiedenen CHBase Katalogen definiert, welche als Auswahlfeld fuer Attributen benutzt werden.
+   */
+  TOPIC Kataloge =
+
+    /** Bedeutung des Biotops. Der Katalog umfasst aktuell die Werte "national" fuer national bedeutsame Biotope, "regional" fuer kantonal oder ueberkantonal bedeutsame Biotope
+     * und "lokal" fuer kommunal oder ueberkommunal bedeutsame Biotope.
+     */
+    CLASS Bedeutung_Catalogue
+    EXTENDS CatalogueObjects_V1.Catalogues.Item =
+      /** Hier werden die Werte national, regional, lokal eingefuegt
+       */
+      BCode : MANDATORY TEXT*10;
+      Beschrieb : MANDATORY LocalisationCH_V1.MultilingualText;
+      /** Sicherstellen Eindeutigkeit fuer  Katalogreferenz Join bei Datentransfer von prod_gl_biotope auf gl_biotope
+       */
+      UNIQUE BCode;
+    END Bedeutung_Catalogue;
+
+    /** Katalog von charakterisierenden Biotopbeschreibungen spezifisch fuer Hochlagenbiotope.
+     */
+    CLASS Beschreibung_HL_Catalogue
+    EXTENDS CatalogueObjects_V1.Catalogues.Item =
+      beschreibung_DE : MANDATORY TEXT;
+      beschreibung_LA : TEXT;
+      Lebensraumnummer : TEXT*10;
+      /** Sicherstellen Eindeutigkeit fuer  Katalogreferenz Join bei Datentransfer von prod_gl_biotope auf gl_biotope
+       */
+      UNIQUE beschreibung_DE;
+    END Beschreibung_HL_Catalogue;
+
+    /** Katalog der Biotoptypisierungen von nationalen Objekten. Enthaelt folgende Werte: "HM", "FM", "TWW", "TWW A2", "AL", "AU", "AU A2".
+     */
+    CLASS Biotyp_Catalogue
+    EXTENDS CatalogueObjects_V1.Catalogues.Item =
+      Bezeichnung : MANDATORY TEXT*20;
+      /** Sicherstellen Eindeutigkeit fuer  Katalogreferenz Join bei Datentransfer von prod_gl_biotope auf gl_biotope
+       */
+      UNIQUE Bezeichnung;
+    END Biotyp_Catalogue;
+
+    /** Auflistung der verschiedenen Inventare oder Kartierungen von denen die Daten stammen
+     */
+    CLASS Datenherkunft_Catalogue
+    EXTENDS CatalogueObjects_V1.Catalogues.Item =
+      /** Inventar, Kartierung, Erhebung
+       */
+      Herkunft : MANDATORY TEXT;
+      /** Sicherstellen Eindeutigkeit fuer  Katalogreferenz Join bei Datentransfer von prod_gl_biotope auf gl_biotope
+       */
+      UNIQUE Herkunft;
+    END Datenherkunft_Catalogue;
+
+    /** Kurze Beschreibung des Biotops in Deutsch und optional in Latein (Pflanzengesellschaften).
+     */
+    CLASS Beschreibung_Catalogue
+    EXTENDS CatalogueObjects_V1.Catalogues.Item =
+      /** Beschreibung der Artengemeinschaft in Deutsch
+       */
+      Beschreibung_DE : MANDATORY TEXT;
+      /** Beschreibung der Artengemeinschaft in Latein
+       */
+      Beschreibung_LA : TEXT;
+      Lebensraumnummer : TEXT*10;
+      /** Sicherstellen Eindeutigkeit fuer  Katalogreferenz Join bei Datentransfer von prod_gl_biotope auf gl_biotope
+       */
+      UNIQUE lebensraumnummer;
+    END Beschreibung_Catalogue;
+
+    STRUCTURE Beschreibung_HL_CatRef
+    EXTENDS CatalogueObjects_V1.Catalogues.CatalogueReference =
+      Reference : REFERENCE TO Beschreibung_HL_Catalogue;
+    END Beschreibung_HL_CatRef;
+
+    STRUCTURE Datenherkunft_CatRef
+    EXTENDS CatalogueObjects_V1.Catalogues.CatalogueReference =
+      Reference (EXTENDED) : REFERENCE TO (EXTERNAL) Datenherkunft_Catalogue;
+    END Datenherkunft_CatRef;
+
+    STRUCTURE Bedeutung_CatRef
+    EXTENDS CatalogueObjects_V1.Catalogues.CatalogueReference =
+      Reference (EXTENDED) : REFERENCE TO (EXTERNAL) Bedeutung_Catalogue;
+    END Bedeutung_CatRef;
+
+    /** Der Katalog listet die verwendeten Kartengrundlagen fuer die Felderhebung auf.
+     */
+    CLASS Kartierungsgrundlage_Catalogue
+    EXTENDS CatalogueObjects_V1.Catalogues.Item =
+      /** Entitaet Kartierungsgrundlage, Codes des Bundes
+       */
+      KCode : MANDATORY TEXT*3;
+      Bezeichnung : MANDATORY LocalisationCH_V1.MultilingualText;
+      /** Sicherstellen Eindeutigkeit fuer  Katalogreferenz Join bei Datentransfer von prod_gl_biotope auf gl_biotope
+       */
+      UNIQUE KCode;
+    END Kartierungsgrundlage_Catalogue;
+
+    STRUCTURE Beschreibung_CatRef
+    EXTENDS CatalogueObjects_V1.Catalogues.CatalogueReference =
+      Reference (EXTENDED) : REFERENCE TO (EXTERNAL) Beschreibung_Catalogue;
+    END Beschreibung_CatRef;
+
+    STRUCTURE Kartierungsgrundlage_CatRef
+    EXTENDS CatalogueObjects_V1.Catalogues.CatalogueReference =
+      Reference (EXTENDED) : REFERENCE TO (EXTERNAL) Kartierungsgrundlage_Catalogue;
+    END Kartierungsgrundlage_CatRef;
+
+    /** Dieser Katalog dient der Typisierung der Biotope. Er beeinhaltet u.a. die
+     * fue den Transfer in die minimalen Datenmodelle des Bundes notwendigen
+     * Bezeichnungen "Hochmoor", "Flachmoor", "Auengebiet" "Amphibienlaichgebiet, Wanderobjekt",
+     * "Amphibienlaichgebiet,Bereich A", "Amphibienlaichgebiet,Bereich B"
+     * und "TWW-Objekt", aber auch "Hecke", "Trockenmauer",
+     * "Biotopbaum", "Fledermausquartier" und "Artenschutzflaeche".
+     */
+    CLASS Biotopart_Catalogue
+    EXTENDS CatalogueObjects_V1.Catalogues.Item =
+      /** Bundesbezeichnung des Biotops
+       */
+      Bezeichnung : MANDATORY TEXT;
+      /** Sicherstellen Eindeutigkeit fuer  Katalogreferenz Join bei Datentransfer von prod_gl_biotope auf gl_biotope
+       */
+      UNIQUE bezeichnung
+    END Biotopart_Catalogue;
+
+    /** Listet die moeglichen Eintraege fuer den Rechtsstatus des Teilobjektes auf, z.B. "rechtskraeftig", "Entwurf". Teilobjekte,
+     * die ein Bundesinventarobjekt im Sinne der kantonalen Detailkartierung abgrenzen,
+     * erhalten aufgrund von Art. 9 des Gesetzes ueber den Natur- und Heimatschutz automatisch
+     * den Status "Inventarobjekt, rechtskraeftig".
+     */
+    CLASS Rechtsstatus_Catalogue
+    EXTENDS CatalogueObjects_V1.Catalogues.Item =
+      /** Attribut fuer moegliche Eintraege
+       */
+      RStatus : MANDATORY TEXT;
+      /** Sicherstellen Eindeutigkeit fuer  Katalogreferenz Join bei Datentransfer von prod_gl_biotope auf gl_biotope
+       */
+      UNIQUE rstatus;
+    END Rechtsstatus_Catalogue;
+
+    STRUCTURE Biotopart_CatRef
+    EXTENDS CatalogueObjects_V1.Catalogues.CatalogueReference =
+      Reference (EXTENDED) : REFERENCE TO (EXTERNAL) Biotopart_Catalogue;
+    END Biotopart_CatRef;
+
+    STRUCTURE Rechtsstatus_CatRef
+    EXTENDS CatalogueObjects_V1.Catalogues.CatalogueReference =
+      Reference (EXTENDED) : REFERENCE TO (EXTERNAL) Rechtsstatus_Catalogue;
+    END Rechtsstatus_CatRef;
+
+  END Kataloge;
+
+  TOPIC Kataloge_intern =
+
+    /** In diesem Katalog werden die Beobachter der besonderen Arten aufgelistet.
+     */
+    CLASS Beobachter_Catalogue
+    EXTENDS CatalogueObjects_V1.Catalogues.Item =
+      /** Name des Beobachter bzw. des Bueros
+       */
+      bName : MANDATORY TEXT;
+      /** Sicherstellen Eindeutigkeit fuer  Katalogreferenz Join bei Datentransfer von prod_gl_biotope auf gl_biotope
+       */
+      UNIQUE bname;
+    END Beobachter_Catalogue;
+
+    /** Dieser Katalog listet die Qualitaetseinstufung der Beobachtungen auf. Noch nicht beurteilte Fundmeldungen erhalten den Eintrag "pendent".
+     */
+    CLASS Datenqualitaet_Catalogue
+    EXTENDS CatalogueObjects_V1.Catalogues.Item =
+      /** Angabe zur Datenqualitaet der Erfassten Arten. Vorlaeufige Werte: pendent,
+       * unsichereBestimmung, durchgefuert, von Experte
+       */
+      Qualitaet : MANDATORY TEXT;
+      UNIQUE qualitaet;
+    END Datenqualitaet_Catalogue;
+
+    /** Dieser Katalog listet die Untergruende auf,
+     * auf denen die jeweiligen Flechten und Moose gefunden wurden:
+     * "Verrucano", "Buche", "Fichte", "Tanne", "Bergahorn", "Ahorn",
+     * "Spitzahorn", "Schwarzpappel" usw. Der Katalog wird laufend nachgefuehrt.
+     */
+    CLASS Substrat_Catalogue
+    EXTENDS CatalogueObjects_V1.Catalogues.Item =
+      /** Bezeichnung des Untergrundes
+       */
+      Bezeichnung : MANDATORY TEXT;
+      /** Sicherstellen Eindeutigkeit fuer  Katalogreferenz Join bei Datentransfer von prod_gl_biotope auf gl_biotope
+       */
+      UNIQUE bezeichnung
+    END Substrat_Catalogue;
+
+    STRUCTURE Beobachter_CatRef
+    EXTENDS CatalogueObjects_V1.Catalogues.CatalogueReference =
+      Reference (EXTENDED) : REFERENCE TO (EXTERNAL) Beobachter_Catalogue;
+    END Beobachter_CatRef;
+
+    STRUCTURE Datenqualitaet_CatRef
+    EXTENDS CatalogueObjects_V1.Catalogues.CatalogueReference =
+      Reference (EXTENDED) : REFERENCE TO (EXTERNAL) Datenqualitaet_Catalogue;
+    END Datenqualitaet_CatRef;
+
+    STRUCTURE Substrat_CatRef
+    EXTENDS CatalogueObjects_V1.Catalogues.CatalogueReference =
+      Reference (EXTENDED) : REFERENCE TO (EXTERNAL) Substrat_Catalogue;
+    END Substrat_CatRef;
+
+    /** In diesem Katalog werden umfassende Informationen zu in den Teilobjekten vorkommenden Arten aufgefuehrt welche einen Schutzstatus haben bzw. gefoerdert werden sollen.
+     * Wissenschaftliche Bezeichnung der Art (Gattung, Spezies, Subspezies ...)
+     */
+    CLASS SpezArten_Catalogue
+    EXTENDS CatalogueObjects_V1.Catalogues.Item =
+      /** Bezeichnung der Art in Latein
+       */
+      Bez_Art_latein : MANDATORY TEXT;
+      /** Bezeichnung der Art in Deutsch
+       */
+      Bez_Art_deutsch : TEXT;
+      /** Status der Art in der roten Liste
+       */
+      RL_Status : (
+        EX,
+        RE,
+        CR_PE,
+        CR,
+        EN,
+        VU,
+        NT,
+        LC,
+        DD,
+        NA,
+        NE
+      );
+      /** Schutzstatus der Art in der Schweiz
+       */
+      Schutzstatus : (
+        kein Schutz,
+        anderer Schutz,
+        Schutz GL,
+        Schutz CH,
+        Schutz GL partiell Alpenpflanzen,
+        Schutz GL partiell (5 Stueck),
+        Schutz GL partiell (3 Zweige)
+      );
+      /** Foerdermassnahmen die in der Schweiz fuer die jeweilige Art getroffen wurden
+       */
+      Foerdermassnahmen : MTEXT;
+      /** Handelt es sich um eine in der Schweiz prioritaere Art oder nicht
+       */
+      Prioritaere_Art_CH : BOOLEAN;
+      /** Soll das Vorkommen der Art im jeweiligen Biotop publiziert werden oder nicht
+       */
+      Vorkommen_publiziert : MANDATORY BOOLEAN;
+      /** Ist die Art Teil der Waldbiostrategie
+       */
+      Art_aus_Waldbiostrategie : BOOLEAN;
+    END SpezArten_Catalogue;
+
+    STRUCTURE SpezArten_CatRef
+    EXTENDS CatalogueObjects_V1.Catalogues.CatalogueReference =
+      Reference (EXTENDED) : REFERENCE TO (EXTERNAL) SpezArten_Catalogue;
+    END SpezArten_CatRef;
+
+  END Kataloge_intern;
+
+  /** Dieses Thema beinhaltet alle oeffentlichen Informationen zu Biotopen, die als Flaeche dargestellt werden.
+   */
+  TOPIC Biotope =
+    OID AS INTERLIS.UUIDOID;
+    DEPENDS ON GL_Biotope_V1_1.Kataloge;
+
+    /** Klasse der uebergeordneten Informationen einer Gruppe von Teilobjekten.
+     */
+    CLASS Biotop =
+      Kanton : MANDATORY CHAdminCodes_V1.CHCantonCode;
+      /** Kantonale Identifikationsnummer fuer das Objekt, Kuerzel
+       */
+      Objekt_Nummer : MANDATORY TEXT;
+      /** Kantonale Identifikationsnummer fuer das Biotop, dient der Darstellung auf Plaenen und im Geodatenviewer und der Aktenablage
+       */
+      Objekt_Name : TEXT;
+    END Biotop;
+
+    /** Bezeichnungen und Identifikatoren von Bundesobjekten welche das kantonale Teilobjekt ueberschneiden
+     */
+    CLASS Biotop_National =
+      /** Objeketnummer des Bundesobjektes
+       */
+      Bund_Nr : MANDATORY TEXT;
+      /** Objektname des Bundesobjektes
+       */
+      Bund_Name : MANDATORY TEXT;
+      /** Nummer des Teilobjektes
+       */
+      Bund_Teilobj_Nr : TEXT;
+      /** Eintrag aus Biotopart_Catalogue entsprechend dem jeweiligen Inventar des Bundes
+       */
+      Bund_Typ : MANDATORY GL_Biotope_V1_1.Kataloge.Biotopart_CatRef;
+    END Biotop_National;
+
+    /** Kantonale Teilobjekte der Biotope (Superclass)
+     */
+    CLASS Teilobjekt (ABSTRACT) =
+      /** Nummerierung der Teilobjekte innerhalb eines Biotopes.
+       * Dient der Bezeichnung im Datenviewer und auf Plaenen, sowie zum Zuordnen von Akten.
+       */
+      Teilobj_Nr : MANDATORY TEXT;
+      /** Eintrag aus Biotopart_Catalogue. Bestimmt was fuer ein Geometrietyp verlangt ist
+       */
+      Teilobj_Name : TEXT;
+      /** Bezeichnung der Teilobjektes innerhalb eines Biotopes, Flurname oder andere Lagebezeichnung.
+       * Dient der Bezeichnung im Datenviewer und auf Plaenen, sowie zum Zuordnen von Akten.
+       */
+      Biotopart : MANDATORY GL_Biotope_V1_1.Kataloge.Biotopart_CatRef;
+      /** Beschreibung des schuetzenswerten Lebensraumes gemaess Beschreibung_Catalogue
+       */
+      Beschreibung : GL_Biotope_V1_1.Kataloge.Beschreibung_CatRef;
+      /** Hinweis aus welchem Inventar oder welcher Kartierung diese Daten stammen
+       */
+      Herkunft : MANDATORY GL_Biotope_V1_1.Kataloge.Datenherkunft_CatRef;
+      /** Beschreibt mit was fuer einer Kartengrundlage die Daten erhoben wurden
+       * (Landeskarte, Basisplan der amtlichen Vermessung, Grundbuchplan, Orthobild, andere Luftbilder)
+       */
+      Kartierungsgrundlage : MANDATORY GL_Biotope_V1_1.Kataloge.Kartierungsgrundlage_CatRef;
+      /** Legt fest ob ein Objekt national, regional oder lokal bedeutend ist
+       */
+      Bedeutung : MANDATORY GL_Biotope_V1_1.Kataloge.Bedeutung_CatRef;
+      /** Infos ueber den Rechtsstatus Bsp: Entwurf oder Rechtskraeftig
+       */
+      Rechtsstatus : MANDATORY GL_Biotope_V1_1.Kataloge.Rechtsstatus_CatRef;
+      /** Sobald die Bearbeitung des Teilobjektes soweit abgeschlossen ist, dass die Daten publiziert werden koennen, wird der Wert auf "wahr/true" gesetzt
+       */
+      Publikation : MANDATORY BOOLEAN;
+      /** Enthaelt eine kommagetrennte Auflistung der in der Klasse
+       * Bes_Arten_intern fuer das Teilobjekt erfassten besonderen Arten,
+       * die publiziert werden koennen. Die Aktualisierung erfolgt automatisch
+       * ueber eine Datenbankfunktion aus diesen internen Daten.
+       */
+      SpezArt : TEXT;
+      /** Bezeichnung des Entscheides ueber die Festlegung des Biotops
+       */
+      Entscheid : TEXT;
+    END Teilobjekt;
+
+    /** Spezialisierung: Teilobjekt mit Flaechengeometrie
+     */
+    CLASS TO_Flaeche
+    EXTENDS Teilobjekt =
+      /** GIS-Flaeche des Teilobjekts in ha
+       */
+      Flaeche_ha : MANDATORY 0.000 .. 999999999.999 [Units.ha];
+      /** Flaechige Vektorgeometrie des Teilobjekts (bei entsprechender Biotopart)
+       */
+      Geo_Obj : MANDATORY GeometryCHLV95_V1.MultiSurface;
+    END TO_Flaeche;
+
+    ASSOCIATION UeberschneidungNatObjekte =
+      hat_Ueberlagerung -- {0..*} Biotop_National;
+      ueberlagert_Teilobjekt -- {1..*} Teilobjekt;
+    END UeberschneidungNatObjekte;
+
+    /** Spezialisierung: Teilobjekt mit Liniengeometrie
+     */
+    CLASS TO_Linie
+    EXTENDS Teilobjekt =
+      /** GIS_Laenge des Teilobjektes
+       */
+      Laenge_m : 0 .. 99999999 [INTERLIS.m];
+      /** linienfoermige Vektorgeometrie des Teilobjekts (bei entsprechender Biotopart))
+       */
+      Geo_Obj : MANDATORY GeometryCHLV95_V1.MultiLine;
+    END TO_Linie;
+
+    /** Spezialisierung: Teilobjekt mit Punktgeometrie
+     */
+    CLASS TO_Punkt
+    EXTENDS Teilobjekt =
+      /** punktfoermige Vektorgeometrie des Teilobjekts (bei entsprechender Biotopart)
+       */
+      Geo_Obj : MANDATORY GL_Basis_Geometrie_V1.MultiPoint;
+    END TO_Punkt;
+
+    ASSOCIATION BiotopTeilobjekt =
+      hat_Teilobjekt -- {1..*} Teilobjekt;
+      von_Biotop -<> {1} Biotop;
+    END BiotopTeilobjekt;
+
+  END Biotope;
+
+  /** Dieses Thema ist eigenstaendig und beinhaltet Einzelflaechen und die darin vorkommenden Lebensraeume in hoeheren Lagen
+   */
+  TOPIC Hochlagenbiotope =
+    OID AS INTERLIS.UUIDOID;
+    DEPENDS ON GL_Biotope_V1_1.Kataloge;
+
+    CLASS Hochlagen_Einheitsflaeche =
+      /** Bezeichnung der Einheitsflaeche fuer Darstellung auf Plan und im Geodatenviewer
+       */
+      Bezeichnung : TEXT*20;
+      /** Jahr der Erhebung, vierstellig
+       */
+      Erhebungsjahr : 1800 .. 3000;
+      /** Vektorgeometrie der Einheitsflaeche
+       */
+      Geo_Obj : GeometryCHLV95_V1.MultiSurface;
+    END Hochlagen_Einheitsflaeche;
+
+    /** In Einheitsflaeche enthaltene Lebensraeueme mit Prozentanteil.
+     */
+    CLASS Hochlagen_Lebensraum =
+      /** Bezeichnung des schuetzenswerten Lebensraumes
+       */
+      Beschreibung : GL_Biotope_V1_1.Kataloge.Beschreibung_HL_CatRef;
+      /** Angabe des prozentualen Anteils der Einheitsflaeche
+       */
+      Flaechen_Anteil_Proz : 0 .. 100 [Units.Percent];
+    END Hochlagen_Lebensraum;
+
+    ASSOCIATION EinheitsflaecheLebensraum =
+      gehoert_zu -- {1} Hochlagen_Einheitsflaeche;
+      hat_lebensraum -- {0..*} Hochlagen_Lebensraum;
+    END EinheitsflaecheLebensraum;
+
+  END Hochlagenbiotope;
+
+  /** Dieses Thema beinhaltet NICHT publizierte Daten zum internen Gebrauch.
+   */
+  TOPIC Teilobjekte_intern =
+    OID AS INTERLIS.UUIDOID;
+    DEPENDS ON GL_Biotope_V1_1.Biotope,GL_Biotope_V1_1.Kataloge,GL_Biotope_V1_1.Kataloge_intern;
+
+    /** Hier werden besondere/relevante Tier-und Pflanzenarten aufgefuehrt welche im jeweiligen Teilobjekt beobachtet wurden.
+     */
+    CLASS Erfassung_Artvorkommen_intern =
+      /** Katalogreferenz zu Artspezifischen Angaben
+       */
+      Art : MANDATORY GL_Biotope_V1_1.Kataloge_intern.SpezArten_CatRef;
+      /** Datum der Beobachtung im Feld falls bekannt
+       */
+      Funddatum : INTERLIS.XMLDate;
+      /** Datum der Beobachtung im Feld falls bekannt
+       */
+      Substrat : GL_Biotope_V1_1.Kataloge_intern.Substrat_CatRef;
+      /** Beobachter der Art im Feld falls bekannt aus BesArten_Beobachter_Catalogue
+       */
+      Beobachter : GL_Biotope_V1_1.Kataloge_intern.Beobachter_CatRef;
+      /** Bemerkungen zum Fund
+       */
+      Bemerkungen : MTEXT;
+      /** Angabe zur Datenqualitaet gemaess Datenqualitaet_Catalogue
+       */
+      Qualitaetskontrolle : GL_Biotope_V1_1.Kataloge_intern.Datenqualitaet_CatRef;
+    END Erfassung_Artvorkommen_intern;
+
+    /** Klasse mit Angaben zu den Fotos für das Teilobjekt.
+     */
+    CLASS Foto_intern =
+      /** Kurze Beschreibung des Bildinhalts
+       */
+      Bezeichnung : TEXT;
+      /** Datum bei schiessen des Fotos
+       */
+      Datum : INTERLIS.XMLDate;
+      /** Behaelter fuer Fotodaten
+       */
+      URI_Foto : MANDATORY URI;
+    END Foto_intern;
+
+    /** Klasse der NICHT publizierten Daten.
+     */
+    CLASS Teilobjekt_intern =
+      /** Angabe der Nutzungsart des Teilobjektes zum Zeitpunkt der Felderhebung
+       */
+      Nutzung : TEXT;
+      /** Angabe des Grundes, wenn der schuetzenswerte Lebensraum zum Zeitpunkt der Felderhebung gefaehrdet ist
+       */
+      Gefaehrdung : TEXT;
+      /** Empfehlungen fuer allfaellige Massnahmen zum Schutz,
+       * zur Erhaltung oder zur Verbesserung des schuetzenswerten Lebensraumes zum Zeitpunkt der Felderhebung der Daten.
+       */
+      Empfehlung : MTEXT;
+      /** Datum der Erhebung im Feld
+       */
+      Datum_Erhebung : INTERLIS.XMLDate;
+      /** Name der Person, welche die Erhebung durchgefuehrt hat, aus Beobachter_Catalogue.
+       */
+      BearbeiterImFeld : GL_Biotope_V1_1.Kataloge_intern.Beobachter_CatRef;
+      /** Allfaellige weitere Bemerkungen zu Besonderheiten oder vorliegenden Beeintrï¿½chtigungen zum Zeitpunkt der Felderhebung.
+       */
+      Kommentar : MTEXT;
+      /** Falls bekannt: Datum der letzten Mutation der Daten in den Klassen Biotop,
+       * Teilobjekt, Teilobjekt_intern, BesArten, Nationale_Biotope
+       */
+      Letzte_Mutation : INTERLIS.XMLDate;
+      /** Falls bekannt: Kurzbeschrieb der letzten Mutation der Daten in den Klassen Biotop,
+       * Teilobjekt, Teilobjekt_intern, BesArten, Nationale_Biotope
+       */
+      Mutationsgrund : TEXT;
+    END Teilobjekt_intern;
+
+    ASSOCIATION Teilobjekt_internFoto =
+      von_Teilobjekt_intern -<#> {1} Teilobjekt_intern;
+      hat_Foto -- {0..*} Foto_intern;
+    END Teilobjekt_internFoto;
+
+    ASSOCIATION TeilobjektTeilobjekt_intern =
+      hat_interne_Daten (EXTERNAL) -- {0..1} Teilobjekt_intern;
+      gehoert_zu_Teilobjekt (EXTERNAL) -<#> {1} GL_Biotope_V1_1.Biotope.Teilobjekt;
+    END TeilobjektTeilobjekt_intern;
+
+    ASSOCIATION Teilobjekt_internErfassung_Artvorkommen =
+      hat_BesArten -- {0..*} Erfassung_Artvorkommen_intern;
+      kommt_vor_in -<#> {1} Teilobjekt_intern;
+    END Teilobjekt_internErfassung_Artvorkommen;
+
+  END Teilobjekte_intern;
+
+END GL_Biotope_V1_1.
