@@ -4,7 +4,7 @@ java -jar ili2pg-5.5.1.jar --schemaimport \
   --dbdatabase test_db \
   --dbusr postgres \
   --dbpwd postgres \
-  --dbschema $2 \
+  --dbschema kbs_v1_5 \
   --defaultSrsAuth EPSG \
   --defaultSrsCode 2056 \
   --createFk \
@@ -15,4 +15,9 @@ java -jar ili2pg-5.5.1.jar --schemaimport \
   --createNumChecks \
   --createUnique \
   --setupPgExt \
-  $1 # path to ili model passed as first argument when calling the script
+  --strokeArcs \
+  --coalesceCatalogueRef \
+  --smart2Inheritance \
+  --createMetaInfo \
+  --iliMetaAttrs iliMetaAttrs.toml \
+  ili_models/kbs_V1_5.ili # path to ili model passed as first argument when calling the script

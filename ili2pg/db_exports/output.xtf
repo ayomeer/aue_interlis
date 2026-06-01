@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><TRANSFER xmlns="http://www.interlis.ch/INTERLIS2.3">
+<HEADERSECTION SENDER="ili2pg-5.5.1-2ee4413c5be30411a59b684e351729d2e5d8dffd" VERSION="2.3"><MODELS><MODEL NAME="GL_Ersatzbiotope_V1" VERSION="2025-04-01" URI="http://geo.gl.ch"></MODEL></MODELS></HEADERSECTION>
+<DATASECTION>
+</DATASECTION>
+</TRANSFER>

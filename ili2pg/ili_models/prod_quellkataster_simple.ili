@@ -33,9 +33,9 @@ MODEL Prod_Quellkataster_V1
       Trinkwasser : Grundwasseraustritte_V2_0.JaNeinUnbestimmt;
       Zweck : TEXT*255;
       Oeffentliches_Interesse : Grundwasseraustritte_V2_0.JaNeinUnbestimmt;
-      Schuettung_minimal: MANDATORY Grundwasseraustritte_V2_0.LiterMinute; 
-      Schuettung_mittel:  MANDATORY Grundwasseraustritte_V2_0.LiterMinute; 
-      Schuettung_maximal: MANDATORY Grundwasseraustritte_V2_0.LiterMinute; 
+      Schuettung_minimal: Grundwasseraustritte_V2_0.LiterMinute; !! MANDATOR in MGDM
+      Schuettung_mittel:  Grundwasseraustritte_V2_0.LiterMinute; !! MANDATOR in MGDM
+      Schuettung_maximal: Grundwasseraustritte_V2_0.LiterMinute; !! MANDATOR in MGDM
       Zustroembereich_erforderlich : Grundwasseraustritte_V2_0.JaNeinUnbestimmt;
       Geometrie : MANDATORY GeometryCHLV95_V1.Coord2;
       Name_WV : TEXT*255;
@@ -47,7 +47,7 @@ MODEL Prod_Quellkataster_V1
       !! Position
       Ortschaft: TEXT*255;
       Postleitzahl: TEXT*255;
-      ParzNr: TEXT*255;
+      Parz_Nr: TEXT*255;
       Hoehe: 0 .. 2999 [INTERLIS.m]; !! <- alpquellen höhe hier rein?
       Lagegenauigkeit: TEXT*255;
       
@@ -77,33 +77,32 @@ MODEL Prod_Quellkataster_V1
       Aufgenommen_durch: TEXT*255; 
       Erhebungsdatum: INTERLIS.XMLDate;
       Feldbegehung: INTERLIS.XMLDate;
-      Objektbereinigung: INTERLIS.XMLDate; !! really need this?
+      Objektbereinigung: INTERLIS.XMLDate; 
 
       !! Andere
-      Schutzzone_erforderlich: BOOLEAN;
+      Schutzzone: TEXT*255;
       Kontaktperson: TEXT*255;
       Bemerkungen: MTEXT*1023;
     END Quelle; !! End Class
 
-    !! CLASS Messdaten_intern =
-    !!   Entnahmedatum: INTERLIS.XMLDate;
-    !!   !! Entnahme: Uhrzeit;
-    !!   Witterung: (leichter Regen, 
-    !!               starker Regen,
-    !!               Sommergewitter,
-    !!               Schneefall,
-    !!               Tauwetter,
-    !!               Nebel,
-    !!               trocken,
-    !!               schön);
-    !!   Schuettungsmenge
-    !!   Wassertemperatur
-    !!   pH-Wert
-    !!   Sauerstoff
-    !!   Sauerstoffsättigung
-    !!   Chemische Analysen
-    !!   Bemerkungen
-    !! END Messdaten_intern;
+    CLASS Messdaten =
+      Entnahmedatum: INTERLIS.XMLDate;
+      Entnahmezeit: INTERLIS.XMLTime;
+      Witterung: TEXT*255;
+      Schuettungsmenge: Grundwasseraustritte_V2_0.LiterMinute;
+      Wassertemperatur: -100.0 .. 100.0;
+      pH_Wert: TEXT*255; !! nur handvoll Werte
+      Sauerstoff: TEXT*255; !! keine Werte
+      Sauerstoffsaettigung: TEXT*255; !! keine Werte
+      Chemische_Analysen: TEXT*255; !! keine Werte
+      Bemerkungen: TEXT*255;
+    END Messdaten;
+
+    ASSOCIATION QuelleMessdaten = 
+      von_quelle -- {1} Quelle;
+      hat_messung -- {0..*} Messdaten;
+    END QuelleMessdaten;
+
 
   END Grundwasseraustritte; !! End Topic
 END Prod_Quellkataster_V1. !! End Model
