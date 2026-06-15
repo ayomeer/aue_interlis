@@ -1,0 +1,66 @@
+INTERLIS 2.3;
+
+
+!!@ technicalContact="mailto:geoinformation@gl.ch"
+MODEL GL_Ersatzbiotope_Publikation_V1 (de) AT "https://www.gl.ch" VERSION "2021-02-02"  =
+  IMPORTS Units,GeometryCHLV95_V1,GL_Basis_Geometrie_V1;
+
+  TOPIC Ersatzbiotope =
+    OID AS INTERLIS.UUIDOID;
+
+    CLASS Teilobjekt (ABSTRACT) =
+      /** Kantonale Identifikationsnummer fuer das Ersatzbiotopobjekt, Kuerzel
+       */
+      Objekt_Nummer : MANDATORY 1 .. 10000;
+      /** Nummerierung der Teilobjekte innerhalb eines Ersatzbiotopes.
+       * Dient der Bezeichnung im Datenviewer und auf Plaenen, sowie zum Zuordnen von Akten.
+       */
+      Teilobj_Nr : MANDATORY 1 .. 10000;
+      /** Bezeichnung der Teilobjektes innerhalb eines Biotopes, Flurname oder andere Lagebezeichnung.
+       * Dient der Bezeichnung im Datenviewer und auf Plaenen, sowie zum Zuordnen von Akten.
+       */
+       Kategorie_Ersatzmassnahme : TEXT*255;
+      /** Beschreibung des schuetzenswerten Lebensraumes
+       */
+      Ersatzmassnahme : MANDATORY TEXT*255;
+      Ziellebensraum : TEXT*255;
+      Entscheide : MTEXT;
+    END Teilobjekt;
+
+    /** Spezialisierung: Teilobjekt mit Flaechengeometrie
+     */
+    CLASS TO_Flaeche
+    EXTENDS Teilobjekt =
+      /** GIS-Flaeche des Teilobjekts in ha
+       */
+      Flaeche_m2 : MANDATORY 0.000 .. 999999999.999 [Units.m2];
+      /** Flaechige Vektorgeometrie des Teilobjekts (bei entsprechender Biotopart)
+       */
+      Geo_Obj : MANDATORY GeometryCHLV95_V1.MultiSurface;
+    END TO_Flaeche;
+
+
+    /** Spezialisierung: Teilobjekt mit Liniengeometrie
+     */
+    CLASS TO_Linie
+    EXTENDS Teilobjekt =
+      /** GIS_Laenge des Teilobjektes
+       */
+      Laenge_m : 0 .. 99999999 [INTERLIS.m];
+      /** linienfoermige Vektorgeometrie des Teilobjekts (bei entsprechender Biotopart))
+       */
+      Geo_Obj : MANDATORY GeometryCHLV95_V1.MultiLine;
+    END TO_Linie;
+
+    /** Spezialisierung: Teilobjekt mit Punktgeometrie
+     */
+    CLASS TO_Punkt
+    EXTENDS Teilobjekt =
+      /** punktfoermige Vektorgeometrie des Teilobjekts (bei entsprechender Biotopart)
+       */
+      Geo_Obj : MANDATORY GL_Basis_Geometrie_V1.MultiPoint;
+    END TO_Punkt;
+
+  END Ersatzbiotope;
+
+END GL_Ersatzbiotope_Publikation_V1.
