@@ -23,4 +23,15 @@ java -jar ili2pg-5.5.1.jar --schemaimport \
   --smart2Inheritance \
   --createMetaInfo \
   --iliMetaAttrs iliMetaAttrs.toml \
-  --models $1 # path to ili model passed as first argument when calling the script
+  --models $1 # ili model (remote)
+
+
+java -jar ili2pg-5.5.1.jar \
+  --dbhost localhost \
+  --dbusr postgres \
+  --dbpwd postgres \
+  --dbdatabase test_db \
+  --dbschema $2 \
+  --importTid \
+  --replace \
+  --dataset catalogues $3 # path to catalogues xtf
