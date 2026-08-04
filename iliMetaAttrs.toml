@@ -1,0 +1,5 @@
+[GL_Ersatzbiotope_V1.Ersatzbiotope.TO_Flaeche.Geo_Obj]
+ili2db.mapping=MultiSurface
+
+[kt_Amphibien_Laichgebiete_V1_1.kt_Amphibiengebiet.MultiPolygon]
+ili2db.mapping=MultiSurface

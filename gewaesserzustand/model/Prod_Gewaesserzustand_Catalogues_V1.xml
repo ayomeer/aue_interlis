@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  File Prod_Gewaesserzustand_V1.xml 2026-08-01   -->
+<TRANSFER xmlns="http://www.interlis.ch/INTERLIS2.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://models.geo.admin.ch/BAFU/DBGZ_NADUF_V1.xsd">
+<HEADERSECTION VERSION="2.3" SENDER="GL">
+<MODELS>
+<MODEL NAME="Units" URI="http://models.interlis.ch/refhb23" VERSION=" 2012-02-20"/>
+<MODEL NAME="CoordSys" URI="http://models.interlis.ch/refhb23" VERSION=" 2005-06-16"/>
+<MODEL NAME="CodeISO" URI="http://models.interlis.ch/geocat.ch/" VERSION=" 2006-08-08"/>
+<MODEL NAME="LocalisationCH_V1" URI="http://models.geo.admin.ch/CHBase" VERSION="2011-05-01"/>
+<MODEL NAME="CatalogueObjects_V1" URI="http://models.geo.admin.ch/CHBase" VERSION="2011-05-01"/>
+<MODEL NAME="CHAdminCodes_V1" URI="http://models.geo.admin.ch/CHBase" VERSION="2011-08-30"/>
+<MODEL NAME="Prod_Gewaesserzustand_V1" URI="http://dummy.geo.admin.ch" VERSION="2025-12-22"/>
+</MODELS>
+</HEADERSECTION>
+<DATASECTION>
+<Prod_Gewaesserzustand_V1.Codelisten BID="b001">
+<Prod_Gewaesserzustand_V1.Codelisten.Art_Gruppierung_Catalogue TID="1001">
+<Code>Art</Code>
+<Description>
+<LocalisationCH_V1.MultilingualText>
+<LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>de</Language>
+<Text>Messstation</Text>
+</LocalisationCH_V1.LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>fr</Language>
+<Text>Station de mesure</Text>
+</LocalisationCH_V1.LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>it</Language>
+<Text>Stazione di misurazione</Text>
+</LocalisationCH_V1.LocalisedText>
+</LocalisedText>
+</LocalisationCH_V1.MultilingualText>
+</Description>
+</Prod_Gewaesserzustand_V1.Codelisten.Art_Gruppierung_Catalogue>
+<Prod_Gewaesserzustand_V1.Codelisten.Erhebung_Catalogue TID="2001">
+<Code>Erhebung1</Code>
+<Description>
+<LocalisationCH_V1.MultilingualText>
+<LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>de</Language>
+<Text>Sammelprobe</Text>
+</LocalisationCH_V1.LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>fr</Language>
+<Text>Echantillon composite</Text>
+</LocalisationCH_V1.LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>it</Language>
+<Text>Campione composito</Text>
+</LocalisationCH_V1.LocalisedText>
+</LocalisedText>
+</LocalisationCH_V1.MultilingualText>
+</Description>
+</Prod_Gewaesserzustand_V1.Codelisten.Erhebung_Catalogue>
+<Prod_Gewaesserzustand_V1.Codelisten.Erhebung_Catalogue TID="2002">
+<Code>Erhebung2</Code>
+<Description>
+<LocalisationCH_V1.MultilingualText>
+<LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>de</Language>
+<Text>Stichprobe</Text>
+</LocalisationCH_V1.LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>fr</Language>
+<Text>Echantillon isolé</Text>
+</LocalisationCH_V1.LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>it</Language>
+<Text>Campione isolato</Text>
+</LocalisationCH_V1.LocalisedText>
+</LocalisedText>
+</LocalisationCH_V1.MultilingualText>
+</Description>
+</Prod_Gewaesserzustand_V1.Codelisten.Erhebung_Catalogue>
+<Prod_Gewaesserzustand_V1.Codelisten.Erhebung_Catalogue TID="2003">
+<Code>Erhebung3</Code>
+<Description>
+<LocalisationCH_V1.MultilingualText>
+<LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>de</Language>
+<Text>Sammel-/Stichprobe</Text>
+</LocalisationCH_V1.LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>fr</Language>
+<Text>Echantillon composite/isolé</Text>
+</LocalisationCH_V1.LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>it</Language>
+<Text>Campione composito/isolato</Text>
+</LocalisationCH_V1.LocalisedText>
+</LocalisedText>
+</LocalisationCH_V1.MultilingualText>
+</Description>
+</Prod_Gewaesserzustand_V1.Codelisten.Erhebung_Catalogue>
+<Prod_Gewaesserzustand_V1.Codelisten.Erhebung_Catalogue TID="2004">
+<Code>Erhebung4</Code>
+<Description>
+<LocalisationCH_V1.MultilingualText>
+<LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>de</Language>
+<Text>kontinuierlich</Text>
+</LocalisationCH_V1.LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>fr</Language>
+<Text>continu</Text>
+</LocalisationCH_V1.LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>it</Language>
+<Text>continuativo</Text>
+</LocalisationCH_V1.LocalisedText>
+</LocalisedText>
+</LocalisationCH_V1.MultilingualText>
+</Description>
+</Prod_Gewaesserzustand_V1.Codelisten.Erhebung_Catalogue>
+<Prod_Gewaesserzustand_V1.Codelisten.Periodizitaet_Catalogue TID="3001">
+<Code>Periode1</Code>
+<Description>
+<LocalisationCH_V1.MultilingualText>
+<LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>de</Language>
+<Text>täglich</Text>
+</LocalisationCH_V1.LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>fr</Language>
+<Text>Relevés quotidiens</Text>
+</LocalisationCH_V1.LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>it</Language>
+<Text>Rilevamenti giornalieri</Text>
+</LocalisationCH_V1.LocalisedText>
+</LocalisedText>
+</LocalisationCH_V1.MultilingualText>
+</Description>
+</Prod_Gewaesserzustand_V1.Codelisten.Periodizitaet_Catalogue>
+<Prod_Gewaesserzustand_V1.Codelisten.Periodizitaet_Catalogue TID="3002">
+<Code>Periode2</Code>
+<Description>
+<LocalisationCH_V1.MultilingualText>
+<LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>de</Language>
+<Text>wöchentlich</Text>
+</LocalisationCH_V1.LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>fr</Language>
+<Text>Relevés hebdomadaires</Text>
+</LocalisationCH_V1.LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>it</Language>
+<Text>Rilevamenti settimanali</Text>
+</LocalisationCH_V1.LocalisedText>
+</LocalisedText>
+</LocalisationCH_V1.MultilingualText>
+</Description>
+</Prod_Gewaesserzustand_V1.Codelisten.Periodizitaet_Catalogue>
+<Prod_Gewaesserzustand_V1.Codelisten.Periodizitaet_Catalogue TID="3003">
+<Code>Periode3</Code>
+<Description>
+<LocalisationCH_V1.MultilingualText>
+<LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>de</Language>
+<Text>2-wöchentlich</Text>
+</LocalisationCH_V1.LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>fr</Language>
+<Text>Relevés bihebdomadaires</Text>
+</LocalisationCH_V1.LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>it</Language>
+<Text>Rilevamenti bisettimanali</Text>
+</LocalisationCH_V1.LocalisedText>
+</LocalisedText>
+</LocalisationCH_V1.MultilingualText>
+</Description>
+</Prod_Gewaesserzustand_V1.Codelisten.Periodizitaet_Catalogue>
+<Prod_Gewaesserzustand_V1.Codelisten.Periodizitaet_Catalogue TID="3004">
+<Code>Periode4</Code>
+<Description>
+<LocalisationCH_V1.MultilingualText>
+<LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>de</Language>
+<Text>monatlich</Text>
+</LocalisationCH_V1.LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>fr</Language>
+<Text>Relevés mensuels</Text>
+</LocalisationCH_V1.LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>it</Language>
+<Text>Rilevamenti mensili</Text>
+</LocalisationCH_V1.LocalisedText>
+</LocalisedText>
+</LocalisationCH_V1.MultilingualText>
+</Description>
+</Prod_Gewaesserzustand_V1.Codelisten.Periodizitaet_Catalogue>
+<Prod_Gewaesserzustand_V1.Codelisten.Periodizitaet_Catalogue TID="3005">
+<Code>Periode5</Code>
+<Description>
+<LocalisationCH_V1.MultilingualText>
+<LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>de</Language>
+<Text>jährlich</Text>
+</LocalisationCH_V1.LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>fr</Language>
+<Text>Relevés annuels</Text>
+</LocalisationCH_V1.LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>it</Language>
+<Text>Rilevamenti annuali</Text>
+</LocalisationCH_V1.LocalisedText>
+</LocalisedText>
+</LocalisationCH_V1.MultilingualText>
+</Description>
+</Prod_Gewaesserzustand_V1.Codelisten.Periodizitaet_Catalogue>
+<Prod_Gewaesserzustand_V1.Codelisten.Periodizitaet_Catalogue TID="3006">
+<Code>Periode6</Code>
+<Description>
+<LocalisationCH_V1.MultilingualText>
+<LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>de</Language>
+<Text>intermittierend</Text>
+</LocalisationCH_V1.LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>fr</Language>
+<Text>Relevés irréguliers</Text>
+</LocalisationCH_V1.LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>it</Language>
+<Text>Rilevamenti irregolari</Text>
+</LocalisationCH_V1.LocalisedText>
+</LocalisedText>
+</LocalisationCH_V1.MultilingualText>
+</Description>
+</Prod_Gewaesserzustand_V1.Codelisten.Periodizitaet_Catalogue>
+<Prod_Gewaesserzustand_V1.Codelisten.Periodizitaet_Catalogue TID="3007">
+<Code>Periode7</Code>
+<Description>
+<LocalisationCH_V1.MultilingualText>
+<LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>de</Language>
+<Text>andere</Text>
+</LocalisationCH_V1.LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>fr</Language>
+<Text>autres</Text>
+</LocalisationCH_V1.LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>it</Language>
+<Text>altro</Text>
+</LocalisationCH_V1.LocalisedText>
+</LocalisedText>
+</LocalisationCH_V1.MultilingualText>
+</Description>
+</Prod_Gewaesserzustand_V1.Codelisten.Periodizitaet_Catalogue>
+<Prod_Gewaesserzustand_V1.Codelisten.Periodizitaet_Catalogue TID="3008">
+<Code>Periode8</Code>
+<Description>
+<LocalisationCH_V1.MultilingualText>
+<LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>de</Language>
+<Text>alle 3.5 Tage</Text>
+</LocalisationCH_V1.LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>fr</Language>
+<Text>tous les 3,5 jours</Text>
+</LocalisationCH_V1.LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>it</Language>
+<Text>ogni 3,5 giorni</Text>
+</LocalisationCH_V1.LocalisedText>
+</LocalisedText>
+</LocalisationCH_V1.MultilingualText>
+</Description>
+</Prod_Gewaesserzustand_V1.Codelisten.Periodizitaet_Catalogue>
+<Prod_Gewaesserzustand_V1.Codelisten.Gewaessertyp_Catalogue TID="4001">
+<Code>GewTyp1</Code>
+<Description>
+<LocalisationCH_V1.MultilingualText>
+<LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>de</Language>
+<Text>Fliessgewässer</Text>
+</LocalisationCH_V1.LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>fr</Language>
+<Text>Cours d’eau</Text>
+</LocalisationCH_V1.LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>it</Language>
+<Text>Corsi d'acqua</Text>
+</LocalisationCH_V1.LocalisedText>
+</LocalisedText>
+</LocalisationCH_V1.MultilingualText>
+</Description>
+</Prod_Gewaesserzustand_V1.Codelisten.Gewaessertyp_Catalogue>
+<Prod_Gewaesserzustand_V1.Codelisten.Gewaessertyp_Catalogue TID="4002">
+<Code>GewTyp2</Code>
+<Description>
+<LocalisationCH_V1.MultilingualText>
+<LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>de</Language>
+<Text>See</Text>
+</LocalisationCH_V1.LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>fr</Language>
+<Text>Lac</Text>
+</LocalisationCH_V1.LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>it</Language>
+<Text>Lago</Text>
+</LocalisationCH_V1.LocalisedText>
+</LocalisedText>
+</LocalisationCH_V1.MultilingualText>
+</Description>
+</Prod_Gewaesserzustand_V1.Codelisten.Gewaessertyp_Catalogue>
+<Prod_Gewaesserzustand_V1.Codelisten.Tel_Typ_Catalogue TID="5001">
+<Code>T1</Code>
+<Description>
+<LocalisationCH_V1.MultilingualText>
+<LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>de</Language>
+<Text>Hauptnummer</Text>
+</LocalisationCH_V1.LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>fr</Language>
+<Text>Numéro principal</Text>
+</LocalisationCH_V1.LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>it</Language>
+<Text>Numero principale</Text>
+</LocalisationCH_V1.LocalisedText>
+</LocalisedText>
+</LocalisationCH_V1.MultilingualText>
+</Description>
+</Prod_Gewaesserzustand_V1.Codelisten.Tel_Typ_Catalogue>
+<Prod_Gewaesserzustand_V1.Codelisten.Tel_Typ_Catalogue TID="5002">
+<Code>T2</Code>
+<Description>
+<LocalisationCH_V1.MultilingualText>
+<LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>de</Language>
+<Text>Direktwahl</Text>
+</LocalisationCH_V1.LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>fr</Language>
+<Text>Numéro direct</Text>
+</LocalisationCH_V1.LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>it</Language>
+<Text>Numero diretto</Text>
+</LocalisationCH_V1.LocalisedText>
+</LocalisedText>
+</LocalisationCH_V1.MultilingualText>
+</Description>
+</Prod_Gewaesserzustand_V1.Codelisten.Tel_Typ_Catalogue>
+<Prod_Gewaesserzustand_V1.Codelisten.Tel_Typ_Catalogue TID="5003">
+<Code>T3</Code>
+<Description>
+<LocalisationCH_V1.MultilingualText>
+<LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>de</Language>
+<Text>Mobiltelefon</Text>
+</LocalisationCH_V1.LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>fr</Language>
+<Text>Téléphone mobile</Text>
+</LocalisationCH_V1.LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>it</Language>
+<Text>Telefono cellulare</Text>
+</LocalisationCH_V1.LocalisedText>
+</LocalisedText>
+</LocalisationCH_V1.MultilingualText>
+</Description>
+</Prod_Gewaesserzustand_V1.Codelisten.Tel_Typ_Catalogue>
+<Prod_Gewaesserzustand_V1.Codelisten.Tel_Typ_Catalogue TID="5004">
+<Code>T4</Code>
+<Description>
+<LocalisationCH_V1.MultilingualText>
+<LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>de</Language>
+<Text>Fax</Text>
+</LocalisationCH_V1.LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>fr</Language>
+<Text>Fax</Text>
+</LocalisationCH_V1.LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>it</Language>
+<Text>Fax</Text>
+</LocalisationCH_V1.LocalisedText>
+</LocalisedText>
+</LocalisationCH_V1.MultilingualText>
+</Description>
+</Prod_Gewaesserzustand_V1.Codelisten.Tel_Typ_Catalogue>
+<Prod_Gewaesserzustand_V1.Codelisten.Parameter_Catalogue TID="7001">
+<Code>Parameter1</Code>
+<Description>
+<LocalisationCH_V1.MultilingualText>
+<LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>de</Language>
+<Text>Nährstoffe</Text>
+</LocalisationCH_V1.LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>fr</Language>
+<Text>Nutriments</Text>
+</LocalisationCH_V1.LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>it</Language>
+<Text>Nutrienti</Text>
+</LocalisationCH_V1.LocalisedText>
+</LocalisedText>
+</LocalisationCH_V1.MultilingualText>
+</Description>
+</Prod_Gewaesserzustand_V1.Codelisten.Parameter_Catalogue>
+<Prod_Gewaesserzustand_V1.Codelisten.Parameter_Catalogue TID="7002">
+<Code>Parameter2</Code>
+<Description>
+<LocalisationCH_V1.MultilingualText>
+<LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>de</Language>
+<Text>Organische Spurenstoffe</Text>
+</LocalisationCH_V1.LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>fr</Language>
+<Text>Composés traces organiques</Text>
+</LocalisationCH_V1.LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>it</Language>
+<Text>Sostanze organiche in tracce</Text>
+</LocalisationCH_V1.LocalisedText>
+</LocalisedText>
+</LocalisationCH_V1.MultilingualText>
+</Description>
+</Prod_Gewaesserzustand_V1.Codelisten.Parameter_Catalogue>
+<Prod_Gewaesserzustand_V1.Codelisten.Parameter_Catalogue TID="7003">
+<Code>Parameter3</Code>
+<Description>
+<LocalisationCH_V1.MultilingualText>
+<LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>de</Language>
+<Text>Geochemische Parameter</Text>
+</LocalisationCH_V1.LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>fr</Language>
+<Text>Paramètres géochimiques</Text>
+</LocalisationCH_V1.LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>it</Language>
+<Text>Parametri geochimici</Text>
+</LocalisationCH_V1.LocalisedText>
+</LocalisedText>
+</LocalisationCH_V1.MultilingualText>
+</Description>
+</Prod_Gewaesserzustand_V1.Codelisten.Parameter_Catalogue>
+<Prod_Gewaesserzustand_V1.Codelisten.Parameter_Catalogue TID="7004">
+<Code>Parameter4</Code>
+<Description>
+<LocalisationCH_V1.MultilingualText>
+<LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>de</Language>
+<Text>Schwermetalle</Text>
+</LocalisationCH_V1.LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>fr</Language>
+<Text>Métaux lourds</Text>
+</LocalisationCH_V1.LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>it</Language>
+<Text>Metalli pesanti</Text>
+</LocalisationCH_V1.LocalisedText>
+</LocalisedText>
+</LocalisationCH_V1.MultilingualText>
+</Description>
+</Prod_Gewaesserzustand_V1.Codelisten.Parameter_Catalogue>
+<Prod_Gewaesserzustand_V1.Codelisten.Parameter_Catalogue TID="7005">
+<Code>Parameter5</Code>
+<Description>
+<LocalisationCH_V1.MultilingualText>
+<LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>de</Language>
+<Text>Physikalische Parameter</Text>
+</LocalisationCH_V1.LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>fr</Language>
+<Text>Paramètres physiques</Text>
+</LocalisationCH_V1.LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>it</Language>
+<Text>Parametri fisici</Text>
+</LocalisationCH_V1.LocalisedText>
+</LocalisedText>
+</LocalisationCH_V1.MultilingualText>
+</Description>
+</Prod_Gewaesserzustand_V1.Codelisten.Parameter_Catalogue>
+<Prod_Gewaesserzustand_V1.Codelisten.Parameter_Catalogue TID="7006">
+<Code>Parameter6</Code>
+<Description>
+<LocalisationCH_V1.MultilingualText>
+<LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>de</Language>
+<Text>Biologische Parameter</Text>
+</LocalisationCH_V1.LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>fr</Language>
+<Text>Paramètres biologiques</Text>
+</LocalisationCH_V1.LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>it</Language>
+<Text>Parametri biologici </Text>
+</LocalisationCH_V1.LocalisedText>
+</LocalisedText>
+</LocalisationCH_V1.MultilingualText>
+</Description>
+</Prod_Gewaesserzustand_V1.Codelisten.Parameter_Catalogue>
+<Prod_Gewaesserzustand_V1.Codelisten.Parameter_Catalogue TID="7007">
+<Code>Parameter7</Code>
+<Description>
+<LocalisationCH_V1.MultilingualText>
+<LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>de</Language>
+<Text>Sedimentuntersuchungen</Text>
+</LocalisationCH_V1.LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>fr</Language>
+<Text>Études des sédiments</Text>
+</LocalisationCH_V1.LocalisedText>
+<LocalisationCH_V1.LocalisedText>
+<Language>it</Language>
+<Text>Analisi dei sedimenti</Text>
+</LocalisationCH_V1.LocalisedText>
+</LocalisedText>
+</LocalisationCH_V1.MultilingualText>
+</Description>
+</Prod_Gewaesserzustand_V1.Codelisten.Parameter_Catalogue>
+</Prod_Gewaesserzustand_V1.Codelisten>
+</DATASECTION>
+</TRANSFER>

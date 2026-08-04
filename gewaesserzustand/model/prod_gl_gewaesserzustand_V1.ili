@@ -1,0 +1,198 @@
+INTERLIS 2.3;
+
+!!@ technicalContact=mailto:geoinformation@gl.ch
+!!@ furtherInformation=none-yet
+
+MODEL Prod_Gewaesserzustand_V1 (de)
+AT "mailto:localhost"
+VERSION "2026-08-01" = 
+
+  IMPORTS CatalogueObjects_V1, CHAdminCodes_V1, CodeISO, GeometryCHLV95_V1, LocalisationCH_V1, Units;
+
+  TOPIC Codelisten
+    EXTENDS CatalogueObjects_V1.Catalogues =
+    
+      CLASS Art_Gruppierung_Catalogue
+      EXTENDS CatalogueObjects_V1.Catalogues.Item =
+        Code : MANDATORY TEXT*3;
+        Description : MANDATORY LocalisationCH_V1.MultilingualText;
+      END Art_Gruppierung_Catalogue;
+
+      CLASS Erhebung_Catalogue
+      EXTENDS CatalogueObjects_V1.Catalogues.Item =
+        Code : MANDATORY TEXT;
+        Description : MANDATORY LocalisationCH_V1.MultilingualText;
+      END Erhebung_Catalogue;
+
+      CLASS Gewaessertyp_Catalogue
+      EXTENDS CatalogueObjects_V1.Catalogues.Item =
+        Code : MANDATORY TEXT;
+        Description : MANDATORY LocalisationCH_V1.MultilingualText;
+      END Gewaessertyp_Catalogue;
+
+      CLASS Parameter_Catalogue
+      EXTENDS CatalogueObjects_V1.Catalogues.Item =
+        Code : MANDATORY TEXT;
+        Description : MANDATORY LocalisationCH_V1.MultilingualText;
+      END Parameter_Catalogue;
+
+      CLASS Periodizitaet_Catalogue
+      EXTENDS CatalogueObjects_V1.Catalogues.Item =
+        Code : MANDATORY TEXT;
+        Description : MANDATORY LocalisationCH_V1.MultilingualText;
+      END Periodizitaet_Catalogue;
+
+      CLASS Tel_Typ_Catalogue
+      EXTENDS CatalogueObjects_V1.Catalogues.Item =
+        Code : MANDATORY TEXT*3;
+        Description : MANDATORY LocalisationCH_V1.MultilingualText;
+      END Tel_Typ_Catalogue;
+
+      STRUCTURE Art_Gruppierung_CatRef
+      EXTENDS CatalogueObjects_V1.Catalogues.CatalogueReference =
+        Reference (EXTENDED) : REFERENCE TO (EXTERNAL) Art_Gruppierung_Catalogue;
+      END Art_Gruppierung_CatRef;
+
+      STRUCTURE Erhebung_CatRef
+      EXTENDS CatalogueObjects_V1.Catalogues.CatalogueReference =
+        Reference (EXTENDED) : REFERENCE TO (EXTERNAL) Erhebung_Catalogue;
+      END Erhebung_CatRef;
+
+      STRUCTURE Gewaessertyp_CatRef
+      EXTENDS CatalogueObjects_V1.Catalogues.CatalogueReference =
+        Reference (EXTENDED) : REFERENCE TO (EXTERNAL) Gewaessertyp_Catalogue;
+      END Gewaessertyp_CatRef;
+
+      STRUCTURE Parameter_CatRef
+      EXTENDS CatalogueObjects_V1.Catalogues.CatalogueReference =
+        Reference (EXTENDED) : REFERENCE TO (EXTERNAL) Parameter_Catalogue;
+      END Parameter_CatRef;
+
+      STRUCTURE Periodizitaet_CatRef
+      EXTENDS CatalogueObjects_V1.Catalogues.CatalogueReference =
+        Reference (EXTENDED) : REFERENCE TO (EXTERNAL) Periodizitaet_Catalogue;
+      END Periodizitaet_CatRef;
+
+      STRUCTURE Tel_Typ_CatRef
+      EXTENDS CatalogueObjects_V1.Catalogues.CatalogueReference =
+        Reference (EXTENDED) : REFERENCE TO (EXTERNAL) Tel_Typ_Catalogue;
+      END Tel_Typ_CatRef;
+
+  END Codelisten;
+
+  TOPIC Messort =
+    DEPENDS ON Prod_Gewaesserzustand_V1.Codelisten;
+
+    CLASS Messnetz =
+      Name : MANDATORY TEXT;
+      Abkuerzung : TEXT;
+      Beschreibung : TEXT;
+      Gueltig_von : MANDATORY INTERLIS.XMLDate;
+      Gueltig_bis : MANDATORY INTERLIS.XMLDate;
+    END Messnetz;
+
+    CLASS Werterhebung =
+      Parameter : MANDATORY Prod_Gewaesserzustand_V1.Codelisten.Parameter_CatRef;
+      Gueltig_von : MANDATORY INTERLIS.XMLDate;
+      Gueltig_bis : MANDATORY INTERLIS.XMLDate;
+      Erhebung : MANDATORY Prod_Gewaesserzustand_V1.Codelisten.Erhebung_CatRef;
+      Periodizitaet : Prod_Gewaesserzustand_V1.Codelisten.Periodizitaet_CatRef;
+      Vorgaenger : TEXT;
+    END Werterhebung;
+	
+    CLASS Messgruppierung =
+      Gewaessername : MANDATORY TEXT;
+      Ortsbezeichnung : MANDATORY TEXT;
+      Code : MANDATORY TEXT;
+      Gueltig_von : MANDATORY INTERLIS.XMLDate;
+      Gueltig_bis : MANDATORY INTERLIS.XMLDate;
+      Art_Gruppierung : Prod_Gewaesserzustand_V1.Codelisten.Art_Gruppierung_CatRef;
+      Gewaessertyp : MANDATORY Prod_Gewaesserzustand_V1.Codelisten.Gewaessertyp_CatRef;
+      Einzugsgebietsgroesse : 0.1 .. 999999999.0 [Units.km2];
+      Mittlere_Hoehe : 1 .. 5000 [INTERLIS.m];
+      Vergletscherungsgrad : 0.1 .. 100.0;
+      URL_Datenblatt_Kanton : INTERLIS.URI;
+
+      /* Attribute für StandortMessgruppierung_Werterhebung bei Export in MGDM */
+      Standort_Typ : MANDATORY TEXT; /* Default zu 'Stationsstandort' */
+
+      /* Attribute für Standort bei Export in MGDM */
+      Geometrie : GeometryCHLV95_V1.Coord2;
+    END Messgruppierung;
+
+
+    CLASS Verantwortlichkeit =
+      Organisation : TEXT;
+      Abkuerzung : TEXT;
+      Abteilung : TEXT;
+      Sektion : TEXT;
+      Email : INTERLIS.URI;
+      Link : MANDATORY INTERLIS.URI;
+
+      /* Attribute für 
+        VerantwortlichkeitWerterhebung.
+        VerantwortlichkeitMessgruppierung,
+        VerantwortlichkeitMessnetz,
+      */
+      Bezeichnung : MANDATORY TEXT; /* Default: Vollzugsstelle*/
+      Beschreibung : TEXT;
+
+      MANDATORY CONSTRAINT DEFINED(Organisation) OR DEFINED(Abkuerzung);
+    END Verantwortlichkeit;
+
+    CLASS Adresse =
+      Strasse : MANDATORY TEXT;
+      Hausnummer : TEXT;
+      Adresszusatz : TEXT;
+      Postfach : TEXT;
+      PLZ : MANDATORY TEXT;
+      Ort : MANDATORY TEXT;
+      Kanton : CHAdminCodes_V1.CHCantonCode;
+      Land : MANDATORY CodeISO.CountryCodeISO;
+    END Adresse;
+	
+    CLASS Telefon =
+      Nummer : TEXT*20;
+      Typ : Prod_Gewaesserzustand_V1.Codelisten.Tel_Typ_CatRef;
+    END Telefon;
+	
+
+    ASSOCIATION MessgruppierungWerterhebung =
+      Messgruppierung -- {1} Messgruppierung;
+      Werterhebung -- {1..*} Werterhebung;
+    END MessgruppierungWerterhebung;
+
+    ASSOCIATION MessstationMessnetz =
+      Werterhebung -- {1..*} Werterhebung;
+      Messnetz -- {1} Messnetz;
+    END MessstationMessnetz;
+
+    /* Verantwortlichkeit Relations*/
+    ASSOCIATION VerantwortlichkeitMessgruppierung =
+      Verantwortlichkeit -- {0..1} Verantwortlichkeit;
+      Messgruppierung -- {0..*} Messgruppierung;
+    END VerantwortlichkeitMessgruppierung;
+
+    ASSOCIATION VerantwortlichkeitMessnetz =
+      Verantwortlichkeit -- {1} Verantwortlichkeit;
+      Messnetz -- {0..*} Messnetz;
+    END VerantwortlichkeitMessnetz;
+
+    ASSOCIATION VerantwortlichkeitWerterhebung =
+      Verantwortlichkeit -- {1} Verantwortlichkeit;
+      Werterhebung -- {0..*} Werterhebung;
+    END VerantwortlichkeitWerterhebung;
+
+
+    ASSOCIATION AdresseVerantwortlichkeit =
+      Adresse -- {0..1} Adresse;
+      Verantwortlichkeit -<#> {0..1} Verantwortlichkeit;
+    END AdresseVerantwortlichkeit;
+
+    ASSOCIATION TelefonVerantwortlichkeit =
+      Telefon -- {0..*} Telefon;
+      Verantwortlichkeit -<#> {0..1} Verantwortlichkeit;
+    END TelefonVerantwortlichkeit;
+  END Messort;
+
+END Prod_Gewaesserzustand_V1.

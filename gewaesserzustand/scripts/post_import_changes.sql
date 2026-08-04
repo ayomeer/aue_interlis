@@ -1,0 +1,6 @@
+DROP TABLE prod_gl_gewaesserzustand.art_gruppierung_catref;
+DROP TABLE prod_gl_gewaesserzustand.erhebung_catref;
+DROP TABLE prod_gl_gewaesserzustand.gewaessertyp_catref;
+DROP TABLE prod_gl_gewaesserzustand.parameter_catref;
+DROP TABLE prod_gl_gewaesserzustand.periodizitaet_catref;
+DROP TABLE prod_gl_gewaesserzustand.tel_typ_catref;

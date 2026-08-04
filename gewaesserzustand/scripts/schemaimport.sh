@@ -1,0 +1,26 @@
+java -jar ili2pg-5.5.1.jar --schemaimport \
+  --dbhost localhost \
+  --dbport 5432 \
+  --dbdatabase test_db \
+  --dbusr postgres \
+  --dbpwd postgres \
+  --dbschema prod_gl_gewaesserzustand_v2 \
+  --defaultSrsAuth EPSG \
+  --defaultSrsCode 2056 \
+  --createFk \
+  --createFkIdx \
+  --createGeomIdx \
+  --createTidCol \
+  --createBasketCol \
+  --createNumChecks \
+  --createUnique \
+  --setupPgExt \
+  --strokeArcs \
+  --coalesceCatalogueRef \
+  --coalesceMultiSurface \
+  --coalesceMultiPoint \
+  --coalesceMultiLine \
+  --smart2Inheritance \
+  --createMetaInfo \
+  --iliMetaAttrs iliMetaAttrs.toml \
+  model/prod_gl_gewaesserzustand_V1.ili # path to ili model passed as first argument when calling the script
