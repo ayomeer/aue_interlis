@@ -1,0 +1,93 @@
+---
+  config:
+    class:
+      hideEmptyMembersBox: true
+---
+classDiagram
+direction LR
+
+namespace Topic_Messort {
+  class Messnetz
+  class Werterhebung
+  class Messgruppierung
+  class Verantwortlichkeit
+  class Adresse
+  class Telefon
+}
+
+
+Messnetz: **#60;#60;CLASS#62;#62;**#8203;
+Messnetz: Name #colon; **Text**#8203;
+Messnetz: Abkuerzung[0..1] #colon; **Text**#8203;
+Messnetz: Beschreibung[0..1] #colon; **Text**#8203;
+Messnetz: Gueltig_von #colon; **XMLDate**#8203;
+Messnetz: Gueltig_bis #colon; **XMLDate**#8203;
+
+Werterhebung: **#60;#60;CLASS#62;#62;**#8203;
+Werterhebung: Parameter #colon; **Parameter_CatRef**#8203;
+Werterhebung: Gueltig_von #colon; **XMLDate**#8203;
+Werterhebung: Gueltig_bis #colon; **XMLDate**#8203;
+Werterhebung: Erhebung #colon; **Erhebung_CatRef**#8203;
+Werterhebung: Periodizitaet[0..1] #colon; **Periodizitaet_CatRef**#8203;
+Werterhebung: Vorgaenger[0..1] #colon; **Text**#8203;
+
+Messgruppierung: **#60;#60;CLASS#62;#62;**#8203;
+Messgruppierung: Gewaessername #colon; **Text**#8203;
+Messgruppierung: Ortsbezeichnung #colon; **Text**#8203;
+Messgruppierung: Code #colon; **Text**#8203;
+Messgruppierung: Gueltig_von #colon; **XMLDate**#8203;
+Messgruppierung: Gueltig_bis #colon; **XMLDate**#8203;
+Messgruppierung: Art_Gruppierung[0..1] #colon; **Art_Gruppierung_CatRef**#8203;
+Messgruppierung: Gewaessertyp #colon; **Gewaessertyp_CatRef**#8203;
+Messgruppierung: Einzugsgebietsgroesse[0..1] #colon; **0.1..999999999 [km2]**#8203;
+Messgruppierung: Mittlere_Hoehe[0..1] #colon; **1..5000 [m]**#8203;
+Messgruppierung: Vergletscherungsgrad[0..1] #colon; **0.1..100**#8203;
+Messgruppierung: URL_Datenblatt_Kanton[0..1] #colon; **URI**#8203;
+Messgruppierung: Standort_Typ #colon; **Text**#8203;
+Messgruppierung: Geometrie[0..1] #colon; **Coord2**#8203;
+
+Verantwortlichkeit: **#60;#60;CLASS#62;#62;**#8203;
+Verantwortlichkeit: Organisation[0..1] #colon; **Text**#8203;
+Verantwortlichkeit: Abkuerzung[0..1] #colon; **Text**#8203;
+Verantwortlichkeit: Abteilung[0..1] #colon; **Text**#8203;
+Verantwortlichkeit: Sektion[0..1] #colon; **Text**#8203;
+Verantwortlichkeit: Email[0..1] #colon; **URI**#8203;
+Verantwortlichkeit: Link #colon; **URI**#8203;
+Verantwortlichkeit: Bezeichnung #colon; **Text**#8203;
+Verantwortlichkeit: Beschreibung[0..1] #colon; **Text**#8203;
+
+Adresse: **#60;#60;CLASS#62;#62;**#8203;
+Adresse: Strasse #colon; **Text**#8203;
+Adresse: Hausnummer[0..1] #colon; **Text**#8203;
+Adresse: Adresszusatz[0..1] #colon; **Text**#8203;
+Adresse: Postfach[0..1] #colon; **Text**#8203;
+Adresse: PLZ #colon; **Text**#8203;
+Adresse: Ort #colon; **Text**#8203;
+Adresse: Kanton[0..1] #colon; **CHCantonCode**#8203;
+Adresse: Land #colon; **CountryCodeISO**#8203;
+
+Telefon: **#60;#60;CLASS#62;#62;**#8203;
+Telefon: Nummer[0..1] #colon; **Text[20]**#8203;
+Telefon: Typ[0..1] #colon; **Tel_Typ_CatRef**#8203;
+
+Messgruppierung "1"  -- "1..*" Werterhebung : MessgruppierungWerterhebung
+Messnetz "1"  -- "1..*" Werterhebung : MessstationMessnetz
+Messgruppierung "0..*"  -- "0..1" Verantwortlichkeit : VerantwortlichkeitMessgruppierung
+Messnetz "0..*"  -- "1" Verantwortlichkeit : VerantwortlichkeitMessnetz
+Verantwortlichkeit "1"  -- "0..*" Werterhebung : VerantwortlichkeitWerterhebung
+Adresse "0..1"  --o "0..1" Verantwortlichkeit : AdresseVerantwortlichkeit
+Telefon "0..*"  --o "0..1" Verantwortlichkeit : TelefonVerantwortlichkeit
+
+style Art_Gruppierung_CatRef fill:,stroke-dasharray:10 10
+style Erhebung_CatRef fill:,stroke-dasharray:10 10
+style Gewaessertyp_CatRef fill:,stroke-dasharray:10 10
+style Parameter_CatRef fill:,stroke-dasharray:10 10
+style Periodizitaet_CatRef fill:,stroke-dasharray:10 10
+style Tel_Typ_CatRef fill:,stroke-dasharray:10 10
+
+style Messgruppierung fill:#85c78e,stroke:#333,stroke-width:1px
+style Werterhebung fill:#85c78e,stroke:#333,stroke-width:1px
+style Verantwortlichkeit fill:#a889e0,stroke:#333,stroke-width:1px
+style Messnetz fill:#a889e0,stroke:#333,stroke-width:1px
+style Adresse fill:#a889e0,stroke:#333,stroke-width:1px
+style Telefon fill:#a889e0,stroke:#333,stroke-width:1px
