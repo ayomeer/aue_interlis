@@ -2,6 +2,7 @@ INTERLIS 2.3;
 
 !!@ technicalContact=mailto:geoinformation@gl.ch
 !!@ furtherInformation=none-yet
+!!@ docURL=https://github.com/ayomeer/aue_interlis/tree/main/gewaesserzustand#readme
 
 MODEL Prod_Gewaesserzustand_V1 (de)
 AT "mailto:localhost"
