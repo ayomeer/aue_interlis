@@ -2,6 +2,7 @@ INTERLIS 2.3;
 
 !!@ technicalContact=mailto:geoinformation@gl.ch
 !!@ furtherInformation=none-yet
+!!@ postImportSQL=https://github.com/ayomeer/aue_interlis/blob/main/gewaesserzustand/scripts/post_import_changes.sql
 !!@ docURL=https://github.com/ayomeer/aue_interlis/tree/main/gewaesserzustand#readme
 
 MODEL Prod_Gewaesserzustand_V1 (de)
@@ -13,36 +14,42 @@ VERSION "2026-08-01" =
   TOPIC Codelisten
     EXTENDS CatalogueObjects_V1.Catalogues =
     
+      !!@ qgis.modelbaker.dispExpression="adescription_de"
       CLASS Art_Gruppierung_Catalogue
       EXTENDS CatalogueObjects_V1.Catalogues.Item =
         Code : MANDATORY TEXT*3;
         Description : MANDATORY LocalisationCH_V1.MultilingualText;
       END Art_Gruppierung_Catalogue;
 
+      !!@ qgis.modelbaker.dispExpression="adescription_de"
       CLASS Erhebung_Catalogue
       EXTENDS CatalogueObjects_V1.Catalogues.Item =
         Code : MANDATORY TEXT;
         Description : MANDATORY LocalisationCH_V1.MultilingualText;
       END Erhebung_Catalogue;
 
+      !!@ qgis.modelbaker.dispExpression="adescription_de"
       CLASS Gewaessertyp_Catalogue
       EXTENDS CatalogueObjects_V1.Catalogues.Item =
         Code : MANDATORY TEXT;
         Description : MANDATORY LocalisationCH_V1.MultilingualText;
       END Gewaessertyp_Catalogue;
 
+      !!@ qgis.modelbaker.dispExpression="adescription_de"
       CLASS Parameter_Catalogue
       EXTENDS CatalogueObjects_V1.Catalogues.Item =
         Code : MANDATORY TEXT;
         Description : MANDATORY LocalisationCH_V1.MultilingualText;
       END Parameter_Catalogue;
 
+      !!@ qgis.modelbaker.dispExpression="adescription_de"
       CLASS Periodizitaet_Catalogue
       EXTENDS CatalogueObjects_V1.Catalogues.Item =
         Code : MANDATORY TEXT;
         Description : MANDATORY LocalisationCH_V1.MultilingualText;
       END Periodizitaet_Catalogue;
 
+      !!@ qgis.modelbaker.dispExpression="adescription_de"
       CLASS Tel_Typ_Catalogue
       EXTENDS CatalogueObjects_V1.Catalogues.Item =
         Code : MANDATORY TEXT*3;
@@ -84,6 +91,14 @@ VERSION "2026-08-01" =
   TOPIC Messort =
     DEPENDS ON Prod_Gewaesserzustand_V1.Codelisten;
 
+    DOMAIN
+
+    standort_typ_enum = (
+      Probeentnahmestandort,
+      Stationsstandort
+    );
+
+    !!@ qgis.modelbaker.dispExpression="Name"
     CLASS Messnetz =
       Name : MANDATORY TEXT;
       Abkuerzung : TEXT;
@@ -92,6 +107,7 @@ VERSION "2026-08-01" =
       Gueltig_bis : MANDATORY INTERLIS.XMLDate;
     END Messnetz;
 
+    !!@ qgis.modelbaker.dispExpression="Parameter"
     CLASS Werterhebung =
       Parameter : MANDATORY Prod_Gewaesserzustand_V1.Codelisten.Parameter_CatRef;
       Gueltig_von : MANDATORY INTERLIS.XMLDate;
@@ -101,6 +117,7 @@ VERSION "2026-08-01" =
       Vorgaenger : TEXT;
     END Werterhebung;
 	
+    !!@ qgis.modelbaker.dispExpression="Code"
     CLASS Messgruppierung =
       Gewaessername : MANDATORY TEXT;
       Ortsbezeichnung : MANDATORY TEXT;
@@ -121,7 +138,7 @@ VERSION "2026-08-01" =
       Geometrie : GeometryCHLV95_V1.Coord2;
     END Messgruppierung;
 
-
+    !!@ qgis.modelbaker.dispExpression="COALESCE(abkuerzung, organisation)"
     CLASS Verantwortlichkeit =
       Organisation : TEXT;
       Abkuerzung : TEXT;
