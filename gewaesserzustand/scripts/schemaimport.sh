@@ -4,7 +4,7 @@ java -jar ili2pg-5.5.1.jar --schemaimport \
   --dbdatabase test_db \
   --dbusr postgres \
   --dbpwd postgres \
-  --dbschema prod_gl_gewaesserzustand_v2 \
+  --dbschema prod_gl_gewaesserzustand \
   --defaultSrsAuth EPSG \
   --defaultSrsCode 2056 \
   --createFk \
@@ -23,4 +23,4 @@ java -jar ili2pg-5.5.1.jar --schemaimport \
   --smart2Inheritance \
   --createMetaInfo \
   --iliMetaAttrs iliMetaAttrs.toml \
-  model/prod_gl_gewaesserzustand_V1.ili # path to ili model passed as first argument when calling the script
+  gewaesserzustand/model/prod_gl_gewaesserzustand_V1.ili # path to ili model passed as first argument when calling the script

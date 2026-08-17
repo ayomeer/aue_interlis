@@ -1,6 +1,6 @@
 # Produktives Modell Gewässerzustand
 
-Das Thema Gewässerzustand handelt von dem Abbilden der gemachten Messungen in den Gewässern des Kantons.
+Das Modell `prod_gl_gewaesserzustand` soll, analog zum MGDM `Kant_Gewaesserzustand_V1_2`, Messtandorte an den kantonalen Gewässern abbilden.
 
 
 ## Motivation
@@ -8,7 +8,7 @@ Das Thema Gewässerzustand handelt von dem Abbilden der gemachten Messungen in d
 Grundsätzlich könnte direkt auf dem Datenbankschema welches aus dem MGDM erstellt wurde gearbeitet werden. Aus den folgenden zwei Gründen wurde aber entschieden, dass ein flacheres Produktiv-Modell sinnvoll ist.
 
 **1) Übersicht über Messstandorte intern**: \
-Das MGDM zum Thema Gewässerzustand ([Kant_Gewaesserzustand_V1_2.ili](model/Kant_Gewaesserzustand_V1_2.ili)) favorisiert maximale Flexibilität und minimale Redundanz. Die Objekte der Fachdomäne sind in viele Teil-Objekte unterteilt, welche über Verknüpfungstabellen noch weiter von einander entfernt werden und in der QGIS UI schwer bis unmöglich navigierbar sind.
+Das MGDM zum Thema Gewässerzustand [Kant_Gewaesserzustand_V1_2.ili](model/Kant_Gewaesserzustand_V1_2.ili) favorisiert maximale Flexibilität und minimale Redundanz. Die Objekte der Fachdomäne sind in viele Teil-Objekte unterteilt, welche über Verknüpfungstabellen noch weiter von einander entfernt werden und in der QGIS UI schwer bis unmöglich navigierbar sind.
 
 **2) Datenschnittstelle Externe für Bearbeiter:** \
 Als Offerten für Datenaufbereitung eingeholt wurden, war sofort klar, dass externe ihre Daten nicht gemäss dem INTERLIS MGDM abgeben können würden. Es müsste also ohnehin eine flache Struktur vorgegeben werden und ein Prozess (Skript) definiert werden, welche diese Flachen informationen in das MGDM abfüllen kann.
@@ -33,6 +33,10 @@ Das MGDM wurde in folgende Struktur vereinfacht:
 <span style="color: green;">Grün</span> hinterlegt, sind die Klassen, welche hauptsächlich sind für den internen Gebrauch und eigentlich den gesamten Informationsgehalt abbilden.
 
 <span style="color: violet;">Violett</span> hinterlegt, sind Klassen, welche vor allem für die Kongruenz zum MGDM gehalten werden. Messnetz und Verantwortung ist für alle gehaltenen Messorte gleich. Das heisst, diese Tabellen müssen nur zu Beginn ein Mal mit dem einen Eintrag des Standardwerts populiert werden. Neue `Messgruppierung` und `Werterhebung` Objekte können von da an automatisch mit diesen Einträgen verknüpft werden. Diese Klassen sind also für den produktiven Gebrauch kaum bemerkbar. Sie haben in dieser Hinsicht hier eine ähnliche Rolle wie Kataloge.
+
+## Hinweise zur Benützung des Datenbankmodells
+
+Es wird empfohlen, das Projekt mit Model Baker aufzusetzen.
 
 ## Verwandte Themen
 
