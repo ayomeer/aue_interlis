@@ -1,0 +1,26 @@
+{
+  "target_schema": "prod_gl_gewaesserzustand",
+  "owner": "prod_gl_gewaesserzustand_write",
+  "catref_tables_to_drop": [
+    "art_gruppierung_catref",
+    "erhebung_catref",
+    "gewaessertyp_catref",
+    "parameter_catref",
+    "periodizitaet_catref",
+    "tel_typ_catref"
+  ],
+  "enum_consraints": [
+    {
+      "name": "standort_typ_enum",
+      "table": "messgruppierung",
+      "column": "standort_typ",
+      "values": ["Probeentnahmestandort", "Stationsstandort"] 
+    } 
+  ],
+  "last_modiefied_table_names": [
+    "messgruppierung",
+    "werterhebung",
+    "messnetz",
+    "verantwortlichkeit"
+  ]
+}

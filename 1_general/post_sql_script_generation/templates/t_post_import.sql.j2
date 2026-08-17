@@ -1,0 +1,42 @@
+
+-- Drop unused catref tables
+{%- for catref_table in catref_tables_to_drop %}
+DROP TABLE <target_schema>.<catref_table>;
+{%- endfor %}
+
+-- Create Domains for custom Enum-Types
+{% for constraint in enum_consraints %}
+{% set domain_name = target_schema ~'.' ~ constraint.table ~ '_' ~ constraint.name %}
+CREATE DOMAIN <domain_name> as TEXT
+CHECK (VALUE IN ('< constraint["values"] | join("','") >'));
+
+ALTER TABLE <target_schema>.<constraint.table>
+ALTER COLUMN <constraint.column> TYPE <domain_name>;
+{% endfor %}
+
+-- Add last_modified columns ---------------------------------------------------
+{% for table_name in last_modiefied_table_names %}
+-- <table_name>
+ALTER TABLE <target_schema>.<table_name>
+ADD COLUMN last_modified timestamp without time zone;
+
+CREATE FUNCTION <target_schema>.<table_name>_update()
+  RETURNS TRIGGER
+  LANGUAGE 'plpgsql'
+AS $BODY$
+
+BEGIN
+NEW.last_modified = localtimestamp(0);
+RETURN NEW;
+END;
+$BODY$;
+
+ALTER FUNCTION <target_schema>.<table_name>_update()
+  OWNER TO <owner>;
+
+CREATE TRIGGER <table_name>_update
+  BEFORE UPDATE
+  ON <target_schema>.<table_name>
+  EXECUTE FUNCTION <target_schema>.<table_name>_update();
+{% endfor %}
+
