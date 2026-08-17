@@ -111,3 +111,16 @@ CREATE TRIGGER verantwortlichkeit_update
   ON prod_gl_gewaesserzustand.verantwortlichkeit
   EXECUTE FUNCTION prod_gl_gewaesserzustand.verantwortlichkeit_update();
 
+-- added after script generation:
+-- catalogue NOT NULLs
+ALTER TABLE prod_gl_gewaesserzustand.messgruppierung
+ALTER COLUMN gewaessertyp SET NOT NULL;
+ALTER TABLE prod_gl_gewaesserzustand.messgruppierung
+ALTER COLUMN art_gruppierung SET NOT NULL;
+
+ALTER TABLE prod_gl_gewaesserzustand.werterhebung
+ALTER COLUMN aparameter SET NOT NULL;
+ALTER TABLE prod_gl_gewaesserzustand.werterhebung
+ALTER COLUMN erhebung SET NOT NULL;
+
+

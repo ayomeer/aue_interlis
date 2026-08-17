@@ -2,7 +2,7 @@ INTERLIS 2.3;
 
 !!@ technicalContact=mailto:geoinformation@gl.ch
 !!@ furtherInformation=none-yet
-!!@ postImportSQL=https://github.com/ayomeer/aue_interlis/blob/main/gewaesserzustand/scripts/post_import_changes.sql
+!!@ postImportSQL=https://github.com/ayomeer/aue_interlis/blob/main/gewaesserzustand/scripts/post_sql/post_sql_prod_gl_gewaesserzustand.sql
 !!@ docURL=https://github.com/ayomeer/aue_interlis/tree/main/gewaesserzustand#readme
 
 MODEL Prod_Gewaesserzustand_V1 (de)
@@ -132,7 +132,7 @@ VERSION "2026-08-01" =
       URL_Datenblatt_Kanton : INTERLIS.URI;
 
       /* Attribute für StandortMessgruppierung_Werterhebung bei Export in MGDM */
-      Standort_Typ : standort_typ_enum; /* Default zu 'Stationsstandort' */
+      Standort_Typ : MANDATORY standort_typ_enum; /* Default zu 'Stationsstandort' */
 
       /* Attribute für Standort bei Export in MGDM */
       Geometrie : GeometryCHLV95_V1.Coord2;
@@ -147,7 +147,7 @@ VERSION "2026-08-01" =
       Email : INTERLIS.URI;
       Link : MANDATORY INTERLIS.URI;
 
-      /* Attribute für 
+      /* Attribute für MGDM-Objekte
         VerantwortlichkeitWerterhebung.
         VerantwortlichkeitMessgruppierung,
         VerantwortlichkeitMessnetz,
@@ -214,3 +214,4 @@ VERSION "2026-08-01" =
   END Messort;
 
 END Prod_Gewaesserzustand_V1.
+

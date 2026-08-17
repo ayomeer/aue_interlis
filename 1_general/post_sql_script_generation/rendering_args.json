@@ -9,6 +9,24 @@
     "periodizitaet_catref",
     "tel_typ_catref"
   ],
+  "not_null_constraints_to_add": [
+    {
+      "table": "messgruppierung",
+      "column": "gewaessertyp"
+    },
+    {
+      "table": "messgruppierung",
+      "column": "art_gruppierung"
+    },
+    {
+      "table": "werterhebung",
+      "column": "aparameter"
+    },
+    {
+      "table": "werterhebung",
+      "column": "erhebung"
+    }
+  ],
   "enum_consraints": [
     {
       "name": "standort_typ_enum",
