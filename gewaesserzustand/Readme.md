@@ -1,6 +1,6 @@
 # Produktives Modell Gewässerzustand
 
-Das Modell `prod_gl_gewaesserzustand` soll, analog zum MGDM `Kant_Gewaesserzustand_V1_2`, Messtandorte an den kantonalen Gewässern abbilden.
+Das Modell `prod_gl_gewaesserzustand` soll - analog zum MGDM `Kant_Gewaesserzustand_V1_2` - Messtandorte an den kantonalen Gewässern abbilden.
 
 
 ## Motivation
@@ -24,7 +24,7 @@ Das Produktive Geodatenmodell wurde nach folgenden Grundsätzen erstellt:
 
 ## Modellbeschreibung
 
-Das MGDM wurde in folgende Struktur vereinfacht:
+Das [MGDM 134.1](doc/ref/Modelldokumentation_Gewässerzustand_kantonal_v1_2_de_20251222.pdf) wurde für das interne produktiv-Modell nach den oben aufgeführten Grundsätzen in folgende Struktur vereinfacht:
 <figure>
   <img src="doc/img/prod_mermaid_edited.png" alt="A diagram of the system">
   <figcaption> UML Darstellung des Produktivmodells.</figcaption>
@@ -36,7 +36,18 @@ Das MGDM wurde in folgende Struktur vereinfacht:
 
 ## Hinweise zur Benützung des Datenbankmodells
 
-Es wird empfohlen, das Projekt mit Model Baker aufzusetzen.
+### QGIS-Projekt
+Es wird empfohlen, das Projekt mit Model Baker zu importieren. Damit werden sämtliche Beziehungen zwischen den Objekten aufgesetzt und Attributenformulare vorbereitet. Weitere Konfigurationen sind im QGIS-Projekt
+
+```
+M:\abt_umwelt_energie\524_gewaesserschutz\GW_Oberflaechgew_Qualitaet_2026.qgz
+```
+
+gemacht worden.
+
+### Erfassen von Messstandorten (Messgruppierungen)
+
+
 
 ## Verwandte Themen
 
@@ -44,6 +55,8 @@ Die MGDM Struktur der folgenden Themen ist vergleichbar:
 - Grundwasserqualitaet_LV95 (vereinfacht)
 - Grundwasserquantitaet_LV95 (vereinfacht)
 - Kant_Gewässerzustand_V1_2 (Dieses Thema)
-- Hydrologische_Messnetze_V1_1 <> Kant_Hydrologische_Messnetze? (beide wie dieses Thema)
+- Hydrologische_Messnetze_V1_1 <> Kant_Hydrologische_Messnetze? 
 
 Diese Strukturellen Ähnlichkeiten sollten genutzt werden indem wiederverwendbare Lösungen erstellt werden oder Themen intern zusammengeführt werden.  
+
+> ⚠️ Es muss noch bestätigt werden, welche IDGeoIV gefordert sind.
