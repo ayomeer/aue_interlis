@@ -134,8 +134,19 @@ CREATE TRIGGER verantwortlichkeit_update
   FOR EACH ROW
   EXECUTE FUNCTION prod_gl_gewaesserzustand.verantwortlichkeit_update();
 
--- Set up priviledges for schema --------------------------------------------
+-- Set up priviledges for schema -----------------------------------------------------
 GRANT USAGE ON SCHEMA prod_gl_gewaesserzustand TO _read;
 
 GRANT ALL ON ALL TABLES IN SCHEMA prod_gl_gewaesserzustand TO _write
 GRANT SELECT ON ALL TABLES IN SCHEMA prod_gl_gewaesserzustand TO _read
+
+-- Column Comments -------------------------------------------------------------------
+COMMENT ON COLUMN prod_gl_gewaesserzustand.messgruppierung.gueltig_bis 
+  IS 'In Betrieb: 31.12.2999 (defaultwert), sonst Abschlussdatum';
+COMMENT ON COLUMN prod_gl_gewaesserzustand.werterhebung.gueltig_bis 
+  IS 'In Betrieb: 31.12.2999 (defaultwert), sonst Abschlussdatum';
+COMMENT ON COLUMN prod_gl_gewaesserzustand.messnetz.gueltig_bis 
+  IS 'In Betrieb: 31.12.2999 (defaultwert), sonst Abschlussdatum';
+COMMENT ON COLUMN prod_gl_gewaesserzustand.werterhebung.vorgaenger 
+  IS 'Falls Zeitreihen von nahe gelegenen Stationen zusammengeführt werden, weil sie homogen sind, wird der Code der Station der zugeordneten Zeitreihe angegeben. ';
+

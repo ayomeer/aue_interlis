@@ -40,5 +40,27 @@
     "werterhebung",
     "messnetz",
     "verantwortlichkeit"
+  ],
+  "column_comments": [
+    {
+      "table": "messgruppierung",
+      "column": "gueltig_bis",
+      "comment": "In Betrieb: 31.12.2999 (defaultwert), sonst Abschlussdatum"
+    },
+    {
+      "table": "werterhebung",
+      "column": "gueltig_bis",
+      "comment": "In Betrieb: 31.12.2999 (defaultwert), sonst Abschlussdatum"
+    },
+    {
+      "table": "messnetz",
+      "column": "gueltig_bis",
+      "comment": "In Betrieb: 31.12.2999 (defaultwert), sonst Abschlussdatum"
+    },
+    {
+      "table": "werterhebung",
+      "column": "vorgaenger",
+      "comment": "Falls Zeitreihen von nahe gelegenen Stationen zusammengeführt werden, weil sie homogen sind, wird der Code der Station der zugeordneten Zeitreihe angegeben. "
+    }
   ]
 }

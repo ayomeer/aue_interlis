@@ -61,8 +61,16 @@ CREATE TRIGGER <table_name>_update
   EXECUTE FUNCTION <target_schema>.<table_name>_update();
 {%- endfor %}
 
--- Set up priviledges for schema --------------------------------------------
+-- Set up priviledges for schema -----------------------------------------------------
 GRANT USAGE ON SCHEMA <target_schema> TO <targe_schema>_read;
 
 GRANT ALL ON ALL TABLES IN SCHEMA <target_schema> TO <targe_schema>_write
 GRANT SELECT ON ALL TABLES IN SCHEMA <target_schema> TO <targe_schema>_read
+
+-- Column Comments -------------------------------------------------------------------
+{%- for column in column_comments %}
+COMMENT ON COLUMN <target_schema>.<column.table>.<column.column> 
+  IS '<column.comment>';
+{%- endfor %}
+
+
