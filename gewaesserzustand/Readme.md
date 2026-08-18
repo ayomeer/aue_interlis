@@ -14,7 +14,6 @@ Das MGDM zum Thema Gewässerzustand [Kant_Gewaesserzustand_V1_2.ili](model/Kant_
 Als Offerten für Datenaufbereitung eingeholt wurden, war sofort klar, dass externe ihre Daten nicht gemäss dem INTERLIS MGDM abgeben können würden. Es müsste also ohnehin eine flache Struktur vorgegeben werden und ein Prozess (Skript) definiert werden, welche diese Flachen informationen in das MGDM abfüllen kann.
 
 ## Grundsätze
-
 Das Produktive Geodatenmodell wurde nach folgenden Grundsätzen erstellt:
 - Die Struktur soll vom MGDM abgeleitet werden und möglichst gleich gehalten werden, um den Export möglichst einfach zu gestalten.
   - Es werden keine Attributen aus dem Modell herausgestrichen, sondern ggf. leer gelassen. 
@@ -34,6 +33,8 @@ Das [MGDM 134.1](doc/ref/Modelldokumentation_Gewässerzustand_kantonal_v1_2_de_2
 
 <span style="color: violet;">Violett</span> hinterlegt, sind Klassen, welche vor allem für die Kongruenz zum MGDM gehalten werden. Messnetz und Verantwortung ist für alle gehaltenen Messorte gleich. Das heisst, diese Tabellen müssen nur zu Beginn ein Mal mit dem einen Eintrag des Standardwerts populiert werden. Neue `Messgruppierung` und `Werterhebung` Objekte können von da an automatisch mit diesen Einträgen verknüpft werden. Diese Klassen sind also für den produktiven Gebrauch kaum bemerkbar. Sie haben in dieser Hinsicht hier eine ähnliche Rolle wie Kataloge.
 
+### Kataloge
+Die Katalog-Definitionen für dieses Modell wurden unverändert vom MGDM 134.1 übernommen. Durch diese Überschneidung mit dem MGDM ist dem Produktiv-Modell für die Katalogwerte die gleiche XML-Definition gültig.  [Prod_Gewaesserzustand_Catalogues_V1.xml](model/Prod_Gewaesserzustand_Catalogues_V1.xml) Entspricht also [Kant_Gewaesserzustand_Catalogues_V1_2.xml](https://models.geo.admin.ch/BAFU/Kant_Gewaesserzustand_Catalogues_V1_2.xml) das auf models.geo.admin gehostet wird. Nur die `<HEADERSECTION>` des XML ist für die Prod Variante angepasst.
 
 ## Hinweise zur Benützung des Datenbankmodells
 
