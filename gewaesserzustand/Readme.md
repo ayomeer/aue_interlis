@@ -1,6 +1,6 @@
 # Produktives Modell Gewässerzustand
 
-Das Modell `prod_gl_gewaesserzustand` soll - analog zum MGDM `Kant_Gewaesserzustand_V1_2` - Messtandorte an den kantonalen Gewässern abbilden.
+Das Modell `prod_gl_gewaesserzustand` soll - analog zum MGDM `Kant_Gewaesserzustand_V1_2` - Messtandorte an den kantonalen Gewässern abbilden, aber in der Handhabung für die produktive Nutzung vereinfacht gehalten werden.
 
 
 ## Motivation
