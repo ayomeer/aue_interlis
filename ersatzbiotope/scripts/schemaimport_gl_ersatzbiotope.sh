@@ -23,4 +23,4 @@ java -jar ili2pg-5.5.1.jar --schemaimport \
   --smart2Inheritance \
   --createMetaInfo \
   --iliMetaAttrs iliMetaAttrs.toml \
-  ili_models/GL_Ersatzbiotope_V04.ili # path to ili model passed as first argument when calling the script
+  ersatzbiotope/model/GL_Ersatzbiotope_V04.ili # path to ili model passed as first argument when calling the script

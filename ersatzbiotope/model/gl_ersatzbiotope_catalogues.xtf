@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><TRANSFER xmlns="http://www.interlis.ch/INTERLIS2.3">
+<HEADERSECTION SENDER="ili2pg-5.5.0-a63de657a43b4ef80b3400f35d088f91ea36fe98" VERSION="2.3"><MODELS><MODEL NAME="GL_Ersatzbiotope_V1" VERSION="2025-04-01" URI="http://geo.gl.ch"></MODEL></MODELS></HEADERSECTION>
+<DATASECTION>
+<GL_Ersatzbiotope_V1.Kataloge BID="_b9d44cfc-9d27-42e6-8b96-26d5a701d705">
+<GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue TID="549676aa-e4d9-4df2-ab6c-94aa621d1fe7"><Kategorie>1.1 Neuanlage Amphibienlaichgewässer</Kategorie></GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue>
+<GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue TID="04d96d3f-ef04-48af-9bfd-b0bb05674cec"><Kategorie>2.3 Gewässerrenaturierung</Kategorie></GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue>
+<GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue TID="53b15f0c-7ec2-4b65-b93e-6d496701dd09"><Kategorie>2.4 Uferrenaturierung</Kategorie></GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue>
+<GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue TID="51a759c5-4177-4464-8023-4e07c2581a79"><Kategorie>2.5 Vergrösserung Amphibienlaichgewässer</Kategorie></GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue>
+<GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue TID="6825cb4e-da43-406b-a55e-644019e20d05"><Kategorie>2.8 Aufwertung Gehölz</Kategorie></GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue>
+<GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue TID="1d153255-261d-433c-83c4-0df2f8bfbfd2"><Kategorie>3.1 Überführung in Streuefläche</Kategorie></GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue>
+<GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue TID="aa182137-388d-414f-a181-bd1d1befaf27"><Kategorie>3.2 Überführung in Magerheuwiese</Kategorie></GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue>
+<GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue TID="2d59e60f-e269-4c6e-b291-47c7bdece2da"><Kategorie>3.3 Überführung in Sonderwaldreservat</Kategorie></GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue>
+<GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue TID="49dc8b0a-c328-4b91-a31c-068ecc3459cb"><Kategorie>3.4 Überführung in Naturwaldreservat</Kategorie></GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue>
+<GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue TID="a12471e4-2d6d-4476-8164-771b816fe52f"><Kategorie>5.1 Andere Massnahmen</Kategorie></GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue>
+</GL_Ersatzbiotope_V1.Kataloge>
+</DATASECTION>
+</TRANSFER>
