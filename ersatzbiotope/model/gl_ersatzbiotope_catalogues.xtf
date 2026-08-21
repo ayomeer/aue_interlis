@@ -1,17 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?><TRANSFER xmlns="http://www.interlis.ch/INTERLIS2.3">
 <HEADERSECTION SENDER="ili2pg-5.5.0-a63de657a43b4ef80b3400f35d088f91ea36fe98" VERSION="2.3"><MODELS><MODEL NAME="GL_Ersatzbiotope_V1" VERSION="2025-04-01" URI="http://geo.gl.ch"></MODEL></MODELS></HEADERSECTION>
 <DATASECTION>
-<GL_Ersatzbiotope_V1.Kataloge BID="_b9d44cfc-9d27-42e6-8b96-26d5a701d705">
-<GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue TID="549676aa-e4d9-4df2-ab6c-94aa621d1fe7"><Kategorie>1.1 Neuanlage Amphibienlaichgewässer</Kategorie></GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue>
-<GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue TID="04d96d3f-ef04-48af-9bfd-b0bb05674cec"><Kategorie>2.3 Gewässerrenaturierung</Kategorie></GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue>
-<GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue TID="53b15f0c-7ec2-4b65-b93e-6d496701dd09"><Kategorie>2.4 Uferrenaturierung</Kategorie></GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue>
-<GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue TID="51a759c5-4177-4464-8023-4e07c2581a79"><Kategorie>2.5 Vergrösserung Amphibienlaichgewässer</Kategorie></GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue>
-<GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue TID="6825cb4e-da43-406b-a55e-644019e20d05"><Kategorie>2.8 Aufwertung Gehölz</Kategorie></GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue>
-<GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue TID="1d153255-261d-433c-83c4-0df2f8bfbfd2"><Kategorie>3.1 Überführung in Streuefläche</Kategorie></GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue>
-<GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue TID="aa182137-388d-414f-a181-bd1d1befaf27"><Kategorie>3.2 Überführung in Magerheuwiese</Kategorie></GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue>
-<GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue TID="2d59e60f-e269-4c6e-b291-47c7bdece2da"><Kategorie>3.3 Überführung in Sonderwaldreservat</Kategorie></GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue>
-<GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue TID="49dc8b0a-c328-4b91-a31c-068ecc3459cb"><Kategorie>3.4 Überführung in Naturwaldreservat</Kategorie></GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue>
-<GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue TID="a12471e4-2d6d-4476-8164-771b816fe52f"><Kategorie>5.1 Andere Massnahmen</Kategorie></GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue>
+<GL_Ersatzbiotope_V1.Kataloge BID="2">
+<GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue TID="0088f1ca-88d8-47f5-bed1-a5a85a06ac4e"><Kategorie>--</Kategorie></GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue>
+<GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue TID="50e97f5e-2547-4927-9357-da586795b816"><Kategorie>1.1 Neuanlage Amphibienlaichgewässer</Kategorie></GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue>
+<GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue TID="63432aaa-0c42-439c-a07f-01a7fa2dddca"><Kategorie>1.2 Neuanlage Fliessgewässer</Kategorie></GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue>
+<GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue TID="1c300226-02f3-46bf-bfe7-5431edb37b53"><Kategorie>1.3 Neuanlage Trockensteinmauer</Kategorie></GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue>
+<GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue TID="7a87bbb8-0e70-49bb-b601-b87d5d632bf7"><Kategorie>1.3 Neubau Trockensteinmauer</Kategorie></GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue>
+<GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue TID="73cc8ba0-d132-45d6-aa6f-e7956a2b65a4"><Kategorie>1.4 Pflanzung Hecke</Kategorie></GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue>
+<GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue TID="57afdf7a-0390-45ec-858a-5b929000911b"><Kategorie>1.6 Pflanzung Einzelbäume</Kategorie></GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue>
+<GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue TID="34b4b681-cd74-483c-97bd-5c3fec3825d5"><Kategorie>1.7 Neuanlage Ruderalflur</Kategorie></GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue>
+<GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue TID="99b6d5a1-f77a-40ca-b154-c0267f7878d5"><Kategorie>1.7 Neubau Trockensteinmauer</Kategorie></GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue>
+<GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue TID="88bc16f9-2870-4bb6-85b5-8aa1998c8bff"><Kategorie>1.8 Neuanlage Magerheuwiese</Kategorie></GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue>
+<GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue TID="5f88bad9-68e9-4823-beb8-5c16498378c6"><Kategorie>2.1 Moorregeneration</Kategorie></GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue>
+<GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue TID="3a7cce36-30c4-48e2-8d31-de552c91c12b"><Kategorie>2.1 Moorrenaturierung</Kategorie></GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue>
+<GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue TID="e844c87b-87ad-454f-bd50-76edc8241f7c"><Kategorie>2.3 Gewässerrenaturierung</Kategorie></GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue>
+<GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue TID="25cb3cbe-5f3e-4db3-9cd4-96c8899c74f4"><Kategorie>2.4 Uferrenaturierung</Kategorie></GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue>
+<GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue TID="055bddbd-0961-452d-8a77-29bc0483268b"><Kategorie>2.5 Vergrösserung Amphibienlaichgewässer</Kategorie></GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue>
+<GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue TID="d41be405-1d39-416e-adf2-a556ca60faad"><Kategorie>2.6 Verzicht auf Beweidung</Kategorie></GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue>
+<GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue TID="131a2aeb-e4e7-4a69-bfba-4a11a9bb8fcb"><Kategorie>2.6 Verzicht auf Beweidung; 2.7 Schaffung Pufferzone</Kategorie></GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue>
+<GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue TID="2b8e6903-cf91-4c31-a8c7-8943bdc2b224"><Kategorie>2.7 Schaffung Pufferzone</Kategorie></GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue>
+<GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue TID="dc276850-1d94-4006-a34b-c6f21f05f88b"><Kategorie>2.8 Aufwertung Gehölz</Kategorie></GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue>
+<GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue TID="4ccd6bdf-3243-4db3-986f-b18fa3c0f207"><Kategorie>2.9 Verzicht auf Düngung</Kategorie></GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue>
+<GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue TID="7236b51f-dedc-4361-ad73-baa6de745327"><Kategorie>3.1 Überführung in Streuefläche</Kategorie></GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue>
+<GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue TID="33e4d1b3-401d-433e-89de-5184d6c61bdf"><Kategorie>3.2 Überführung in Magerheuwiese</Kategorie></GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue>
+<GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue TID="ede7ee8e-5e6e-4508-b43f-f88be1d6a2c5"><Kategorie>3.3 Überführung in Sonderwaldreservat</Kategorie></GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue>
+<GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue TID="d2164d77-4f94-4353-bc38-63ee94376ee7"><Kategorie>3.4 Überführung in Naturwaldreservat</Kategorie></GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue>
+<GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue TID="ed3b4bcc-c676-443c-aad7-1dc0077c86a4"><Kategorie>3.5 Überführung in Altholzinsel</Kategorie></GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue>
+<GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue TID="cb3245a1-0a7e-46bd-a76c-96339540deff"><Kategorie>3.6 Überführung in ökologisch wertvollen Waldrand</Kategorie></GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue>
+<GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue TID="c989e5c8-cf15-4b42-93f7-2c3205255b64"><Kategorie>3.6 Überführung in ökologisch wertvollen Waldrand; 3.2 Überführung in Magerheuwiese</Kategorie></GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue>
+<GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue TID="904d7b70-1770-4073-83af-b8dbfb3b9c7d"><Kategorie>4.1 Naturraum, ohne alpwirtschaftliche Nutzung</Kategorie></GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue>
+<GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue TID="da7e9e53-e1c5-4b6d-bbe4-137fdfcd7bb7"><Kategorie>5.1 Andere</Kategorie></GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue>
+<GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue TID="dd850c25-58af-4bd2-b43c-4088f2e1ecff"><Kategorie>5.1 Andere Massnahmen</Kategorie></GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue>
+<GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue TID="b956b1cc-a8e6-4578-8cac-97ee0e7e5bd0"><Kategorie>5.2 Mehrere Massnahmen</Kategorie></GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_Catalogue>
 </GL_Ersatzbiotope_V1.Kataloge>
 </DATASECTION>
 </TRANSFER>
