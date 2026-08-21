@@ -67,7 +67,7 @@ VERSION "2025-04-01"  =
        Kategorie_Ersatzmassnahme : MANDATORY GL_Ersatzbiotope_V1.Kataloge.Ersatzmassnahme_CatRef;
       /** Beschreibung des schuetzenswerten Lebensraumes gemaess Beschreibung_Catalogue
        */
-      Ersatzmassnahme : MANDATORY TEXT*255;
+      Ersatzmassnahme : MANDATORY TEXT;
       Ziellebensraum : TEXT*255;
       Entscheide : MTEXT;
       Dokumente : MTEXT;
