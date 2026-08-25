@@ -4,7 +4,7 @@ INTERLIS 2.3;
  * Ersatzbiotope
  * (ID kGeoIV ---)
  * 
- * 2026-06-01: Version 0.4
+ * 2026-06-01: Version 1.0
  */
 MODEL GL_Ersatzbiotope_V1 (de)
 AT "http://geo.gl.ch"
