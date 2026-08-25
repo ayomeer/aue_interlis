@@ -15,8 +15,7 @@ VERSION "2025-04-01"  =
    */
   TOPIC Kataloge =
 
-    /** Dieser Katalog dient der Typisierung der Ersatzbiotope
-     */
+    !!@ qgis.modelbaker.dispExpression="kategorie"
     CLASS Ersatzmassnahme_Catalogue
     EXTENDS CatalogueObjects_V1.Catalogues.Item =
       /** Kategorie der Ersatzmassnahme
