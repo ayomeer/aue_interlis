@@ -54,7 +54,7 @@ BEGIN
 NEW.last_modified = localtimestamp(0);
 {%- endif %}
 {% if setup.area_calc -%}
-NEW.<setup.area_calc.target_column> = ST_Area(<setup.area_calc.geom_column>);
+NEW.<setup.area_calc.target_column> = ST_Area(NEW.<setup.area_calc.geom_column>);
 {% elif setup.length_calc -%}
 NEW.<setup.length_calc.target_column> = ST_Length(<setup.length_calc.geom_column>);
 {%- endif %}
