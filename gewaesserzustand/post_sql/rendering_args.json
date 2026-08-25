@@ -9,7 +9,7 @@
     "periodizitaet_catref",
     "tel_typ_catref"
   ],
-  "not_null_constraints_to_add": [
+  "not_null_columns": [
     {
       "table": "messgruppierung",
       "column": "gewaessertyp"
@@ -35,7 +35,7 @@
       "values": ["Probeentnahmestandort", "Stationsstandort"] 
     } 
   ],
-  "last_modiefied_table_names": [
+  "add_last_modified_to_tables": [
     "messgruppierung",
     "werterhebung",
     "messnetz",

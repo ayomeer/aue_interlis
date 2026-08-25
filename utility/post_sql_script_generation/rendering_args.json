@@ -1,66 +1,42 @@
 {
-  "target_schema": "prod_gl_gewaesserzustand",
-  "owner": "prod_gl_gewaesserzustand_write",
+  "target_schema": "",
+  "owner": "",
   "catref_tables_to_drop": [
-    "art_gruppierung_catref",
-    "erhebung_catref",
-    "gewaessertyp_catref",
-    "parameter_catref",
-    "periodizitaet_catref",
-    "tel_typ_catref"
+    "_catref"
   ],
-  "not_null_constraints_to_add": [
+  "not_null_columns": [
     {
-      "table": "messgruppierung",
-      "column": "gewaessertyp"
-    },
-    {
-      "table": "messgruppierung",
-      "column": "art_gruppierung"
-    },
-    {
-      "table": "werterhebung",
-      "column": "aparameter"
-    },
-    {
-      "table": "werterhebung",
-      "column": "erhebung"
+      "table": "",
+      "column": ""
     }
   ],
   "enum_consraints": [
     {
-      "name": "standort_typ_enum",
-      "table": "messgruppierung",
-      "column": "standort_typ",
-      "values": ["Probeentnahmestandort", "Stationsstandort"] 
+      "name": "",
+      "table": "",
+      "column": "",
+      "values": ["", ""] 
     } 
   ],
-  "last_modiefied_table_names": [
-    "messgruppierung",
-    "werterhebung",
-    "messnetz",
-    "verantwortlichkeit"
+  "add_last_modified_to_tables": [
+    ""
   ],
   "column_comments": [
     {
-      "table": "messgruppierung",
-      "column": "gueltig_bis",
-      "comment": "In Betrieb: 31.12.2999 (defaultwert), sonst Abschlussdatum"
-    },
-    {
-      "table": "werterhebung",
-      "column": "gueltig_bis",
-      "comment": "In Betrieb: 31.12.2999 (defaultwert), sonst Abschlussdatum"
-    },
-    {
-      "table": "messnetz",
-      "column": "gueltig_bis",
-      "comment": "In Betrieb: 31.12.2999 (defaultwert), sonst Abschlussdatum"
-    },
-    {
-      "table": "werterhebung",
-      "column": "vorgaenger",
-      "comment": "Falls Zeitreihen von nahe gelegenen Stationen zusammengeführt werden, weil sie homogen sind, wird der Code der Station der zugeordneten Zeitreihe angegeben. "
+      "table": "",
+      "column": "",
+      "comment": ""
     }
-  ]
+  ],
+  "trigger_setup": [
+    {
+      "table": "",
+      "when": "update",
+      "last_modified": true,
+      "area_calc": {
+        "geom_column": "geo_obj",
+        "target_column": "flaeche_m2"
+      }
+    }
+  ] 
 }

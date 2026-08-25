@@ -1,0 +1,42 @@
+{
+  "target_schema": "gl_ersatzbiotope",
+  "owner": "gl_ersatzbiotope_write",
+  "read_role": "gl_ersatzbiotope_read",
+  "write_role": "gl_ersatzbiotope_write",
+  "catref_tables_to_drop": [
+    "ersatzmassnahme_catref"
+  ],
+  "not_null_columns": [],
+  "enum_consraints": [],
+  "column_comments": [],
+  "trigger_setup": [
+    {
+      "table": "ersatzbiotop",
+      "when": "update",
+      "last_modified": true
+    },
+    {
+      "table": "to_flaeche",
+      "when": "update",
+      "last_modified": true,
+      "area_calc": {
+        "geom_column": "geo_obj",
+        "target_column": "flaeche_m2"
+      }
+    },
+        {
+      "table": "to_linie",
+      "when": "update",
+      "last_modified": true,
+      "length_calc": {
+        "geom_column": "geo_obj",
+        "target_column": "laenge_m"
+      }
+    },
+    {
+      "table": "to_punkt",
+      "when": "update",
+      "last_modified": true
+    }
+  ]
+}

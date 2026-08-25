@@ -17,7 +17,7 @@ DROP TABLE <target_schema>.<catref_table>;
 {%- endfor %}
 
 -- Add NOT NULL constraints ------------------------------------------------------------
-{%- for constraint in not_null_constraints_to_add %}
+{%- for constraint in not_null_columns %}
 ALTER TABLE <target_schema>.<constraint.table>
 ALTER COLUMN <constraint.column> SET NOT NULL;
 {%- endfor %}
@@ -33,39 +33,51 @@ ALTER TABLE <target_schema>.<constraint.table>
 ALTER COLUMN <constraint.column> TYPE <domain_name>;
 {%- endfor %}
 
--- Add last_modified columns ------------------------------------------------------------
-{%- for table_name in last_modiefied_table_names %}
+-- Add Trigger Setup ------------------------------------------------------------
+{%- for setup in trigger_setup %}
 
--- <table_name>
-ALTER TABLE <target_schema>.<table_name>
+-- <setup.table>
+
+{%- if setup.last_modified %}
+ALTER TABLE <target_schema>.<setup.table>
 ADD COLUMN last_modified timestamp without time zone;
+{%- endif %}
 
-CREATE FUNCTION <target_schema>.<table_name>_update()
+CREATE FUNCTION <target_schema>.<setup.table>_update()
   RETURNS TRIGGER
   LANGUAGE 'plpgsql'
 AS $BODY$
 
 BEGIN
+
+{% if setup.last_modified -%}
 NEW.last_modified = localtimestamp(0);
+{%- endif %}
+{% if setup.area_calc -%}
+NEW.<setup.area_calc.target_column> = ST_Area(<setup.area_calc.geom_column>);
+{% elif setup.length_calc -%}
+NEW.<setup.length_calc.target_column> = ST_Length(<setup.length_calc.geom_column>);
+{%- endif %}
+
 RETURN NEW;
 END;
 $BODY$;
 
-ALTER FUNCTION <target_schema>.<table_name>_update()
+ALTER FUNCTION <target_schema>.<setup.table>_update()
   OWNER TO <owner>;
 
-CREATE TRIGGER <table_name>_update
+CREATE TRIGGER <setup.table>_update
   BEFORE UPDATE
-  ON <target_schema>.<table_name>
+  ON <target_schema>.<setup.table>
   FOR EACH ROW
-  EXECUTE FUNCTION <target_schema>.<table_name>_update();
+  EXECUTE FUNCTION <target_schema>.<setup.table>_update();
 {%- endfor %}
 
 -- Set up priviledges for schema -----------------------------------------------------
-GRANT USAGE ON SCHEMA <target_schema> TO <targe_schema>_read;
+GRANT USAGE ON SCHEMA <target_schema> TO <read_role>;
 
-GRANT ALL ON ALL TABLES IN SCHEMA <target_schema> TO <targe_schema>_write
-GRANT SELECT ON ALL TABLES IN SCHEMA <target_schema> TO <targe_schema>_read
+GRANT ALL ON ALL TABLES IN SCHEMA <target_schema> TO <write_role>;
+GRANT SELECT ON ALL TABLES IN SCHEMA <target_schema> TO <read_role>;
 
 -- Column Comments -------------------------------------------------------------------
 {%- for column in column_comments %}
