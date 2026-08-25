@@ -40,7 +40,7 @@ END;
 $BODY$;
 
 ALTER FUNCTION gl_ersatzbiotope.ersatzbiotop_update()
-  OWNER TO prod_biotope_write;
+  OWNER TO gl_ersatzbiotope_write;
 
 CREATE TRIGGER ersatzbiotop_update
   BEFORE UPDATE
@@ -68,7 +68,7 @@ END;
 $BODY$;
 
 ALTER FUNCTION gl_ersatzbiotope.to_flaeche_update()
-  OWNER TO prod_biotope_write;
+  OWNER TO gl_ersatzbiotope_write;
 
 CREATE TRIGGER to_flaeche_update
   BEFORE UPDATE
@@ -95,7 +95,7 @@ END;
 $BODY$;
 
 ALTER FUNCTION gl_ersatzbiotope.to_linie_update()
-  OWNER TO prod_biotope_write;
+  OWNER TO gl_ersatzbiotope_write;
 
 CREATE TRIGGER to_linie_update
   BEFORE UPDATE
@@ -122,7 +122,7 @@ END;
 $BODY$;
 
 ALTER FUNCTION gl_ersatzbiotope.to_punkt_update()
-  OWNER TO prod_biotope_write;
+  OWNER TO gl_ersatzbiotope_write;
 
 CREATE TRIGGER to_punkt_update
   BEFORE UPDATE
@@ -131,10 +131,10 @@ CREATE TRIGGER to_punkt_update
   EXECUTE FUNCTION gl_ersatzbiotope.to_punkt_update();
 
 -- Set up priviledges for schema -----------------------------------------------------
-GRANT USAGE ON SCHEMA gl_ersatzbiotope TO prod_biotope_read;
+GRANT USAGE ON SCHEMA gl_ersatzbiotope TO gl_ersatzbiotope_read;
 
-GRANT ALL ON ALL TABLES IN SCHEMA gl_ersatzbiotope TO prod_biotope_write;
-GRANT SELECT ON ALL TABLES IN SCHEMA gl_ersatzbiotope TO prod_biotope_read;
+GRANT ALL ON ALL TABLES IN SCHEMA gl_ersatzbiotope TO gl_ersatzbiotope_write;
+GRANT SELECT ON ALL TABLES IN SCHEMA gl_ersatzbiotope TO gl_ersatzbiotope_read;
 
 -- Column Comments -------------------------------------------------------------------
 
