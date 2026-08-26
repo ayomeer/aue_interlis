@@ -22,28 +22,28 @@
     <customproperties>
       <Option/>
     </customproperties>
-    <layer-tree-layer legend_split_behavior="0" name="Teilobjekt (Fläche)" expanded="1" patch_size="-1,-1" id="TO_Flaeche_3baf02e7_a5ba_4418_928c_bef5f1c034a6" source="dbname='glarus' host=srv-gisiap-02.glnet.ch port=5432 key='t_id' srid=2056 type=MultiPolygon checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;to_flaeche&quot; (geo_obj)" checked="Qt::Checked" providerKey="postgres" legend_exp="">
+    <layer-tree-layer legend_split_behavior="0" name="Teilobjekt (Fläche)" expanded="1" patch_size="-1,-1" id="TO_Flaeche_3baf02e7_a5ba_4418_928c_bef5f1c034a6" source="dbname='glarus' host=srv-gisprod-02.glnet.ch port=5432 key='t_id' srid=2056 type=MultiPolygon checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;to_flaeche&quot; (geo_obj)" checked="Qt::Checked" providerKey="postgres" legend_exp="">
       <customproperties>
         <Option type="Map">
           <Option value="1" name="showFeatureCount" type="int"/>
         </Option>
       </customproperties>
     </layer-tree-layer>
-    <layer-tree-layer legend_split_behavior="0" name="Teilobjekt (Linie)" expanded="1" patch_size="-1,-1" id="TO_Linie_b2699309_ca27_46fb_9ecb_aae4cf042e02" source="dbname='glarus' host=srv-gisiap-02.glnet.ch port=5432 key='t_id' srid=2056 type=MultiLineString checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;to_linie&quot; (geo_obj)" checked="Qt::Checked" providerKey="postgres" legend_exp="">
+    <layer-tree-layer legend_split_behavior="0" name="Teilobjekt (Linie)" expanded="1" patch_size="-1,-1" id="TO_Linie_b2699309_ca27_46fb_9ecb_aae4cf042e02" source="dbname='glarus' host=srv-gisprod-02.glnet.ch port=5432 key='t_id' srid=2056 type=MultiLineString checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;to_linie&quot; (geo_obj)" checked="Qt::Checked" providerKey="postgres" legend_exp="">
       <customproperties>
         <Option type="Map">
           <Option value="1" name="showFeatureCount" type="int"/>
         </Option>
       </customproperties>
     </layer-tree-layer>
-    <layer-tree-layer legend_split_behavior="0" name="Teilobjekt (Punkt)" expanded="1" patch_size="-1,-1" id="TO_Punkt_847c9b77_1121_47ae_8c9e_1b6ea9dc5605" source="dbname='glarus' host=srv-gisiap-02.glnet.ch port=5432 key='t_id' srid=2056 type=MultiPoint checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;to_punkt&quot; (geo_obj)" checked="Qt::Checked" providerKey="postgres" legend_exp="">
+    <layer-tree-layer legend_split_behavior="0" name="Teilobjekt (Punkt)" expanded="1" patch_size="-1,-1" id="TO_Punkt_847c9b77_1121_47ae_8c9e_1b6ea9dc5605" source="dbname='glarus' host=srv-gisprod-02.glnet.ch port=5432 key='t_id' srid=2056 type=MultiPoint checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;to_punkt&quot; (geo_obj)" checked="Qt::Checked" providerKey="postgres" legend_exp="">
       <customproperties>
         <Option type="Map">
           <Option value="1" name="showFeatureCount" type="int"/>
         </Option>
       </customproperties>
     </layer-tree-layer>
-    <layer-tree-layer legend_split_behavior="0" name="Ersatzbiotop" expanded="1" patch_size="-1,-1" id="Ersatzbiotop_7ae428d3_64c2_4cf0_9ea9_58d6f75ef517" source="dbname='glarus' host=srv-gisiap-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;ersatzbiotop&quot;" checked="Qt::Unchecked" providerKey="postgres" legend_exp="">
+    <layer-tree-layer legend_split_behavior="0" name="Ersatzbiotop" expanded="1" patch_size="-1,-1" id="Ersatzbiotop_7ae428d3_64c2_4cf0_9ea9_58d6f75ef517" source="dbname='glarus' host=srv-gisprod-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;ersatzbiotop&quot;" checked="Qt::Unchecked" providerKey="postgres" legend_exp="">
       <customproperties>
         <Option type="Map">
           <Option value="1" name="showFeatureCount" type="int"/>
@@ -54,7 +54,7 @@
       <customproperties>
         <Option/>
       </customproperties>
-      <layer-tree-layer legend_split_behavior="0" name="Ersatzmassnahme_Catalogue" expanded="1" patch_size="-1,-1" id="Ersatzmassnahme_Catalogue_5a41033f_1aa5_448c_a519_f56d2472802e" source="dbname='glarus' host=srv-gisiap-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;ersatzmassnahme_catalogue&quot;" checked="Qt::Checked" providerKey="postgres" legend_exp="">
+      <layer-tree-layer legend_split_behavior="0" name="Ersatzmassnahme_Catalogue" expanded="1" patch_size="-1,-1" id="Ersatzmassnahme_Catalogue_5a41033f_1aa5_448c_a519_f56d2472802e" source="dbname='glarus' host=srv-gisprod-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;ersatzmassnahme_catalogue&quot;" checked="Qt::Checked" providerKey="postgres" legend_exp="">
         <customproperties>
           <Option type="Map">
             <Option value="1" name="showFeatureCount" type="int"/>
@@ -66,7 +66,7 @@
       <customproperties>
         <Option/>
       </customproperties>
-      <layer-tree-layer legend_split_behavior="0" name="Ersatzbiotop (teilobj subform)" expanded="1" patch_size="-1,-1" id="Ersatzbiotop_5d1e2b43_9fc0_4bcd_8824_af0b6d1d97a7" source="dbname='glarus' host=srv-gisiap-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;ersatzbiotop&quot;" checked="Qt::Checked" providerKey="postgres" legend_exp="">
+      <layer-tree-layer legend_split_behavior="0" name="Ersatzbiotop (teilobj subform)" expanded="1" patch_size="-1,-1" id="Ersatzbiotop_5d1e2b43_9fc0_4bcd_8824_af0b6d1d97a7" source="dbname='glarus' host=srv-gisprod-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;ersatzbiotop&quot;" checked="Qt::Checked" providerKey="postgres" legend_exp="">
         <customproperties>
           <Option type="Map">
             <Option value="1" name="showFeatureCount" type="int"/>
@@ -255,7 +255,7 @@
   <projectlayers>
     <maplayer refreshOnNotifyMessage="" refreshOnNotifyEnabled="0" styleCategories="AllStyleCategories" autoRefreshTime="0" wkbType="NoGeometry" hasScaleBasedVisibilityFlag="0" type="vector" minScale="1e+08" maxScale="0" legendPlaceholderImage="" readOnly="0" geometry="No geometry" autoRefreshMode="Disabled">
       <id>Ersatzbiotop_5d1e2b43_9fc0_4bcd_8824_af0b6d1d97a7</id>
-      <datasource>dbname='glarus' host=srv-gisiap-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table="gl_ersatzbiotope"."ersatzbiotop"</datasource>
+      <datasource>dbname='glarus' host=srv-gisprod-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table="gl_ersatzbiotope"."ersatzbiotop"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -492,7 +492,7 @@
       </geometryOptions>
       <legend type="default-vector" showLabelLegend="0"/>
       <referencedLayers>
-        <relation referencedLayer="t_ili2db_basket_b1124310_3b35_41ff_b6cd_98b9261a77f6" name="ersatzbiotop_t_basket_fkey" layerId="t_ili2db_basket_b1124310_3b35_41ff_b6cd_98b9261a77f6" id="ersatzbiotop_t_basket_fkey" providerKey="postgres" layerName="t_ili2db_basket" strength="Association" dataSource="dbname='glarus' host=srv-gisiap-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;t_ili2db_basket&quot;" referencingLayer="Ersatzbiotop_5d1e2b43_9fc0_4bcd_8824_af0b6d1d97a7">
+        <relation referencedLayer="t_ili2db_basket_b1124310_3b35_41ff_b6cd_98b9261a77f6" name="ersatzbiotop_t_basket_fkey" layerId="t_ili2db_basket_b1124310_3b35_41ff_b6cd_98b9261a77f6" id="ersatzbiotop_t_basket_fkey" providerKey="postgres" layerName="t_ili2db_basket" strength="Association" dataSource="dbname='glarus' host=srv-gisprod-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;t_ili2db_basket&quot;" referencingLayer="Ersatzbiotop_5d1e2b43_9fc0_4bcd_8824_af0b6d1d97a7">
           <fieldRef referencingField="t_basket" referencedField="t_id"/>
         </relation>
       </referencedLayers>
@@ -520,7 +520,7 @@
                 <Option name="FilterFields" type="invalid"/>
                 <Option value="false" name="MapIdentification" type="bool"/>
                 <Option value="false" name="ReadOnly" type="bool"/>
-                <Option value="dbname='glarus' host=srv-gisiap-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;t_ili2db_basket&quot;" name="ReferencedLayerDataSource" type="QString"/>
+                <Option value="dbname='glarus' host=srv-gisprod-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;t_ili2db_basket&quot;" name="ReferencedLayerDataSource" type="QString"/>
                 <Option value="t_ili2db_basket_b1124310_3b35_41ff_b6cd_98b9261a77f6" name="ReferencedLayerId" type="QString"/>
                 <Option value="t_ili2db_basket" name="ReferencedLayerName" type="QString"/>
                 <Option value="postgres" name="ReferencedLayerProviderKey" type="QString"/>
@@ -733,7 +733,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer refreshOnNotifyMessage="" refreshOnNotifyEnabled="0" styleCategories="AllStyleCategories" autoRefreshTime="0" wkbType="NoGeometry" hasScaleBasedVisibilityFlag="0" type="vector" minScale="1e+08" maxScale="0" legendPlaceholderImage="" readOnly="0" geometry="No geometry" autoRefreshMode="Disabled">
       <id>Ersatzbiotop_7ae428d3_64c2_4cf0_9ea9_58d6f75ef517</id>
-      <datasource>dbname='glarus' host=srv-gisiap-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table="gl_ersatzbiotope"."ersatzbiotop"</datasource>
+      <datasource>dbname='glarus' host=srv-gisprod-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table="gl_ersatzbiotope"."ersatzbiotop"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -994,7 +994,7 @@ def my_form_open(dialog, layer, feature):
                 <Option name="FilterFields" type="invalid"/>
                 <Option value="false" name="MapIdentification" type="bool"/>
                 <Option value="false" name="ReadOnly" type="bool"/>
-                <Option value="dbname='glarus' host=srv-gisiap-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;t_ili2db_basket&quot;" name="ReferencedLayerDataSource" type="QString"/>
+                <Option value="dbname='glarus' host=srv-gisprod-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;t_ili2db_basket&quot;" name="ReferencedLayerDataSource" type="QString"/>
                 <Option value="t_ili2db_basket_b1124310_3b35_41ff_b6cd_98b9261a77f6" name="ReferencedLayerId" type="QString"/>
                 <Option value="t_ili2db_basket" name="ReferencedLayerName" type="QString"/>
                 <Option value="postgres" name="ReferencedLayerProviderKey" type="QString"/>
@@ -1252,7 +1252,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer refreshOnNotifyMessage="" refreshOnNotifyEnabled="0" styleCategories="AllStyleCategories" autoRefreshTime="0" wkbType="NoGeometry" hasScaleBasedVisibilityFlag="0" type="vector" minScale="1e+08" maxScale="0" legendPlaceholderImage="" readOnly="1" geometry="No geometry" autoRefreshMode="Disabled">
       <id>Ersatzmassnahme_Catalogue_5a41033f_1aa5_448c_a519_f56d2472802e</id>
-      <datasource>dbname='glarus' host=srv-gisiap-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table="gl_ersatzbiotope"."ersatzmassnahme_catalogue"</datasource>
+      <datasource>dbname='glarus' host=srv-gisprod-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table="gl_ersatzbiotope"."ersatzmassnahme_catalogue"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -1470,7 +1470,7 @@ def my_form_open(dialog, layer, feature):
       </geometryOptions>
       <legend type="default-vector" showLabelLegend="0"/>
       <referencedLayers>
-        <relation referencedLayer="t_ili2db_basket_b1124310_3b35_41ff_b6cd_98b9261a77f6" name="ersatzmassnahme_catalogue_t_basket_fkey" layerId="t_ili2db_basket_b1124310_3b35_41ff_b6cd_98b9261a77f6" id="ersatzmassnahme_catalogue_t_basket_fkey" providerKey="postgres" layerName="t_ili2db_basket" strength="Association" dataSource="dbname='glarus' host=srv-gisiap-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;t_ili2db_basket&quot;" referencingLayer="Ersatzmassnahme_Catalogue_5a41033f_1aa5_448c_a519_f56d2472802e">
+        <relation referencedLayer="t_ili2db_basket_b1124310_3b35_41ff_b6cd_98b9261a77f6" name="ersatzmassnahme_catalogue_t_basket_fkey" layerId="t_ili2db_basket_b1124310_3b35_41ff_b6cd_98b9261a77f6" id="ersatzmassnahme_catalogue_t_basket_fkey" providerKey="postgres" layerName="t_ili2db_basket" strength="Association" dataSource="dbname='glarus' host=srv-gisprod-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;t_ili2db_basket&quot;" referencingLayer="Ersatzmassnahme_Catalogue_5a41033f_1aa5_448c_a519_f56d2472802e">
           <fieldRef referencingField="t_basket" referencedField="t_id"/>
         </relation>
       </referencedLayers>
@@ -1646,7 +1646,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>47.17479125356798164</ymax>
       </wgs84extent>
       <id>TO_Flaeche_3baf02e7_a5ba_4418_928c_bef5f1c034a6</id>
-      <datasource>dbname='glarus' host=srv-gisiap-02.glnet.ch port=5432 key='t_id' srid=2056 type=MultiPolygon checkPrimaryKeyUnicity='1' table="gl_ersatzbiotope"."to_flaeche" (geo_obj)</datasource>
+      <datasource>dbname='glarus' host=srv-gisprod-02.glnet.ch port=5432 key='t_id' srid=2056 type=MultiPolygon checkPrimaryKeyUnicity='1' table="gl_ersatzbiotope"."to_flaeche" (geo_obj)</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -2029,13 +2029,13 @@ def my_form_open(dialog, layer, feature):
       </geometryOptions>
       <legend type="default-vector" showLabelLegend="0"/>
       <referencedLayers>
-        <relation referencedLayer="Ersatzmassnahme_Catalogue_5a41033f_1aa5_448c_a519_f56d2472802e" name="to_flaeche_kategorie_ersatzmassnahme_fkey" layerId="Ersatzmassnahme_Catalogue_5a41033f_1aa5_448c_a519_f56d2472802e" id="to_flaeche_kategorie_ersatzmassnahme_fkey" providerKey="postgres" layerName="Ersatzmassnahme_Catalogue" strength="Association" dataSource="dbname='glarus' host=srv-gisiap-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;ersatzmassnahme_catalogue&quot;" referencingLayer="TO_Flaeche_3baf02e7_a5ba_4418_928c_bef5f1c034a6">
+        <relation referencedLayer="Ersatzmassnahme_Catalogue_5a41033f_1aa5_448c_a519_f56d2472802e" name="to_flaeche_kategorie_ersatzmassnahme_fkey" layerId="Ersatzmassnahme_Catalogue_5a41033f_1aa5_448c_a519_f56d2472802e" id="to_flaeche_kategorie_ersatzmassnahme_fkey" providerKey="postgres" layerName="Ersatzmassnahme_Catalogue" strength="Association" dataSource="dbname='glarus' host=srv-gisprod-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;ersatzmassnahme_catalogue&quot;" referencingLayer="TO_Flaeche_3baf02e7_a5ba_4418_928c_bef5f1c034a6">
           <fieldRef referencingField="kategorie_ersatzmassnahme" referencedField="t_id"/>
         </relation>
-        <relation referencedLayer="t_ili2db_basket_b1124310_3b35_41ff_b6cd_98b9261a77f6" name="to_flaeche_t_basket_fkey" layerId="t_ili2db_basket_b1124310_3b35_41ff_b6cd_98b9261a77f6" id="to_flaeche_t_basket_fkey" providerKey="postgres" layerName="t_ili2db_basket" strength="Association" dataSource="dbname='glarus' host=srv-gisiap-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;t_ili2db_basket&quot;" referencingLayer="TO_Flaeche_3baf02e7_a5ba_4418_928c_bef5f1c034a6">
+        <relation referencedLayer="t_ili2db_basket_b1124310_3b35_41ff_b6cd_98b9261a77f6" name="to_flaeche_t_basket_fkey" layerId="t_ili2db_basket_b1124310_3b35_41ff_b6cd_98b9261a77f6" id="to_flaeche_t_basket_fkey" providerKey="postgres" layerName="t_ili2db_basket" strength="Association" dataSource="dbname='glarus' host=srv-gisprod-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;t_ili2db_basket&quot;" referencingLayer="TO_Flaeche_3baf02e7_a5ba_4418_928c_bef5f1c034a6">
           <fieldRef referencingField="t_basket" referencedField="t_id"/>
         </relation>
-        <relation referencedLayer="Ersatzbiotop_5d1e2b43_9fc0_4bcd_8824_af0b6d1d97a7" name="to_flaeche_von_ersatzbiotop_fkey" layerId="Ersatzbiotop_5d1e2b43_9fc0_4bcd_8824_af0b6d1d97a7" id="to_flaeche_von_ersatzbiotop_fkey" providerKey="postgres" layerName="Ersatzbiotop (teilobj subform)" strength="Composition" dataSource="dbname='glarus' host=srv-gisiap-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;ersatzbiotop&quot;" referencingLayer="TO_Flaeche_3baf02e7_a5ba_4418_928c_bef5f1c034a6">
+        <relation referencedLayer="Ersatzbiotop_5d1e2b43_9fc0_4bcd_8824_af0b6d1d97a7" name="to_flaeche_von_ersatzbiotop_fkey" layerId="Ersatzbiotop_5d1e2b43_9fc0_4bcd_8824_af0b6d1d97a7" id="to_flaeche_von_ersatzbiotop_fkey" providerKey="postgres" layerName="Ersatzbiotop (teilobj subform)" strength="Composition" dataSource="dbname='glarus' host=srv-gisprod-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;ersatzbiotop&quot;" referencingLayer="TO_Flaeche_3baf02e7_a5ba_4418_928c_bef5f1c034a6">
           <fieldRef referencingField="von_ersatzbiotop" referencedField="t_id"/>
         </relation>
       </referencedLayers>
@@ -2063,7 +2063,7 @@ def my_form_open(dialog, layer, feature):
                 <Option name="FilterFields" type="invalid"/>
                 <Option value="false" name="MapIdentification" type="bool"/>
                 <Option value="false" name="ReadOnly" type="bool"/>
-                <Option value="dbname='glarus' host=srv-gisiap-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;t_ili2db_basket&quot;" name="ReferencedLayerDataSource" type="QString"/>
+                <Option value="dbname='glarus' host=srv-gisprod-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;t_ili2db_basket&quot;" name="ReferencedLayerDataSource" type="QString"/>
                 <Option value="t_ili2db_basket_b1124310_3b35_41ff_b6cd_98b9261a77f6" name="ReferencedLayerId" type="QString"/>
                 <Option value="t_ili2db_basket" name="ReferencedLayerName" type="QString"/>
                 <Option value="postgres" name="ReferencedLayerProviderKey" type="QString"/>
@@ -2122,7 +2122,7 @@ def my_form_open(dialog, layer, feature):
                 <Option name="FilterFields" type="invalid"/>
                 <Option value="false" name="MapIdentification" type="bool"/>
                 <Option value="false" name="ReadOnly" type="bool"/>
-                <Option value="dbname='glarus' host=srv-gisiap-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;ersatzmassnahme_catalogue&quot;" name="ReferencedLayerDataSource" type="QString"/>
+                <Option value="dbname='glarus' host=srv-gisprod-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;ersatzmassnahme_catalogue&quot;" name="ReferencedLayerDataSource" type="QString"/>
                 <Option value="Ersatzmassnahme_Catalogue_5a41033f_1aa5_448c_a519_f56d2472802e" name="ReferencedLayerId" type="QString"/>
                 <Option value="Ersatzmassnahme_Catalogue" name="ReferencedLayerName" type="QString"/>
                 <Option value="postgres" name="ReferencedLayerProviderKey" type="QString"/>
@@ -2180,7 +2180,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="100" name="FetchLimitNumber" type="int"/>
                 <Option value="false" name="MapIdentification" type="bool"/>
                 <Option value="false" name="ReadOnly" type="bool"/>
-                <Option value="dbname='glarus' host=srv-gisiap-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;ersatzbiotop&quot;" name="ReferencedLayerDataSource" type="QString"/>
+                <Option value="dbname='glarus' host=srv-gisprod-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;ersatzbiotop&quot;" name="ReferencedLayerDataSource" type="QString"/>
                 <Option value="Ersatzbiotop_5d1e2b43_9fc0_4bcd_8824_af0b6d1d97a7" name="ReferencedLayerId" type="QString"/>
                 <Option value="Ersatzbiotop" name="ReferencedLayerName" type="QString"/>
                 <Option value="postgres" name="ReferencedLayerProviderKey" type="QString"/>
@@ -2439,7 +2439,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>47.10980280145672339</ymax>
       </wgs84extent>
       <id>TO_Linie_b2699309_ca27_46fb_9ecb_aae4cf042e02</id>
-      <datasource>dbname='glarus' host=srv-gisiap-02.glnet.ch port=5432 key='t_id' srid=2056 type=MultiLineString checkPrimaryKeyUnicity='1' table="gl_ersatzbiotope"."to_linie" (geo_obj)</datasource>
+      <datasource>dbname='glarus' host=srv-gisprod-02.glnet.ch port=5432 key='t_id' srid=2056 type=MultiLineString checkPrimaryKeyUnicity='1' table="gl_ersatzbiotope"."to_linie" (geo_obj)</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -2719,13 +2719,13 @@ def my_form_open(dialog, layer, feature):
       </geometryOptions>
       <legend type="default-vector" showLabelLegend="0"/>
       <referencedLayers>
-        <relation referencedLayer="Ersatzmassnahme_Catalogue_5a41033f_1aa5_448c_a519_f56d2472802e" name="to_linie_kategorie_ersatzmassnahme_fkey" layerId="Ersatzmassnahme_Catalogue_5a41033f_1aa5_448c_a519_f56d2472802e" id="to_linie_kategorie_ersatzmassnahme_fkey" providerKey="postgres" layerName="Ersatzmassnahme_Catalogue" strength="Association" dataSource="dbname='glarus' host=srv-gisiap-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;ersatzmassnahme_catalogue&quot;" referencingLayer="TO_Linie_b2699309_ca27_46fb_9ecb_aae4cf042e02">
+        <relation referencedLayer="Ersatzmassnahme_Catalogue_5a41033f_1aa5_448c_a519_f56d2472802e" name="to_linie_kategorie_ersatzmassnahme_fkey" layerId="Ersatzmassnahme_Catalogue_5a41033f_1aa5_448c_a519_f56d2472802e" id="to_linie_kategorie_ersatzmassnahme_fkey" providerKey="postgres" layerName="Ersatzmassnahme_Catalogue" strength="Association" dataSource="dbname='glarus' host=srv-gisprod-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;ersatzmassnahme_catalogue&quot;" referencingLayer="TO_Linie_b2699309_ca27_46fb_9ecb_aae4cf042e02">
           <fieldRef referencingField="kategorie_ersatzmassnahme" referencedField="t_id"/>
         </relation>
-        <relation referencedLayer="t_ili2db_basket_b1124310_3b35_41ff_b6cd_98b9261a77f6" name="to_linie_t_basket_fkey" layerId="t_ili2db_basket_b1124310_3b35_41ff_b6cd_98b9261a77f6" id="to_linie_t_basket_fkey" providerKey="postgres" layerName="t_ili2db_basket" strength="Association" dataSource="dbname='glarus' host=srv-gisiap-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;t_ili2db_basket&quot;" referencingLayer="TO_Linie_b2699309_ca27_46fb_9ecb_aae4cf042e02">
+        <relation referencedLayer="t_ili2db_basket_b1124310_3b35_41ff_b6cd_98b9261a77f6" name="to_linie_t_basket_fkey" layerId="t_ili2db_basket_b1124310_3b35_41ff_b6cd_98b9261a77f6" id="to_linie_t_basket_fkey" providerKey="postgres" layerName="t_ili2db_basket" strength="Association" dataSource="dbname='glarus' host=srv-gisprod-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;t_ili2db_basket&quot;" referencingLayer="TO_Linie_b2699309_ca27_46fb_9ecb_aae4cf042e02">
           <fieldRef referencingField="t_basket" referencedField="t_id"/>
         </relation>
-        <relation referencedLayer="Ersatzbiotop_5d1e2b43_9fc0_4bcd_8824_af0b6d1d97a7" name="to_linie_von_ersatzbiotop_fkey" layerId="Ersatzbiotop_5d1e2b43_9fc0_4bcd_8824_af0b6d1d97a7" id="to_linie_von_ersatzbiotop_fkey" providerKey="postgres" layerName="Ersatzbiotop (teilobj subform)" strength="Composition" dataSource="dbname='glarus' host=srv-gisiap-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;ersatzbiotop&quot;" referencingLayer="TO_Linie_b2699309_ca27_46fb_9ecb_aae4cf042e02">
+        <relation referencedLayer="Ersatzbiotop_5d1e2b43_9fc0_4bcd_8824_af0b6d1d97a7" name="to_linie_von_ersatzbiotop_fkey" layerId="Ersatzbiotop_5d1e2b43_9fc0_4bcd_8824_af0b6d1d97a7" id="to_linie_von_ersatzbiotop_fkey" providerKey="postgres" layerName="Ersatzbiotop (teilobj subform)" strength="Composition" dataSource="dbname='glarus' host=srv-gisprod-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;ersatzbiotop&quot;" referencingLayer="TO_Linie_b2699309_ca27_46fb_9ecb_aae4cf042e02">
           <fieldRef referencingField="von_ersatzbiotop" referencedField="t_id"/>
         </relation>
       </referencedLayers>
@@ -2753,7 +2753,7 @@ def my_form_open(dialog, layer, feature):
                 <Option name="FilterFields" type="invalid"/>
                 <Option value="false" name="MapIdentification" type="bool"/>
                 <Option value="false" name="ReadOnly" type="bool"/>
-                <Option value="dbname='glarus' host=srv-gisiap-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;t_ili2db_basket&quot;" name="ReferencedLayerDataSource" type="QString"/>
+                <Option value="dbname='glarus' host=srv-gisprod-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;t_ili2db_basket&quot;" name="ReferencedLayerDataSource" type="QString"/>
                 <Option value="t_ili2db_basket_b1124310_3b35_41ff_b6cd_98b9261a77f6" name="ReferencedLayerId" type="QString"/>
                 <Option value="t_ili2db_basket" name="ReferencedLayerName" type="QString"/>
                 <Option value="postgres" name="ReferencedLayerProviderKey" type="QString"/>
@@ -2809,7 +2809,7 @@ def my_form_open(dialog, layer, feature):
                 <Option name="FilterFields" type="invalid"/>
                 <Option value="false" name="MapIdentification" type="bool"/>
                 <Option value="false" name="ReadOnly" type="bool"/>
-                <Option value="dbname='glarus' host=srv-gisiap-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;ersatzmassnahme_catalogue&quot;" name="ReferencedLayerDataSource" type="QString"/>
+                <Option value="dbname='glarus' host=srv-gisprod-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;ersatzmassnahme_catalogue&quot;" name="ReferencedLayerDataSource" type="QString"/>
                 <Option value="Ersatzmassnahme_Catalogue_5a41033f_1aa5_448c_a519_f56d2472802e" name="ReferencedLayerId" type="QString"/>
                 <Option value="Ersatzmassnahme_Catalogue" name="ReferencedLayerName" type="QString"/>
                 <Option value="postgres" name="ReferencedLayerProviderKey" type="QString"/>
@@ -2867,7 +2867,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="100" name="FetchLimitNumber" type="int"/>
                 <Option value="false" name="MapIdentification" type="bool"/>
                 <Option value="false" name="ReadOnly" type="bool"/>
-                <Option value="dbname='glarus' host=srv-gisiap-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;ersatzbiotop&quot;" name="ReferencedLayerDataSource" type="QString"/>
+                <Option value="dbname='glarus' host=srv-gisprod-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;ersatzbiotop&quot;" name="ReferencedLayerDataSource" type="QString"/>
                 <Option value="Ersatzbiotop_5d1e2b43_9fc0_4bcd_8824_af0b6d1d97a7" name="ReferencedLayerId" type="QString"/>
                 <Option value="Ersatzbiotop" name="ReferencedLayerName" type="QString"/>
                 <Option value="postgres" name="ReferencedLayerProviderKey" type="QString"/>
@@ -3112,7 +3112,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>47.10768879687954325</ymax>
       </wgs84extent>
       <id>TO_Punkt_847c9b77_1121_47ae_8c9e_1b6ea9dc5605</id>
-      <datasource>dbname='glarus' host=srv-gisiap-02.glnet.ch port=5432 key='t_id' srid=2056 type=MultiPoint checkPrimaryKeyUnicity='1' table="gl_ersatzbiotope"."to_punkt" (geo_obj)</datasource>
+      <datasource>dbname='glarus' host=srv-gisprod-02.glnet.ch port=5432 key='t_id' srid=2056 type=MultiPoint checkPrimaryKeyUnicity='1' table="gl_ersatzbiotope"."to_punkt" (geo_obj)</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -3384,13 +3384,13 @@ def my_form_open(dialog, layer, feature):
       </geometryOptions>
       <legend type="default-vector" showLabelLegend="0"/>
       <referencedLayers>
-        <relation referencedLayer="Ersatzmassnahme_Catalogue_5a41033f_1aa5_448c_a519_f56d2472802e" name="to_punkt_kategorie_ersatzmassnahme_fkey" layerId="Ersatzmassnahme_Catalogue_5a41033f_1aa5_448c_a519_f56d2472802e" id="to_punkt_kategorie_ersatzmassnahme_fkey" providerKey="postgres" layerName="Ersatzmassnahme_Catalogue" strength="Association" dataSource="dbname='glarus' host=srv-gisiap-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;ersatzmassnahme_catalogue&quot;" referencingLayer="TO_Punkt_847c9b77_1121_47ae_8c9e_1b6ea9dc5605">
+        <relation referencedLayer="Ersatzmassnahme_Catalogue_5a41033f_1aa5_448c_a519_f56d2472802e" name="to_punkt_kategorie_ersatzmassnahme_fkey" layerId="Ersatzmassnahme_Catalogue_5a41033f_1aa5_448c_a519_f56d2472802e" id="to_punkt_kategorie_ersatzmassnahme_fkey" providerKey="postgres" layerName="Ersatzmassnahme_Catalogue" strength="Association" dataSource="dbname='glarus' host=srv-gisprod-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;ersatzmassnahme_catalogue&quot;" referencingLayer="TO_Punkt_847c9b77_1121_47ae_8c9e_1b6ea9dc5605">
           <fieldRef referencingField="kategorie_ersatzmassnahme" referencedField="t_id"/>
         </relation>
-        <relation referencedLayer="t_ili2db_basket_b1124310_3b35_41ff_b6cd_98b9261a77f6" name="to_punkt_t_basket_fkey" layerId="t_ili2db_basket_b1124310_3b35_41ff_b6cd_98b9261a77f6" id="to_punkt_t_basket_fkey" providerKey="postgres" layerName="t_ili2db_basket" strength="Association" dataSource="dbname='glarus' host=srv-gisiap-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;t_ili2db_basket&quot;" referencingLayer="TO_Punkt_847c9b77_1121_47ae_8c9e_1b6ea9dc5605">
+        <relation referencedLayer="t_ili2db_basket_b1124310_3b35_41ff_b6cd_98b9261a77f6" name="to_punkt_t_basket_fkey" layerId="t_ili2db_basket_b1124310_3b35_41ff_b6cd_98b9261a77f6" id="to_punkt_t_basket_fkey" providerKey="postgres" layerName="t_ili2db_basket" strength="Association" dataSource="dbname='glarus' host=srv-gisprod-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;t_ili2db_basket&quot;" referencingLayer="TO_Punkt_847c9b77_1121_47ae_8c9e_1b6ea9dc5605">
           <fieldRef referencingField="t_basket" referencedField="t_id"/>
         </relation>
-        <relation referencedLayer="Ersatzbiotop_5d1e2b43_9fc0_4bcd_8824_af0b6d1d97a7" name="to_punkt_von_ersatzbiotop_fkey" layerId="Ersatzbiotop_5d1e2b43_9fc0_4bcd_8824_af0b6d1d97a7" id="to_punkt_von_ersatzbiotop_fkey" providerKey="postgres" layerName="Ersatzbiotop (teilobj subform)" strength="Composition" dataSource="dbname='glarus' host=srv-gisiap-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;ersatzbiotop&quot;" referencingLayer="TO_Punkt_847c9b77_1121_47ae_8c9e_1b6ea9dc5605">
+        <relation referencedLayer="Ersatzbiotop_5d1e2b43_9fc0_4bcd_8824_af0b6d1d97a7" name="to_punkt_von_ersatzbiotop_fkey" layerId="Ersatzbiotop_5d1e2b43_9fc0_4bcd_8824_af0b6d1d97a7" id="to_punkt_von_ersatzbiotop_fkey" providerKey="postgres" layerName="Ersatzbiotop (teilobj subform)" strength="Composition" dataSource="dbname='glarus' host=srv-gisprod-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;ersatzbiotop&quot;" referencingLayer="TO_Punkt_847c9b77_1121_47ae_8c9e_1b6ea9dc5605">
           <fieldRef referencingField="von_ersatzbiotop" referencedField="t_id"/>
         </relation>
       </referencedLayers>
@@ -3418,7 +3418,7 @@ def my_form_open(dialog, layer, feature):
                 <Option name="FilterFields" type="invalid"/>
                 <Option value="false" name="MapIdentification" type="bool"/>
                 <Option value="false" name="ReadOnly" type="bool"/>
-                <Option value="dbname='glarus' host=srv-gisiap-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;t_ili2db_basket&quot;" name="ReferencedLayerDataSource" type="QString"/>
+                <Option value="dbname='glarus' host=srv-gisprod-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;t_ili2db_basket&quot;" name="ReferencedLayerDataSource" type="QString"/>
                 <Option value="t_ili2db_basket_b1124310_3b35_41ff_b6cd_98b9261a77f6" name="ReferencedLayerId" type="QString"/>
                 <Option value="t_ili2db_basket" name="ReferencedLayerName" type="QString"/>
                 <Option value="postgres" name="ReferencedLayerProviderKey" type="QString"/>
@@ -3463,7 +3463,7 @@ def my_form_open(dialog, layer, feature):
                 <Option name="FilterFields" type="invalid"/>
                 <Option value="false" name="MapIdentification" type="bool"/>
                 <Option value="false" name="ReadOnly" type="bool"/>
-                <Option value="dbname='glarus' host=srv-gisiap-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;ersatzmassnahme_catalogue&quot;" name="ReferencedLayerDataSource" type="QString"/>
+                <Option value="dbname='glarus' host=srv-gisprod-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;ersatzmassnahme_catalogue&quot;" name="ReferencedLayerDataSource" type="QString"/>
                 <Option value="Ersatzmassnahme_Catalogue_5a41033f_1aa5_448c_a519_f56d2472802e" name="ReferencedLayerId" type="QString"/>
                 <Option value="Ersatzmassnahme_Catalogue" name="ReferencedLayerName" type="QString"/>
                 <Option value="postgres" name="ReferencedLayerProviderKey" type="QString"/>
@@ -3521,7 +3521,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="100" name="FetchLimitNumber" type="int"/>
                 <Option value="false" name="MapIdentification" type="bool"/>
                 <Option value="false" name="ReadOnly" type="bool"/>
-                <Option value="dbname='glarus' host=srv-gisiap-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;ersatzbiotop&quot;" name="ReferencedLayerDataSource" type="QString"/>
+                <Option value="dbname='glarus' host=srv-gisprod-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;ersatzbiotop&quot;" name="ReferencedLayerDataSource" type="QString"/>
                 <Option value="Ersatzbiotop_5d1e2b43_9fc0_4bcd_8824_af0b6d1d97a7" name="ReferencedLayerId" type="QString"/>
                 <Option value="Ersatzbiotop" name="ReferencedLayerName" type="QString"/>
                 <Option value="postgres" name="ReferencedLayerProviderKey" type="QString"/>
@@ -3762,7 +3762,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer refreshOnNotifyMessage="" refreshOnNotifyEnabled="0" styleCategories="AllStyleCategories" autoRefreshTime="0" wkbType="NoGeometry" hasScaleBasedVisibilityFlag="0" type="vector" minScale="1e+08" maxScale="0" legendPlaceholderImage="" readOnly="0" geometry="No geometry" autoRefreshMode="Disabled">
       <id>t_ili2db_basket_b1124310_3b35_41ff_b6cd_98b9261a77f6</id>
-      <datasource>dbname='glarus' host=srv-gisiap-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table="gl_ersatzbiotope"."t_ili2db_basket"</datasource>
+      <datasource>dbname='glarus' host=srv-gisprod-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table="gl_ersatzbiotope"."t_ili2db_basket"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -3980,7 +3980,7 @@ def my_form_open(dialog, layer, feature):
       </geometryOptions>
       <legend type="default-vector" showLabelLegend="0"/>
       <referencedLayers>
-        <relation referencedLayer="t_ili2db_dataset_21f8773d_884a_4ec4_8871_3ffe9267a651" name="t_ili2db_basket_dataset_fkey" layerId="t_ili2db_dataset_21f8773d_884a_4ec4_8871_3ffe9267a651" id="t_ili2db_basket_dataset_fkey" providerKey="postgres" layerName="t_ili2db_dataset" strength="Association" dataSource="dbname='glarus' host=srv-gisiap-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;t_ili2db_dataset&quot;" referencingLayer="t_ili2db_basket_b1124310_3b35_41ff_b6cd_98b9261a77f6">
+        <relation referencedLayer="t_ili2db_dataset_21f8773d_884a_4ec4_8871_3ffe9267a651" name="t_ili2db_basket_dataset_fkey" layerId="t_ili2db_dataset_21f8773d_884a_4ec4_8871_3ffe9267a651" id="t_ili2db_basket_dataset_fkey" providerKey="postgres" layerName="t_ili2db_dataset" strength="Association" dataSource="dbname='glarus' host=srv-gisprod-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;t_ili2db_dataset&quot;" referencingLayer="t_ili2db_basket_b1124310_3b35_41ff_b6cd_98b9261a77f6">
           <fieldRef referencingField="dataset" referencedField="t_id"/>
         </relation>
       </referencedLayers>
@@ -4197,7 +4197,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer refreshOnNotifyMessage="" refreshOnNotifyEnabled="0" styleCategories="AllStyleCategories" autoRefreshTime="0" wkbType="NoGeometry" hasScaleBasedVisibilityFlag="0" type="vector" minScale="1e+08" maxScale="0" legendPlaceholderImage="" readOnly="1" geometry="No geometry" autoRefreshMode="Disabled">
       <id>t_ili2db_dataset_21f8773d_884a_4ec4_8871_3ffe9267a651</id>
-      <datasource>dbname='glarus' host=srv-gisiap-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table="gl_ersatzbiotope"."t_ili2db_dataset"</datasource>
+      <datasource>dbname='glarus' host=srv-gisprod-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table="gl_ersatzbiotope"."t_ili2db_dataset"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -4739,7 +4739,7 @@ def my_form_open(dialog, layer, feature):
       </spatialrefsys>
     </CoordinateCustomCrs>
   </ProjectDisplaySettings>
-  <ProjectGpsSettings destinationLayer="Ersatzbiotop_7ae428d3_64c2_4cf0_9ea9_58d6f75ef517" destinationLayerProvider="postgres" destinationLayerSource="dbname='glarus' host=srv-gisiap-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;ersatzbiotop&quot;" destinationFollowsActiveLayer="1" autoAddTrackVertices="0" autoCommitFeatures="0" destinationLayerName="Ersatzbiotop">
+  <ProjectGpsSettings destinationLayer="Ersatzbiotop_7ae428d3_64c2_4cf0_9ea9_58d6f75ef517" destinationLayerProvider="postgres" destinationLayerSource="dbname='glarus' host=srv-gisprod-02.glnet.ch port=5432 key='t_id' checkPrimaryKeyUnicity='1' table=&quot;gl_ersatzbiotope&quot;.&quot;ersatzbiotop&quot;" destinationFollowsActiveLayer="1" autoAddTrackVertices="0" autoCommitFeatures="0" destinationLayerName="Ersatzbiotop">
     <timeStampFields/>
   </ProjectGpsSettings>
 </qgis>
