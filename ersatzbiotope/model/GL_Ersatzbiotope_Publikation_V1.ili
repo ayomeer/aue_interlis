@@ -16,13 +16,7 @@ MODEL GL_Ersatzbiotope_Publikation_V1 (de) AT "https://www.gl.ch" VERSION "2021-
        * Dient der Bezeichnung im Datenviewer und auf Plaenen, sowie zum Zuordnen von Akten.
        */
       Teilobj_Nr : MANDATORY 1 .. 10000;
-      /** Bezeichnung der Teilobjektes innerhalb eines Biotopes, Flurname oder andere Lagebezeichnung.
-       * Dient der Bezeichnung im Datenviewer und auf Plaenen, sowie zum Zuordnen von Akten.
-       */
-       Kategorie_Ersatzmassnahme : TEXT*255;
-      /** Beschreibung des schuetzenswerten Lebensraumes
-       */
-      Ersatzmassnahme : MANDATORY TEXT*255;
+      Kategorie_Ersatzmassnahme : TEXT*255;
       Ziellebensraum : TEXT*255;
       Entscheide : MTEXT;
     END Teilobjekt;

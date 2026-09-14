@@ -1,9 +1,9 @@
 java -jar ili2pg-5.5.1.jar --schemaimport \
-  --dbhost localhost \
+  --dbhost srv-gisiap-02.glnet.ch \
   --dbport 5432 \
-  --dbdatabase test_db \
-  --dbusr postgres \
-  --dbpwd postgres \
+  --dbdatabase glarus \
+  --dbusr gisuploadmanager \
+  --dbpwd "$DB_PASSWORD" \
   --dbschema pub_gl_ersatzbiotope \
   --defaultSrsAuth EPSG \
   --defaultSrsCode 2056 \

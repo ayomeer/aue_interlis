@@ -4,7 +4,7 @@ java -jar ili2pg-5.5.1.jar --schemaimport \
   --dbdatabase glarus \
   --dbusr gisuploadmanager \
   --dbpwd $DB_PASSWORD \
-  --dbschema gl_ersatzbiotope \
+  --dbschema pub_gl_gsbohrung \
   --defaultSrsAuth EPSG \
   --defaultSrsCode 2056 \
   --createFk \
@@ -23,4 +23,4 @@ java -jar ili2pg-5.5.1.jar --schemaimport \
   --smart2Inheritance \
   --createMetaInfo \
   --iliMetaAttrs iliMetaAttrs.toml \
-  ersatzbiotope/model/GL_Ersatzbiotope_V1.ili # path to ili model passed as first argument when calling the script
+  gsbohrung/model/GL_Bohrkataster_Publikation_V1.ili # path to ili model passed as first argument when calling the script
