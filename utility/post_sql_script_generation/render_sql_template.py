@@ -28,7 +28,7 @@ if __name__ == '__main__':
     add_help=True,
   )
   parser.add_argument(
-      "--path_rendering_args",
+      "--path-rendering-args",
       "-a",
       dest="path_rendering_args",
       type=Path,
@@ -36,12 +36,12 @@ if __name__ == '__main__':
       help="Path to rendering args json file.",
   )
   parser.add_argument(
-      "--path_output",
+      "--path-output",
       "-o",
       dest="path_output",
       type=Path,
       default=default_output_path, # required=True,
-      help="Path of output directory for generated file.",
+      help="(Optional) Path of output directory for generated file. If omitted, output gets written to 'output' directory where this script is located.",
   )
   args = parser.parse_args()
 

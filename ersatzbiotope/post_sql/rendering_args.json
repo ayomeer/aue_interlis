@@ -24,7 +24,7 @@
         "target_column": "flaeche_m2"
       }
     },
-        {
+    {
       "table": "to_linie",
       "when": "update",
       "last_modified": true,

@@ -1,6 +1,9 @@
 INTERLIS 2.3;
 
-MODEL GL_Bohrkataster_Publikation_V1 (de) AT "https://www.gl.ch" VERSION "2026-09-14" =
+
+MODEL GL_Bohrkataster_Publikation_V1 (de) 
+AT "https://www.gl.ch" 
+VERSION "2026-09-14" =
     IMPORTS GeometryCHLV95_V1;
     
     DOMAIN
@@ -9,12 +12,12 @@ MODEL GL_Bohrkataster_Publikation_V1 (de) AT "https://www.gl.ch" VERSION "2026-0
     
     TOPIC Bohrungen =
         CLASS Grundwasserbohrung = 
-            Name: TEXT*255;
-            Typ: TEXT*255;
             Koordinate_E: X_COORD;
             Koordinate_N: Y_COORD;
+            Name: TEXT*255;
+            Typ: TEXT*255;
             Pdf: TEXT;
-            Geometrie: GeometryCHLV95_V1.Coord2;            
+            Geometrie: MANDATORY GeometryCHLV95_V1.Coord2;            
         END Grundwasserbohrung;
     END Bohrungen;
 

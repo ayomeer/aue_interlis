@@ -1,0 +1,18 @@
+{
+  "target_schema": "pub_gl_bohrkataster",
+  "owner": "dbu_aue_gsbohrung_write",
+  "read_role": "dbu_aue_gsbohrung_read",
+  "write_role": "dbu_aue_gsbohrung_write",
+  "catref_tables_to_drop": [
+  ],
+  "not_null_columns": [],
+  "t_ili_tid_as_uuid": [
+    {
+      "table": "grundwasserbohrung"
+    }
+  ],
+  "enum_consraints": [],
+  "add_last_modified_to_tables": [],
+  "column_comments": [],
+  "trigger_setup": [] 
+}

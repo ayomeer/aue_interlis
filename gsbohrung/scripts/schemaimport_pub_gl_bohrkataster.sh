@@ -4,7 +4,7 @@ java -jar ili2pg-5.5.1.jar --schemaimport \
   --dbdatabase glarus \
   --dbusr gisuploadmanager \
   --dbpwd $DB_PASSWORD \
-  --dbschema pub_gl_gsbohrung \
+  --dbschema pub_gl_bohrkataster \
   --defaultSrsAuth EPSG \
   --defaultSrsCode 2056 \
   --createFk \
@@ -23,4 +23,5 @@ java -jar ili2pg-5.5.1.jar --schemaimport \
   --smart2Inheritance \
   --createMetaInfo \
   --iliMetaAttrs iliMetaAttrs.toml \
+  --preScript gsbohrung/scripts/schemaimport_pub_gl_bohrkataster_pre-script.sql \
   gsbohrung/model/GL_Bohrkataster_Publikation_V1.ili # path to ili model passed as first argument when calling the script

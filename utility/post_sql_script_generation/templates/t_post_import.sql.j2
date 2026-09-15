@@ -22,6 +22,14 @@ ALTER TABLE <target_schema>.<constraint.table>
 ALTER COLUMN <constraint.column> SET NOT NULL;
 {%- endfor %}
 
+-- Configure uuid for t_ili_tid --------------------------------------------------------
+{%- for e in t_ili_tid_as_uuid %}
+ALTER TABLE <target_schema>.<e.table>
+ALTER COLUMN t_ili_tid TYPE uuid USING t_ili_tid::uuid;
+
+ALTER TABLE <target_schema>.<e.table>
+ALTER COLUMN t_ili_tid SET DEFAULT uuid_generate_v4();
+{%- endfor %}
 
 -- Create Domains for custom Enum-Types ------------------------------------------------
 {%- for constraint in enum_consraints %}
@@ -73,7 +81,7 @@ CREATE TRIGGER <setup.table>_update
   EXECUTE FUNCTION <target_schema>.<setup.table>_update();
 {%- endfor %}
 
--- Set up priviledges for schema -----------------------------------------------------
+-- Set up priviledges for schema and its tables ---------------------------------------
 GRANT USAGE ON SCHEMA <target_schema> TO <read_role>;
 
 GRANT ALL ON ALL TABLES IN SCHEMA <target_schema> TO <write_role>;

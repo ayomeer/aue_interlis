@@ -1,6 +1,8 @@
 {
   "target_schema": "",
   "owner": "",
+  "read_role": "",
+  "write_role": "",
   "catref_tables_to_drop": [
     "_catref"
   ],
@@ -8,6 +10,11 @@
     {
       "table": "",
       "column": ""
+    }
+  ],
+  "t_ili_tid_as_uuid": [
+    {
+      "table": ""
     }
   ],
   "enum_consraints": [
@@ -37,6 +44,15 @@
         "geom_column": "geo_obj",
         "target_column": "flaeche_m2"
       }
-    }
+    },
+    {
+      "table": "to_linie",
+      "when": "update",
+      "last_modified": true,
+      "length_calc": {
+        "geom_column": "geo_obj",
+        "target_column": "laenge_m"
+      }
+    },
   ] 
 }
