@@ -1,0 +1,77 @@
+INTERLIS 2.3;
+
+
+MODEL GL_Biotope_Publikation_V1 (de) 
+AT "https://www.gl.ch" 
+VERSION "2026-09-16" =
+    IMPORTS Units, GeometryCHLV95_V1, GL_Basis_Geometrie_V1;
+    
+    TOPIC Biotope =
+
+        CLASS Biotope_National =
+            Biotoptyp: TEXT*255;
+            Objektname: TEXT*255;
+            Objektnummer: TEXT*255;
+            Teilobjekt_Nummer: TEXT*255;
+            Geometrie: MANDATORY GeometryCHLV95_V1.MultiSurface; 
+            Flaeche_A: 0 .. 9999999 [Units.a];
+        END Biotope_National;
+
+        CLASS Biotope_Flaechen = 
+            objekt_nummer: TEXT*255;
+            teilobj_nummer: TEXT*255;
+            objekt_name: TEXT*255;
+            teilobjekt_name: TEXT*255;
+            
+            bund_nummer: TEXT*255;
+            bund_teilobj_nr: TEXT*255;
+            bund_name: TEXT*255;
+            bund_typ: TEXT*255;
+
+            biotopart: TEXT*255;
+            beschreibung: TEXT;
+            bedeutung: TEXT*255;
+
+            spezielle_arten: TEXT;
+
+            geometrie: MANDATORY GeometryCHLV95_V1.MultiSurface; 
+            flaeche_ha: 0.0 .. 99999.0 [Units.ha];
+        END Biotope_Flaechen;
+
+        CLASS Biotope_Linien = 
+            objekt_nummer: TEXT*255;
+            teilobj_nummer: TEXT*255;
+            objekt_name: TEXT*255;
+            teilobjekt_name: TEXT*255;
+            
+            bund_nummer: TEXT*255;
+            bund_teilobj_nr: TEXT*255;
+            bund_name: TEXT*255;
+            bund_typ: TEXT*255;
+            
+            biotopart: TEXT*255;
+            beschreibung: TEXT;
+            
+            geometrie: MANDATORY GeometryCHLV95_V1.MultiLine;
+            laenge_m: 0.0 .. 100000.0 [INTERLIS.m];
+        END Biotope_Linien;
+
+        CLASS Biotope_Punkte = 
+            objekt_nummer: TEXT*255;
+            teilobj_nummer: TEXT*255;
+            objekt_name: TEXT*255;
+            teilobjekt_name: TEXT*255;
+            
+            bund_nummer: TEXT*255;
+            bund_teilobj_nr: TEXT*255;
+            bund_name: TEXT*255;
+            bund_typ: TEXT*255;
+            
+            biotopart: TEXT*255;
+            beschreibung: TEXT;
+            
+            geometrie: MANDATORY GL_Basis_Geometrie_V1.MultiPoint;
+        END Biotope_Punkte;
+
+    END Biotope;
+END GL_Biotope_Publikation_V1. 

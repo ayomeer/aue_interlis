@@ -1,0 +1,1 @@
+DROP SCHEMA IF EXISTS pub_gl_biotope CASCADE;

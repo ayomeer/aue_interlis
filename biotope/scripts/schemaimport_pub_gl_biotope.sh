@@ -1,0 +1,27 @@
+java -jar ili2pg-5.5.1.jar --schemaimport \
+  --dbhost srv-gisiap-02.glnet.ch \
+  --dbport 5432 \
+  --dbdatabase glarus \
+  --dbusr gisuploadmanager \
+  --dbpwd $DB_PASSWORD \
+  --dbschema pub_gl_biotope \
+  --defaultSrsAuth EPSG \
+  --defaultSrsCode 2056 \
+  --createFk \
+  --createFkIdx \
+  --createGeomIdx \
+  --createTidCol \
+  --createBasketCol \
+  --createNumChecks \
+  --createUnique \
+  --setupPgExt \
+  --strokeArcs \
+  --coalesceCatalogueRef \
+  --coalesceMultiSurface \
+  --coalesceMultiPoint \
+  --coalesceMultiLine \
+  --smart2Inheritance \
+  --createMetaInfo \
+  --iliMetaAttrs iliMetaAttrs.toml \
+  --preScript biotope/scripts/schemaimport_pub_gl_biotope_pre-script.sql \
+    biotope/model/GL_Biotope_Publikation_V1.ili # name of ili model passed as first argument when calling the script
