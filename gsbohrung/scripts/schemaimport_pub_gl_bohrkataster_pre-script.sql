@@ -1,1 +1,1 @@
-DROP SCHEMA IF EXISTS pub_gl_gsbohrung CASCADE;
+DROP SCHEMA IF EXISTS pub_gl_bohrkataster CASCADE;
