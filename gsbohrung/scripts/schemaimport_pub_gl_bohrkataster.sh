@@ -24,4 +24,5 @@ java -jar ili2pg-5.5.1.jar --schemaimport \
   --createMetaInfo \
   --iliMetaAttrs iliMetaAttrs.toml \
   --preScript gsbohrung/scripts/schemaimport_pub_gl_bohrkataster_pre-script.sql \
+  --postScript gsbohrung/scripts/post_sql_pub_gl_bohrkataster.sql \
   gsbohrung/model/GL_Bohrkataster_Publikation_V1.ili # path to ili model passed as first argument when calling the script
