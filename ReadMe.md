@@ -8,6 +8,8 @@ Centralized repo for all things schema modelling.
 
 2) Check out the `scripts` directory for the given project. There you will find a `schemaimport_<schema_name>.sh` script. Additionally, there may be pre and post sql scripts which are ran before and after the schema import to prepare (usually just drop the existing schema if it already exists) and configure the created schema further (set up roles, etc). 
 
+    > ⚠️ If the postScript includes trigger function setup, it won't be run as a postScript of the schemaimport shell script because ili2pg doesn't parse it correctly. In that case, run the postScript manually in pgAdmin. 
+
 3) Execute the schemaimport script. For Example:
     ```bash
     ./gsbohrung/scripts/schemaimport_pub_gl_bohrkataster.sh 
@@ -29,6 +31,12 @@ The most common cause of this is that a QGIS Model Baker project was blocking th
 
 **Solution:**
 Make sure QGIS is closed and re-import the schema.
+
+#### Schemaimport postScript fails with error about unterminated function body (missing $$)
+The SQL script passed via the `--postScript` argument is chunked into statements by splitting naively at `;`. Since function definitions use `;` within the body, the naive chunking breaks the script.
+
+**Solution:**
+Don't use `--postScript` and run the post-script manually in pgAdmin. 
 
 ## Todo
 
