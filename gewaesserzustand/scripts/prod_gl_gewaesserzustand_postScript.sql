@@ -195,4 +195,13 @@ GRANT ALL ON ALL TABLES IN SCHEMA prod_gl_gewaesserzustand TO prod_gl_gewaesserz
 GRANT SELECT ON ALL TABLES IN SCHEMA prod_gl_gewaesserzustand TO prod_gl_gewaesserzustand_read;
 
 -- Column Comments -------------------------------------------------------------------
+COMMENT ON COLUMN prod_gl_gewaesserzustand.messgruppierung.gueltig_bis 
+  IS 'In Betrieb: 31.12.2999 (defaultwert), sonst Abschlussdatum';
+COMMENT ON COLUMN prod_gl_gewaesserzustand.werterhebung.gueltig_bis 
+  IS 'In Betrieb: 31.12.2999 (defaultwert), sonst Abschlussdatum';
+COMMENT ON COLUMN prod_gl_gewaesserzustand.messnetz.gueltig_bis 
+  IS 'In Betrieb: 31.12.2999 (defaultwert), sonst Abschlussdatum';
+COMMENT ON COLUMN prod_gl_gewaesserzustand.werterhebung.vorgaenger 
+  IS 'Falls Zeitreihen von nahe gelegenen Stationen zusammengeführt werden, weil sie homogen sind, wird der Code der Station der zugeordneten Zeitreihe angegeben. ';
+
 
