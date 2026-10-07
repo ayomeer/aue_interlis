@@ -33,7 +33,7 @@ ALTER COLUMN t_ili_tid SET DEFAULT uuid_generate_v4();
 
 -- Create Domains for custom Enum-Types ------------------------------------------------
 {%- for constraint in enum_consraints %}
-{%- set domain_name = target_schema ~'.' ~ constraint.table ~ '_' ~ constraint.name -%}
+{% set domain_name = target_schema ~'.' ~ constraint.table ~ '_' ~ constraint.name -%}
 CREATE DOMAIN <domain_name> as TEXT
 CHECK (VALUE IN ('< constraint["values"] | join("','") >'));
 
