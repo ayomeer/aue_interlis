@@ -65,9 +65,13 @@ Teil der Vereinfachungen gegenüber dem MGDM 134.1 ist, dass grundsätzlich alle
 
 Es können jedoch ohne weiteres auch neue Messnetze und Verantwortlichkeiten erfasst und verknüpft werden. Diese können direkt in den respektiven Layern `Messnetz` und `Verantwortlichkeit` hinzugefügt werden und stehen dann in Assoziierten Objekten als Auswahl zur Verfügen.
 
+> ℹ️ Nur das Default-Messnetz 'Messnetz Kt. Glarus' wird für den Export in das MGDM berücksichtigt, welches dem Bund abgegeben wird. 
+
+
 ## Todo
 
-- [ ] Konvention für Feld `Messgruppierung.Code` festlegen.
+- [ ] Konvention für Feld `Messgruppierung.Code` festlegen
+  - Anina frägt nach
 
 
 ## Verwandte Themen
