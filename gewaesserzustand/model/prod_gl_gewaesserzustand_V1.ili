@@ -115,6 +115,7 @@ VERSION "2026-08-01" =
       Erhebung : MANDATORY Prod_Gewaesserzustand_V1.Codelisten.Erhebung_CatRef;
       Periodizitaet : Prod_Gewaesserzustand_V1.Codelisten.Periodizitaet_CatRef;
       Vorgaenger : TEXT;
+      Bericht_Pdf: TEXT;
     END Werterhebung;
 	
     !!@ qgis.modelbaker.dispExpression="Code"

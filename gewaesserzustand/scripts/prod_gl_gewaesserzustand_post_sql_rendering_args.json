@@ -1,0 +1,50 @@
+{
+  "target_schema": "prod_gl_gewaesserzustand",
+  "owner": "prod_gl_gewaesserzustand_write",
+  "read_role": "prod_gl_gewaesserzustand_read",
+  "write_role": "prod_gl_gewaesserzustand_write",
+  "catref_tables_to_drop": [],
+  "not_null_columns": [],
+  "t_ili_tid_as_uuid": [],
+  "enum_consraints": [
+    {
+      "name": "standort_typ_enum",
+      "table": "messgruppierung",
+      "column": "standort_typ",
+      "values": ["Probeentnahmestandort", "Stationsstandort"] 
+    } 
+  ],
+  "column_comments": [],
+  "trigger_setup": [
+    {
+      "table": "verantwortlichkeit",
+      "when": "update",
+      "last_modified": true
+    },
+    {
+      "table": "messnetz",
+      "when": "update",
+      "last_modified": true
+    },
+    {
+      "table": "messgruppierung",
+      "when": "update",
+      "last_modified": true
+    },
+    {
+      "table": "werterhebung",
+      "when": "update",
+      "last_modified": true
+    },
+    {
+      "table": "adresse",
+      "when": "update",
+      "last_modified": true
+    },
+    {
+      "table": "telefon",
+      "when": "update",
+      "last_modified": true
+    }
+  ] 
+}
