@@ -27,10 +27,10 @@ ALTER COLUMN t_ili_tid SET DEFAULT uuid_generate_v4();
 -- Add Trigger Setup ------------------------------------------------------------
 
 -- Set up priviledges for schema and its tables ---------------------------------------
-GRANT USAGE ON SCHEMA pub_gl_bohrkataster TO dbu_aue_gsbohrung_read;
-
-GRANT ALL ON ALL TABLES IN SCHEMA pub_gl_bohrkataster TO dbu_aue_gsbohrung_write;
-GRANT SELECT ON ALL TABLES IN SCHEMA pub_gl_bohrkataster TO dbu_aue_gsbohrung_read;
+GRANT USAGE ON SCHEMA pub_gl_denkmalpflege TO verwaltung_read;
+GRANT USAGE ON SCHEMA pub_gl_denkmalpflege TO web_view;
+GRANT SELECT ON ALL TABLES IN SCHEMA pub_gl_bohrkataster TO verwaltung_read;
+GRANT SELECT ON ALL TABLES IN SCHEMA pub_gl_bohrkataster TO web_view;
 
 -- Column Comments -------------------------------------------------------------------
 

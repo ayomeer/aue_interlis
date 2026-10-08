@@ -3,6 +3,7 @@
   "owner": "dbu_aue_gsbohrung_write",
   "read_role": "dbu_aue_gsbohrung_read",
   "write_role": "dbu_aue_gsbohrung_write",
+  "is_pub_schema": true,
   "catref_tables_to_drop": [
   ],
   "not_null_columns": [],

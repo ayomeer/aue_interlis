@@ -41,7 +41,7 @@ ALTER TABLE <target_schema>.<constraint.table>
 ALTER COLUMN <constraint.column> TYPE <domain_name>;
 {%- endfor %}
 
--- Add Trigger Setup ------------------------------------------------------------
+-- Add Trigger Setup -------------------------------------------------------------------
 {%- for setup in trigger_setup %}
 
 -- <setup.table>
@@ -82,10 +82,16 @@ CREATE TRIGGER <setup.table>_update
 {%- endfor %}
 
 -- Set up priviledges for schema and its tables ---------------------------------------
+{%- if is_pub_schema %}
+GRANT USAGE ON SCHEMA pub_gl_denkmalpflege TO verwaltung_read;
+GRANT USAGE ON SCHEMA pub_gl_denkmalpflege TO web_view;
+GRANT SELECT ON ALL TABLES IN SCHEMA <target_schema> TO verwaltung_read;
+GRANT SELECT ON ALL TABLES IN SCHEMA <target_schema> TO web_view;
+{%- else %}
 GRANT USAGE ON SCHEMA <target_schema> TO <read_role>;
-
 GRANT ALL ON ALL TABLES IN SCHEMA <target_schema> TO <write_role>;
 GRANT SELECT ON ALL TABLES IN SCHEMA <target_schema> TO <read_role>;
+{%- endif %}
 
 -- Column Comments -------------------------------------------------------------------
 {%- for column in column_comments %}

@@ -3,6 +3,7 @@
   "owner": "",
   "read_role": "",
   "write_role": "",
+  "is_pub_schema": false,
   "catref_tables_to_drop": [
     "_catref"
   ],
@@ -50,6 +51,6 @@
         "geom_column": "geo_obj",
         "target_column": "laenge_m"
       }
-    },
+    }
   ] 
 }
