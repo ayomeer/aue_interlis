@@ -1,3 +1,4 @@
+# Reference script for new model-specific import scripts
 java -jar ili2pg-5.5.1.jar --schemaimport \
   --dbhost localhost \
   --dbport 5432 \
@@ -7,7 +8,6 @@ java -jar ili2pg-5.5.1.jar --schemaimport \
   --dbschema $2 \
   --defaultSrsAuth EPSG \
   --defaultSrsCode 2056 \
-  --createFk \
   --createFkIdx \
   --createGeomIdx \
   --createTidCol \
