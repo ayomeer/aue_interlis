@@ -7,7 +7,6 @@ java -jar ili2pg-5.5.1.jar --schemaimport \
   --dbschema prod_gl_gewaesserzustand \
   --defaultSrsAuth EPSG \
   --defaultSrsCode 2056 \
-  --createFk \
   --createFkIdx \
   --createGeomIdx \
   --createTidCol \
@@ -25,5 +24,3 @@ java -jar ili2pg-5.5.1.jar --schemaimport \
   --iliMetaAttrs iliMetaAttrs.toml \
   --preScript gewaesserzustand/scripts/prod_gl_gewaesserzustand_preScript.sql \
   gewaesserzustand/model/prod_gl_gewaesserzustand_V1.ili # path to ili model passed as first argument when calling the script
-
-# TODO: remove --createFK if this script is used again!

@@ -7,7 +7,6 @@ java -jar ili2pg-5.5.1.jar --schemaimport \
   --dbschema pub_gl_biotope \
   --defaultSrsAuth EPSG \
   --defaultSrsCode 2056 \
-  --createFk \
   --createFkIdx \
   --createGeomIdx \
   --createTidCol \
