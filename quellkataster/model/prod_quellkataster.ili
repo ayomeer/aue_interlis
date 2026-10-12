@@ -5,31 +5,49 @@ MODEL Prod_Quellkataster_V1
   VERSION "2026-04-07" =
 
   !! Modelle importieren, in welche später exportiert werden muss
-  IMPORTS Grundwasseraustritte_V2_0;
+  IMPORTS Grundwasseraustritte_V2_0, GeometryCHLV95_V1;
   IMPORTS Units;
 
-  TOPIC Quelle =
+  TOPIC Grundwasseraustritte =
 
     DOMAIN 
       NumericOK = 0 .. 2999;
       NumericSchachtueberstand = 0 .. 1000 [Units.cm];
 
-    !! UNIT
-    !!   Zeit (ABSTRACT);
-    !!   Sekunde [s] EXTENDS Zeit;
-    !!   Minute = 60 [s];
-    !!   Stunde = 60 [Minute];
-    !!   Uhrzeit = {Stunde:Minute[0 .. 59]} CONTINUOUS;
+    CLASS Quelle =
+      !! --- MGDM Attributen -------------------------------------------------------- !!
+      !! (Kopiert von Grundwasseraustritte_V2_0.Grundwasseraustritte.Quelle)
 
+      Identifikator : MANDATORY Grundwasseraustritte_V2_0.IdentifikatorTyp;
+      Name : TEXT*255;
+      Grundwasserleiter_Typ : MANDATORY(Lockergestein,Kluft,Karst,gemischt,unbestimmt);
+      Quelltyp: TEXT*255;
+      Fassungsart : MANDATORY (ungefasst,
+                               gefasst(
+                                 direkt, 
+                                 Fassungsstrang, 
+                                 Fassungsstollen, 
+                                 unbestimmt)
+                              );
+      Nutzungszustand : Grundwasseraustritte_V2_0.Grundwasseraustritte.Nutzungszustand;
+      Trinkwasser : Grundwasseraustritte_V2_0.JaNeinUnbestimmt;
+      Zweck : TEXT*255;
+      Oeffentliches_Interesse : Grundwasseraustritte_V2_0.JaNeinUnbestimmt;
+      Schuettung_minimal: Grundwasseraustritte_V2_0.LiterMinute; !! MANDATOR in MGDM
+      Schuettung_mittel:  Grundwasseraustritte_V2_0.LiterMinute; !! MANDATOR in MGDM
+      Schuettung_maximal: Grundwasseraustritte_V2_0.LiterMinute; !! MANDATOR in MGDM
+      Zustroembereich_erforderlich : Grundwasseraustritte_V2_0.JaNeinUnbestimmt;
+      Geometrie : MANDATORY GeometryCHLV95_V1.Coord2;
+      Name_WV : TEXT*255;
 
-    CLASS Quelle_intern EXTENDS Grundwasseraustritte_V2_0.Grundwasseraustritte.Quelle =
+      !! --- Interen Attributen ----------------------------------------------------- !!
       !! Identifikation
       Ordnungs_Nr: TEXT*255;
     
       !! Position
       Ortschaft: TEXT*255;
       Postleitzahl: TEXT*255;
-      ParzNr: TEXT*255;
+      Parz_Nr: TEXT*255;
       Hoehe: 0 .. 2999 [INTERLIS.m]; !! <- alpquellen höhe hier rein?
       Lagegenauigkeit: TEXT*255;
       
@@ -59,33 +77,32 @@ MODEL Prod_Quellkataster_V1
       Aufgenommen_durch: TEXT*255; 
       Erhebungsdatum: INTERLIS.XMLDate;
       Feldbegehung: INTERLIS.XMLDate;
-      Objektbereinigung: INTERLIS.XMLDate; !! really need this?
+      Objektbereinigung: INTERLIS.XMLDate; 
 
       !! Andere
-      Schutzzone_erforderlich: BOOLEAN;
+      Schutzzone: TEXT*255;
       Kontaktperson: TEXT*255;
       Bemerkungen: MTEXT*1023;
-    END Quelle_intern;
+    END Quelle; !! End Class
 
-    !! CLASS Messdaten_intern =
-    !!   Entnahmedatum: INTERLIS.XMLDate;
-    !!   !! Entnahme: Uhrzeit;
-    !!   Witterung: (leichter Regen, 
-    !!               starker Regen,
-    !!               Sommergewitter,
-    !!               Schneefall,
-    !!               Tauwetter,
-    !!               Nebel,
-    !!               trocken,
-    !!               schön);
-    !!   Schuettungsmenge
-    !!   Wassertemperatur
-    !!   pH-Wert
-    !!   Sauerstoff
-    !!   Sauerstoffsättigung
-    !!   Chemische Analysen
-    !!   Bemerkungen
-    !! END Messdaten_intern;
+    CLASS Messdaten =
+      Entnahmedatum: INTERLIS.XMLDate;
+      Entnahmezeit: INTERLIS.XMLTime;
+      Witterung: TEXT*255;
+      Schuettungsmenge: Grundwasseraustritte_V2_0.LiterMinute;
+      Wassertemperatur: -100.0 .. 100.0;
+      pH_Wert: TEXT*255; !! nur handvoll Werte
+      Sauerstoff: TEXT*255; !! keine Werte
+      Sauerstoffsaettigung: TEXT*255; !! keine Werte
+      Chemische_Analysen: TEXT*255; !! keine Werte
+      Bemerkungen: TEXT*255;
+    END Messdaten;
 
-  END Quelle;
-END Prod_Quellkataster_V1.
+    ASSOCIATION QuelleMessdaten = 
+      von_quelle -- {1} Quelle;
+      hat_messung -- {0..*} Messdaten;
+    END QuelleMessdaten;
+
+
+  END Grundwasseraustritte; !! End Topic
+END Prod_Quellkataster_V1. !! End Model
