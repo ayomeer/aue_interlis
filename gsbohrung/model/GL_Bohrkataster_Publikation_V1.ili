@@ -7,8 +7,10 @@ VERSION "2026-09-14" =
     IMPORTS GeometryCHLV95_V1;
     
     DOMAIN
-        X_COORD = 2460000.000 .. 2870000.000 [INTERLIS.m];
-        Y_COORD = 1045000.000 .. 1310000.000 [INTERLIS.m];
+        X_COORD = 2460000 .. 2870000 [INTERLIS.m];
+        Y_COORD = 1045000 .. 1310000 [INTERLIS.m];
+
+        ABLAGENR = 0 .. 9999;
     
     TOPIC Bohrungen =
         CLASS Grundwasserbohrung = 
@@ -16,6 +18,7 @@ VERSION "2026-09-14" =
             Koordinate_N: Y_COORD;
             Name: TEXT*255;
             Typ: TEXT*255;
+            Ablagenummer: ABLAGENR;
             Bohrprofil_Pdf: TEXT;
             Geometrie: MANDATORY GeometryCHLV95_V1.Coord2;            
         END Grundwasserbohrung;
