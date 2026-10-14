@@ -13,7 +13,7 @@ VERSION "2026-09-14" =
         ABLAGENR = 0 .. 9999;
     
     TOPIC Bohrungen =
-        CLASS Grundwasserbohrung = 
+        CLASS Sondierungen = 
             Koordinate_E: X_COORD;
             Koordinate_N: Y_COORD;
             Name: TEXT*255;
@@ -21,7 +21,7 @@ VERSION "2026-09-14" =
             Ablagenummer: ABLAGENR;
             Bohrprofil_Pdf: TEXT;
             Geometrie: MANDATORY GeometryCHLV95_V1.Coord2;            
-        END Grundwasserbohrung;
+        END Sondierungen;
     END Bohrungen;
 
 END GL_Bohrkataster_Publikation_V1. 
