@@ -16,10 +16,10 @@
 -- Add NOT NULL constraints ------------------------------------------------------------
 
 -- Configure uuid for t_ili_tid --------------------------------------------------------
-ALTER TABLE pub_gl_bohrkataster.grundwasserbohrung
+ALTER TABLE pub_gl_bohrkataster.sondierungen
 ALTER COLUMN t_ili_tid TYPE uuid USING t_ili_tid::uuid;
 
-ALTER TABLE pub_gl_bohrkataster.grundwasserbohrung
+ALTER TABLE pub_gl_bohrkataster.sondierungen
 ALTER COLUMN t_ili_tid SET DEFAULT uuid_generate_v4();
 
 -- Create Domains for custom Enum-Types ------------------------------------------------
@@ -27,8 +27,8 @@ ALTER COLUMN t_ili_tid SET DEFAULT uuid_generate_v4();
 -- Add Trigger Setup ------------------------------------------------------------
 
 -- Set up priviledges for schema and its tables ---------------------------------------
-GRANT USAGE ON SCHEMA pub_gl_denkmalpflege TO verwaltung_read;
-GRANT USAGE ON SCHEMA pub_gl_denkmalpflege TO web_view;
+GRANT USAGE ON SCHEMA pub_gl_bohrkataster TO verwaltung_read;
+GRANT USAGE ON SCHEMA pub_gl_bohrkataster TO web_view;
 GRANT SELECT ON ALL TABLES IN SCHEMA pub_gl_bohrkataster TO verwaltung_read;
 GRANT SELECT ON ALL TABLES IN SCHEMA pub_gl_bohrkataster TO web_view;
 
