@@ -53,6 +53,12 @@ CREATE TRIGGER verantwortlichkeit_update
   FOR EACH ROW
   EXECUTE FUNCTION prod_gl_gewaesserzustand.verantwortlichkeit_update();
 
+CREATE TRIGGER verantwortlichkeit_insert
+  BEFORE INSERT
+  ON prod_gl_gewaesserzustand.verantwortlichkeit
+  FOR EACH ROW
+  EXECUTE FUNCTION prod_gl_gewaesserzustand.verantwortlichkeit_update();
+
 -- messnetz
 ALTER TABLE prod_gl_gewaesserzustand.messnetz
 ADD COLUMN last_modified timestamp without time zone;
@@ -76,6 +82,12 @@ ALTER FUNCTION prod_gl_gewaesserzustand.messnetz_update()
 
 CREATE TRIGGER messnetz_update
   BEFORE UPDATE
+  ON prod_gl_gewaesserzustand.messnetz
+  FOR EACH ROW
+  EXECUTE FUNCTION prod_gl_gewaesserzustand.messnetz_update();
+
+CREATE TRIGGER messnetz_insert
+  BEFORE INSERT
   ON prod_gl_gewaesserzustand.messnetz
   FOR EACH ROW
   EXECUTE FUNCTION prod_gl_gewaesserzustand.messnetz_update();
@@ -107,6 +119,12 @@ CREATE TRIGGER messgruppierung_update
   FOR EACH ROW
   EXECUTE FUNCTION prod_gl_gewaesserzustand.messgruppierung_update();
 
+CREATE TRIGGER messgruppierung_insert
+  BEFORE INSERT
+  ON prod_gl_gewaesserzustand.messgruppierung
+  FOR EACH ROW
+  EXECUTE FUNCTION prod_gl_gewaesserzustand.messgruppierung_update();
+
 -- werterhebung
 ALTER TABLE prod_gl_gewaesserzustand.werterhebung
 ADD COLUMN last_modified timestamp without time zone;
@@ -130,6 +148,12 @@ ALTER FUNCTION prod_gl_gewaesserzustand.werterhebung_update()
 
 CREATE TRIGGER werterhebung_update
   BEFORE UPDATE
+  ON prod_gl_gewaesserzustand.werterhebung
+  FOR EACH ROW
+  EXECUTE FUNCTION prod_gl_gewaesserzustand.werterhebung_update();
+
+CREATE TRIGGER werterhebung_insert
+  BEFORE INSERT
   ON prod_gl_gewaesserzustand.werterhebung
   FOR EACH ROW
   EXECUTE FUNCTION prod_gl_gewaesserzustand.werterhebung_update();
@@ -161,6 +185,12 @@ CREATE TRIGGER adresse_update
   FOR EACH ROW
   EXECUTE FUNCTION prod_gl_gewaesserzustand.adresse_update();
 
+CREATE TRIGGER adresse_insert
+  BEFORE INSERT
+  ON prod_gl_gewaesserzustand.adresse
+  FOR EACH ROW
+  EXECUTE FUNCTION prod_gl_gewaesserzustand.adresse_update();
+
 -- telefon
 ALTER TABLE prod_gl_gewaesserzustand.telefon
 ADD COLUMN last_modified timestamp without time zone;
@@ -184,6 +214,12 @@ ALTER FUNCTION prod_gl_gewaesserzustand.telefon_update()
 
 CREATE TRIGGER telefon_update
   BEFORE UPDATE
+  ON prod_gl_gewaesserzustand.telefon
+  FOR EACH ROW
+  EXECUTE FUNCTION prod_gl_gewaesserzustand.telefon_update();
+
+CREATE TRIGGER telefon_insert
+  BEFORE INSERT
   ON prod_gl_gewaesserzustand.telefon
   FOR EACH ROW
   EXECUTE FUNCTION prod_gl_gewaesserzustand.telefon_update();
