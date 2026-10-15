@@ -51,7 +51,7 @@ ALTER TABLE <target_schema>.<setup.table>
 ADD COLUMN last_modified timestamp without time zone;
 {%- endif %}
 
-CREATE FUNCTION <target_schema>.<setup.table>_update()
+CREATE FUNCTION <target_schema>.<setup.table>__insert_or_update()
   RETURNS TRIGGER
   LANGUAGE 'plpgsql'
 AS $BODY$
@@ -71,14 +71,20 @@ RETURN NEW;
 END;
 $BODY$;
 
-ALTER FUNCTION <target_schema>.<setup.table>_update()
+ALTER FUNCTION <target_schema>.<setup.table>__insert_or_update()
   OWNER TO <owner>;
 
-CREATE TRIGGER <setup.table>_update
+CREATE TRIGGER <setup.table>__insert_or_update
   BEFORE UPDATE
   ON <target_schema>.<setup.table>
   FOR EACH ROW
-  EXECUTE FUNCTION <target_schema>.<setup.table>_update();
+  EXECUTE FUNCTION <target_schema>.<setup.table>__insert_or_update();
+
+CREATE TRIGGER <setup.table>_insert
+  BEFORE INSERT
+  ON <target_schema>.<setup.table>
+  FOR EACH ROW
+  EXECUTE FUNCTION <target_schema>.<setup.table>__insert_or_update();
 {%- endfor %}
 
 -- Set up priviledges for schema and its tables ---------------------------------------
