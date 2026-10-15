@@ -1,0 +1,291 @@
+INTERLIS 2.4;
+!!QWFIXME translation to FR/IT? cf. https://www.geo.admin.ch/dam/de/sd-web/OPiTupSz8HJf/Empfehlungen-minimaleGeodatenmodelle_20120117_de.pdf Empfehlungen 15+16
+
+!! Version    | Who        | Modification
+!!--------------------------------------------------------------------------------------
+!! 2026-10-05 | QW         | Transform Umsetzungsstand into a class, add constraints on AM/HM sectors
+!! 2026-09-17 | QW         | Adaptation to latest decisions
+!! 2026-09-16 | QW         | Full rewrite for new structure
+!! 2026-05-12 | QW         | Further inclusion of AM-specific content (KarchNummer)
+!! 2026-05-12 | QW         | Simplification for buffer zones (Pufferzone, Umsetzungsstand, constraints); no views needed anymore
+!! 2026-05-12 | QW         | MultilingualMText for Herkunft and Mutationsgrund
+!! 2026-05-12 | QW         | Bundesnummer -> Bundesnummern BAG OF
+!! 2026-05-12 | QW         | Identifikator -> Nummer (only Biotop, Schutz)
+!! 2026-05-11 | QW         | Feedback AND: MultilingualMText, MultiSurfaceWithoutArcs, no runtime parameter
+!! 2026-05-06 | QW         | Misc. small adaptations
+!! 2026-05-06 | QW         | Inclusion of AM and TW-specific content
+!! 2026-05-06 | QW         | Deletion of class Managementplan (+ catalogue Inhalt), attribute in Biotop instead
+!! 2026-05-06 | QW         | Renaming of class RechtlicheSicherung -> Schutz
+!! 2026-05-06 | QW         | Deletion of constraint Biotop.Bedeutung == N => objectCount(Werteeinheiten) > 0
+!! 2026-04-29 | QW         | Fix of PZ1 constraints constants in Umsetzungsstand
+!! 2026-04-29 | QW         | Initial version
+
+!!@ technicalContact=mailto:gis@bafu.admin.ch
+!!QWNOTE     uebf uebl uebp am   am_w au   hm   fm   tw
+!!@ IDGeoIV="23.1,23.2,23.3,29.1,29.2,26.1,27.1,28.1,189.1"
+!!@ furtherInformation=https://www.bafu.admin.ch/geodatenmodelle
+MODEL kt_Biotope_V2_0 (de)
+AT "https://models.geo.admin.ch/BAFU/"
+VERSION "2026-10-08" =
+  IMPORTS GeometryCHLV95_V2, LocalisationCH_V2, CatalogueObjects_V2, CHAdminCodes_V2, Units;
+
+  TOPIC Codelisten
+  EXTENDS CatalogueObjects_V2.Catalogues =
+
+!!QWTODO reformat once we're ready
+
+!!QWNOTE common
+    CLASS                Bedeutung_Catalogue EXTENDS CatalogueObjects_V2.Catalogues.Item = Code: MANDATORY TEXT; Definition: MANDATORY LocalisationCH_V2.MultilingualText;
+    END                  Bedeutung_Catalogue;
+    CLASS         Sanierungsbedarf_Catalogue EXTENDS CatalogueObjects_V2.Catalogues.Item = Code: MANDATORY TEXT; Definition: MANDATORY LocalisationCH_V2.MultilingualText;
+    END           Sanierungsbedarf_Catalogue;
+    CLASS           Bundesinventar_Catalogue EXTENDS CatalogueObjects_V2.Catalogues.Item = Code: MANDATORY TEXT; Definition: MANDATORY LocalisationCH_V2.MultilingualText;
+    END             Bundesinventar_Catalogue;
+    CLASS         Pflegeinstrument_Catalogue EXTENDS CatalogueObjects_V2.Catalogues.Item = Code: MANDATORY TEXT; Definition: MANDATORY LocalisationCH_V2.MultilingualText;
+    END           Pflegeinstrument_Catalogue;
+    CLASS  ObjektspezifischePflege_Catalogue EXTENDS CatalogueObjects_V2.Catalogues.Item = Code: MANDATORY TEXT; Definition: MANDATORY LocalisationCH_V2.MultilingualText;
+    END    ObjektspezifischePflege_Catalogue;
+    CLASS  OekologischesAusreichen_Catalogue EXTENDS CatalogueObjects_V2.Catalogues.Item = Code: MANDATORY TEXT; Definition: MANDATORY LocalisationCH_V2.MultilingualText;
+    END    OekologischesAusreichen_Catalogue;
+    CLASS                 Funktion_Catalogue EXTENDS CatalogueObjects_V2.Catalogues.Item = Code: MANDATORY TEXT; Definition: MANDATORY LocalisationCH_V2.MultilingualText;
+    END                   Funktion_Catalogue;
+    CLASS                  Methode_Catalogue EXTENDS CatalogueObjects_V2.Catalogues.Item = Code: MANDATORY TEXT; Definition: MANDATORY LocalisationCH_V2.MultilingualText;
+    END                    Methode_Catalogue;
+    CLASS             Ausscheidung_Catalogue EXTENDS CatalogueObjects_V2.Catalogues.Item = Code: MANDATORY TEXT; Definition: MANDATORY LocalisationCH_V2.MultilingualText;
+    END               Ausscheidung_Catalogue;
+    CLASS      RechtlicheSicherung_Catalogue EXTENDS CatalogueObjects_V2.Catalogues.Item = Code: MANDATORY TEXT; Definition: MANDATORY LocalisationCH_V2.MultilingualText;
+    END        RechtlicheSicherung_Catalogue;
+    CLASS             Rechtsstatus_Catalogue EXTENDS CatalogueObjects_V2.Catalogues.Item = Code: MANDATORY TEXT; Definition: MANDATORY LocalisationCH_V2.MultilingualText;
+    END               Rechtsstatus_Catalogue;
+    CLASS              Schutzdauer_Catalogue EXTENDS CatalogueObjects_V2.Catalogues.Item = Code: MANDATORY TEXT; Definition: MANDATORY LocalisationCH_V2.MultilingualText;
+    END                Schutzdauer_Catalogue;
+
+!!QWNOTE AM
+    CLASS      AmphibienBereichTyp_Catalogue EXTENDS CatalogueObjects_V2.Catalogues.Item = Code: MANDATORY TEXT; Definition: MANDATORY LocalisationCH_V2.MultilingualText;
+    END        AmphibienBereichTyp_Catalogue;
+
+!!QWNOTE AU
+    CLASS                  AuenTyp_Catalogue EXTENDS CatalogueObjects_V2.Catalogues.Item = Code: MANDATORY TEXT; Definition: MANDATORY LocalisationCH_V2.MultilingualText;
+    END                    AuenTyp_Catalogue;
+
+!!QWNOTE FM+HM
+    CLASS        HydrologischerTyp_Catalogue EXTENDS CatalogueObjects_V2.Catalogues.Item = Code: MANDATORY TEXT; Definition: MANDATORY LocalisationCH_V2.MultilingualText;
+    END          HydrologischerTyp_Catalogue;
+    CLASS       HochmoorBereichTyp_Catalogue EXTENDS CatalogueObjects_V2.Catalogues.Item = Code: MANDATORY TEXT; Definition: MANDATORY LocalisationCH_V2.MultilingualText;
+    END         HochmoorBereichTyp_Catalogue;
+
+!!QWNOTE UEB
+    CLASS                BiotopTyp_Catalogue EXTENDS CatalogueObjects_V2.Catalogues.Item = Code: MANDATORY TEXT; Definition: MANDATORY LocalisationCH_V2.MultilingualText;
+    END                  BiotopTyp_Catalogue;
+
+  END Codelisten;
+
+  TOPIC Biotope =
+    OID AS INTERLIS.UUIDOID;
+    DEPENDS ON Codelisten;
+
+    CLASS Biotop (ABSTRACT) =
+      Kanton: MANDATORY CHAdminCodes_V2.CHCantonCode;
+      Nummer: TEXT*30;
+      Name: TEXT*80;
+      Herkunft: MANDATORY LocalisationCH_V2.MultilingualMText;
+      Bedeutung: MANDATORY REFERENCE TO (EXTERNAL) kt_Biotope_V2_0.Codelisten.Bedeutung_Catalogue;
+      Sanierungsbedarf: MANDATORY REFERENCE TO (EXTERNAL) kt_Biotope_V2_0.Codelisten.Sanierungsbedarf_Catalogue;
+      Bemerkung: LocalisationCH_V2.MultilingualMText;
+      Mutationsdatum: MANDATORY INTERLIS.XMLDate;
+      Mutationsgrund: MANDATORY LocalisationCH_V2.MultilingualMText;
+    END Biotop;
+
+    CLASS Pufferzone =
+      Funktion: MANDATORY REFERENCE TO (EXTERNAL) kt_Biotope_V2_0.Codelisten.Funktion_Catalogue;
+      Methode: MANDATORY REFERENCE TO (EXTERNAL) kt_Biotope_V2_0.Codelisten.Methode_Catalogue;
+      Bemerkung: LocalisationCH_V2.MultilingualMText;
+      Mutationsdatum: MANDATORY INTERLIS.XMLDate;
+      Mutationsgrund: MANDATORY LocalisationCH_V2.MultilingualMText;
+      Geometrie: MANDATORY GeometryCHLV95_V2.MultiSurfaceWithoutArcs;
+    END Pufferzone;
+
+    CLASS Ausscheidung =
+      Kanton: MANDATORY CHAdminCodes_V2.CHCantonCode;
+      Nummer: TEXT*30;
+      Name: TEXT*80;
+      Ausscheidung: MANDATORY REFERENCE TO (EXTERNAL) kt_Biotope_V2_0.Codelisten.Ausscheidung_Catalogue;
+      Rechtsstatus: MANDATORY REFERENCE TO (EXTERNAL) kt_Biotope_V2_0.Codelisten.Rechtsstatus_Catalogue;
+      Aufnahmedatum: INTERLIS.XMLDate;
+      Anhoerungsdatum: INTERLIS.XMLDate;
+      Bemerkung: LocalisationCH_V2.MultilingualMText;
+      Mutationsdatum: MANDATORY INTERLIS.XMLDate;
+      Mutationsgrund: MANDATORY LocalisationCH_V2.MultilingualMText;
+      Geometrie: MANDATORY GeometryCHLV95_V2.MultiSurfaceWithoutArcs;
+      MANDATORY CONSTRAINT (Rechtsstatus->Code == "ST1") == DEFINED(Aufnahmedatum);
+      MANDATORY CONSTRAINT (Ausscheidung->Code == "SA6") => DEFINED(Anhoerungsdatum);
+    END Ausscheidung;
+
+    CLASS RechtlicheSicherung =
+      Kanton: MANDATORY CHAdminCodes_V2.CHCantonCode;
+      Nummer: TEXT*30;
+      Name: TEXT*80;
+      RechtlicheSicherung: MANDATORY REFERENCE TO (EXTERNAL) kt_Biotope_V2_0.Codelisten.RechtlicheSicherung_Catalogue;
+      Rechtsstatus: MANDATORY REFERENCE TO (EXTERNAL) kt_Biotope_V2_0.Codelisten.Rechtsstatus_Catalogue;
+      Schutzdauer: MANDATORY REFERENCE TO (EXTERNAL) kt_Biotope_V2_0.Codelisten.Schutzdauer_Catalogue;
+      Schutzbeschlussdatum: INTERLIS.XMLDate;
+      Anhoerungsdatum: INTERLIS.XMLDate;
+      Bemerkung: LocalisationCH_V2.MultilingualMText;
+      Mutationsdatum: MANDATORY INTERLIS.XMLDate;
+      Mutationsgrund: MANDATORY LocalisationCH_V2.MultilingualMText;
+      Geometrie: MANDATORY GeometryCHLV95_V2.MultiSurfaceWithoutArcs;
+      MANDATORY CONSTRAINT (Rechtsstatus->Code == "ST1") == DEFINED(Schutzbeschlussdatum);
+    END RechtlicheSicherung;
+
+    ASSOCIATION Biotop_Pufferzone =
+      Biotope -- {1..*} Biotop;
+      Pufferzonen -- {0..*} Pufferzone;
+    END Biotop_Pufferzone;
+
+!! QWNOTE no official way to display those cardinalities properly in UML - see https://www.geo.admin.ch/dam/de/sd-web/IOvaorxUneqw/basismoduledesbundeschbasev.1.020120118.pdf page 43
+    ASSOCIATION Ausscheidung_Biotop_Pufferzone =
+      Ausscheidungen -- {0..*} Ausscheidung;
+      Biotope_Pufferzonen -- {1..*} Biotop OR Pufferzone;
+    END Ausscheidung_Biotop_Pufferzone;
+
+    ASSOCIATION RechtlicheSicherung_Biotop_Pufferzone =
+      RechtlicheSicherungen -- {0..*} RechtlicheSicherung;
+      Biotope_Pufferzonen -- {1..*} Biotop OR Pufferzone;
+    END RechtlicheSicherung_Biotop_Pufferzone;
+
+    STRUCTURE Pufferzonenstand =
+      Funktion: MANDATORY REFERENCE TO (EXTERNAL) kt_Biotope_V2_0.Codelisten.Funktion_Catalogue;
+      OekologischesAusreichen: MANDATORY REFERENCE TO (EXTERNAL) kt_Biotope_V2_0.Codelisten.OekologischesAusreichen_Catalogue;
+    END Pufferzonenstand;
+
+    CLASS Umsetzungsstand =
+      Bundesinventar: MANDATORY REFERENCE TO (EXTERNAL) kt_Biotope_V2_0.Codelisten.Bundesinventar_Catalogue;
+      Bundesnummer: MANDATORY TEXT*30;
+      GeschuetzterAnteil: MANDATORY 0 .. 100 [Units.Percent];
+      GepflegterAnteil: MANDATORY 0 .. 100 [Units.Percent];
+      Pufferzonenstaende: BAG {4} OF Pufferzonenstand;
+      Bemerkung: LocalisationCH_V2.MultilingualMText;
+      UNIQUE (LOCAL) Pufferzonenstaende: Funktion;
+      UNIQUE Bundesinventar, Bundesnummer;
+    END Umsetzungsstand;
+
+    ASSOCIATION Biotop_Umsetzungsstand =
+      Biotope -- {0..*} Biotop;
+      Umsetzungsstaende -- {0..*} Umsetzungsstand;
+    END Biotop_Umsetzungsstand;
+
+    CLASS Amphibienlaichgebiet EXTENDS Biotop =
+      KarchNummer: MANDATORY TEXT*30;
+    END Amphibienlaichgebiet;
+
+    CLASS AmphibienlaichgebietBereich =
+      BereichTyp: MANDATORY REFERENCE TO (EXTERNAL) kt_Biotope_V2_0.Codelisten.AmphibienBereichTyp_Catalogue;
+      Geometrie: MANDATORY GeometryCHLV95_V2.MultiSurfaceWithoutArcs;
+!!QWXXX this is not allowed for Multi's.
+!!      SET CONSTRAINT WHERE BereichTyp->Code != "K": INTERLIS.areAreas(ALL, UNDEFINED, >>Geometrie);
+    END AmphibienlaichgebietBereich;
+
+    ASSOCIATION Amphibienlaichgebiet_AmphibienlaichgebietBereich =
+      Biotop -<#> {1} Amphibienlaichgebiet;
+      Bereiche -- {0..*} AmphibienlaichgebietBereich;
+    END Amphibienlaichgebiet_AmphibienlaichgebietBereich;
+
+    CONSTRAINTS OF AmphibienlaichgebietBereich =
+      MANDATORY CONSTRAINT (BereichTyp->Code == "A") => (INTERLIS.objectCount(Biotop->Bereiche) == 1 OR INTERLIS.objectCount(Biotop->Bereiche) == 2);
+      MANDATORY CONSTRAINT (BereichTyp->Code == "B") => (INTERLIS.objectCount(Biotop->Bereiche) == 2);
+      MANDATORY CONSTRAINT (BereichTyp->Code == "W" OR BereichTyp->Code == "K") => (INTERLIS.objectCount(Biotop->Bereiche) == 1);
+      UNIQUE Biotop, BereichTyp;
+    END;
+
+    CLASS Auengebiet EXTENDS Biotop =
+      AuenTyp: MANDATORY REFERENCE TO (EXTERNAL) kt_Biotope_V2_0.Codelisten.AuenTyp_Catalogue;
+      Geometrie: MANDATORY GeometryCHLV95_V2.MultiSurfaceWithoutArcs;
+    END Auengebiet;
+
+    CLASS Flachmoor EXTENDS Biotop =
+      HydrologischeTypen: BAG OF REFERENCE TO (EXTERNAL) kt_Biotope_V2_0.Codelisten.HydrologischerTyp_Catalogue;
+      Geometrie: MANDATORY GeometryCHLV95_V2.MultiSurfaceWithoutArcs;
+    END Flachmoor;
+
+    CLASS Hochmoor EXTENDS Biotop =
+      HydrologischeTypen: BAG OF REFERENCE TO (EXTERNAL) kt_Biotope_V2_0.Codelisten.HydrologischerTyp_Catalogue;
+    END Hochmoor;
+
+    CLASS HochmoorBereich =
+      BereichTyp: MANDATORY REFERENCE TO (EXTERNAL) kt_Biotope_V2_0.Codelisten.HochmoorBereichTyp_Catalogue;
+      Geometrie: MANDATORY GeometryCHLV95_V2.MultiSurfaceWithoutArcs;
+!!QWXXX this is not allowed for Multi's.
+!!      SET CONSTRAINT WHERE BereichTyp->Code != "HM6": INTERLIS.areAreas(ALL, UNDEFINED, >>Geometrie);
+    END HochmoorBereich;
+
+    ASSOCIATION Hochmoor_HochmoorBereich =
+      Biotop -<#> {1} Hochmoor;
+      Bereiche -- {0..*} HochmoorBereich;
+    END Hochmoor_HochmoorBereich;
+
+    CONSTRAINTS OF HochmoorBereich =
+      MANDATORY CONSTRAINT (BereichTyp->Code == "HM6") => (INTERLIS.objectCount(Biotop->Bereiche) == 1);
+!!QWXXX: do we want this?
+!!      UNIQUE Biotop, BereichTyp;
+    END;
+
+    CLASS Trockenwiese EXTENDS Biotop =
+      Geometrie: MANDATORY GeometryCHLV95_V2.MultiSurfaceWithoutArcs;
+    END Trockenwiese;
+
+    CLASS TWWVorranggebiet EXTENDS Biotop =
+      Anhoerungsdatum: MANDATORY INTERLIS.XMLDate;
+      Geometrie: MANDATORY GeometryCHLV95_V2.MultiSurfaceWithoutArcs;
+      MANDATORY CONSTRAINT Bedeutung->Code == "N+R";
+    END TWWVorranggebiet;
+
+    CLASS UebrigesBiotop EXTENDS Biotop =
+      BiotopTyp: BAG OF REFERENCE TO (EXTERNAL) kt_Biotope_V2_0.Codelisten.BiotopTyp_Catalogue;
+      Geometrie: MANDATORY GeometryCHLV95_V2.MultiSurfaceWithoutArcs;
+      MANDATORY CONSTRAINT Bedeutung->Code == "R" OR Bedeutung->Code == "L";
+    END UebrigesBiotop;
+
+    CONSTRAINTS OF Biotop =
+      MANDATORY CONSTRAINT (Bedeutung->Code == "N" OR Bedeutung->Code == "N+R") == (INTERLIS.objectCount(Umsetzungsstaende) > 0);
+    END;
+
+!!QWXXX model as Pufferzone subclasses + derived restricted associations instead?
+    CONSTRAINTS OF Biotop_Pufferzone =
+      MANDATORY CONSTRAINT Pufferzonen->Funktion->Code != "FU1";
+      MANDATORY CONSTRAINT Pufferzonen->Funktion->Code == "FU2" => (
+           INTERLIS.isOfClass(Biotope, >Amphibienlaichgebiet)
+        OR INTERLIS.isOfClass(Biotope, >Auengebiet)
+        OR INTERLIS.isOfClass(Biotope, >Flachmoor)
+        OR INTERLIS.isOfClass(Biotope, >Hochmoor)
+        OR INTERLIS.isOfClass(Biotope, >TWWVorranggebiet)
+        OR INTERLIS.isOfClass(Biotope, >UebrigesBiotop)
+      );
+      MANDATORY CONSTRAINT Pufferzonen->Funktion->Code == "FU3" => (
+           INTERLIS.isOfClass(Biotope, >Auengebiet)
+        OR INTERLIS.isOfClass(Biotope, >TWWVorranggebiet)
+        OR INTERLIS.isOfClass(Biotope, >UebrigesBiotop)
+      );
+      MANDATORY CONSTRAINT Pufferzonen->Funktion->Code == "FU4" => (
+           INTERLIS.isOfClass(Biotope, >Amphibienlaichgebiet)
+        OR INTERLIS.isOfClass(Biotope, >Auengebiet)
+        OR INTERLIS.isOfClass(Biotope, >Flachmoor)
+        OR INTERLIS.isOfClass(Biotope, >Hochmoor)
+        OR INTERLIS.isOfClass(Biotope, >Trockenwiese)
+        OR INTERLIS.isOfClass(Biotope, >TWWVorranggebiet)
+        OR INTERLIS.isOfClass(Biotope, >UebrigesBiotop)
+      );
+    END;
+
+    CONSTRAINTS OF Biotop_Umsetzungsstand =
+      MANDATORY CONSTRAINT (
+           (Umsetzungsstaende->Bundesinventar->Code == "AM" AND INTERLIS.isOfClass(Biotope, >Amphibienlaichgebiet))
+        OR (Umsetzungsstaende->Bundesinventar->Code == "AU" AND INTERLIS.isOfClass(Biotope, >Auengebiet))
+        OR (Umsetzungsstaende->Bundesinventar->Code == "FM" AND INTERLIS.isOfClass(Biotope, >Flachmoor))
+        OR (Umsetzungsstaende->Bundesinventar->Code == "HM" AND INTERLIS.isOfClass(Biotope, >Hochmoor))
+        OR (Umsetzungsstaende->Bundesinventar->Code == "TW" AND (INTERLIS.isOfClass(Biotope, >Trockenwiese) OR INTERLIS.isOfClass(Biotope, >TWWVorranggebiet)))
+      );
+    END;
+
+  END Biotope;
+
+END kt_Biotope_V2_0.
