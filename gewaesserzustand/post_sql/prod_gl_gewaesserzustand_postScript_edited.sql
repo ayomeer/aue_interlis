@@ -227,6 +227,8 @@ CREATE TRIGGER telefon_insert
 -- Set up priviledges for schema and its tables ---------------------------------------
 GRANT USAGE ON SCHEMA prod_gl_gewaesserzustand TO prod_gl_gewaesserzustand_read;
 
+GRANT ALL ON SEQUENCE prod_gl_gewaesserzustand.t_ili2db_seq TO prod_gl_gewaesserzustand_write;
+
 GRANT ALL ON ALL TABLES IN SCHEMA prod_gl_gewaesserzustand TO prod_gl_gewaesserzustand_write;
 GRANT SELECT ON ALL TABLES IN SCHEMA prod_gl_gewaesserzustand TO prod_gl_gewaesserzustand_read;
 

@@ -95,6 +95,7 @@ GRANT SELECT ON ALL TABLES IN SCHEMA <target_schema> TO verwaltung_read;
 GRANT SELECT ON ALL TABLES IN SCHEMA <target_schema> TO web_view;
 {%- else %}
 GRANT USAGE ON SCHEMA <target_schema> TO <read_role>;
+GRANT ALL ON SEQUENCE <target_schema>.t_ili2db_seq TO <write_role>;
 GRANT ALL ON ALL TABLES IN SCHEMA <target_schema> TO <write_role>;
 GRANT SELECT ON ALL TABLES IN SCHEMA <target_schema> TO <read_role>;
 {%- endif %}
