@@ -115,7 +115,9 @@ VERSION "2026-08-01" =
       Erhebung : MANDATORY Prod_Gewaesserzustand_V1.Codelisten.Erhebung_CatRef;
       Periodizitaet : Prod_Gewaesserzustand_V1.Codelisten.Periodizitaet_CatRef;
       Vorgaenger : TEXT;
-      Bericht_Pdf: TEXT;
+      Bericht_Pdf_1: TEXT;
+      Bericht_Pdf_2: TEXT;
+      Bericht_Pdf_3: TEXT;
     END Werterhebung;
 	
     !!@ qgis.modelbaker.dispExpression="Code"
@@ -131,6 +133,7 @@ VERSION "2026-08-01" =
       Mittlere_Hoehe : 1 .. 5000 [INTERLIS.m];
       Vergletscherungsgrad : 0.1 .. 100.0;
       URL_Datenblatt_Kanton : INTERLIS.URI;
+      Bemerkungen : TEXT;
 
       /* Attribute für StandortMessgruppierung_Werterhebung bei Export in MGDM */
       Standort_Typ : MANDATORY standort_typ_enum; /* Default zu 'Stationsstandort' */
