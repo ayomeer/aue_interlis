@@ -243,3 +243,20 @@ COMMENT ON COLUMN prod_gl_gewaesserzustand.werterhebung.vorgaenger
   IS 'Falls Zeitreihen von nahe gelegenen Stationen zusammengeführt werden, weil sie homogen sind, wird der Code der Station der zugeordneten Zeitreihe angegeben. ';
 
 
+-- Other Manually Added SQL ---------------------------------------------------------
+
+ALTER TABLE prod_gl_gewaesserzustand.werterhebung
+ALTER COLUMN t_ili_tid SET DEFAULT '_' || uuid_generate_v4()
+
+ALTER TABLE prod_gl_gewaesserzustand.messgruppierung
+ALTER COLUMN t_ili_tid SET DEFAULT '_' || uuid_generate_v4()
+
+ALTER TABLE prod_gl_gewaesserzustand.messnetz
+ALTER COLUMN t_ili_tid SET DEFAULT '_' || uuid_generate_v4()
+
+ALTER TABLE prod_gl_gewaesserzustand.adresse
+ALTER COLUMN t_ili_tid SET DEFAULT '_' || uuid_generate_v4()
+
+ALTER TABLE prod_gl_gewaesserzustand.telefon
+ALTER COLUMN t_ili_tid SET DEFAULT '_' || uuid_generate_v4()
+
