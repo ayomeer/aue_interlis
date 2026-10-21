@@ -190,6 +190,7 @@ VERSION "2026-10-08" =
       Bereiche -- {0..*} AmphibienlaichgebietBereich;
     END Amphibienlaichgebiet_AmphibienlaichgebietBereich;
 
+    !! constraints-check: ok
     CONSTRAINTS OF AmphibienlaichgebietBereich =
       MANDATORY CONSTRAINT (BereichTyp->Code == "A") => (INTERLIS.objectCount(Biotop->Bereiche) == 1 OR INTERLIS.objectCount(Biotop->Bereiche) == 2);
       MANDATORY CONSTRAINT (BereichTyp->Code == "B") => (INTERLIS.objectCount(Biotop->Bereiche) == 2);
@@ -223,6 +224,7 @@ VERSION "2026-10-08" =
       Bereiche -- {0..*} HochmoorBereich;
     END Hochmoor_HochmoorBereich;
 
+    !! constraints-check: ok
     CONSTRAINTS OF HochmoorBereich =
       MANDATORY CONSTRAINT (BereichTyp->Code == "HM6") => (INTERLIS.objectCount(Biotop->Bereiche) == 1);
 !!QWXXX: do we want this?
@@ -245,11 +247,13 @@ VERSION "2026-10-08" =
       MANDATORY CONSTRAINT Bedeutung->Code == "R" OR Bedeutung->Code == "L";
     END UebrigesBiotop;
 
+    !! constraints-check: ok
     CONSTRAINTS OF Biotop =
-      MANDATORY CONSTRAINT (Bedeutung->Code == "N" OR Bedeutung->Code == "N+R") == (INTERLIS.objectCount(Umsetzungsstaende) > 0);
+      MANDATORY CONSTRAINT (Bedeutung->Code == "N" OR Bedeutung->Code == "N+R") == (INTERLIS.objectCount(Umsetzungsstaende) > 0); 
     END;
 
 !!QWXXX model as Pufferzone subclasses + derived restricted associations instead?
+    !! constraints-check: ok
     CONSTRAINTS OF Biotop_Pufferzone =
       MANDATORY CONSTRAINT Pufferzonen->Funktion->Code != "FU1";
       MANDATORY CONSTRAINT Pufferzonen->Funktion->Code == "FU2" => (
@@ -276,6 +280,7 @@ VERSION "2026-10-08" =
       );
     END;
 
+    !! constraints-check: ok
     CONSTRAINTS OF Biotop_Umsetzungsstand =
       MANDATORY CONSTRAINT (
            (Umsetzungsstaende->Bundesinventar->Code == "AM" AND INTERLIS.isOfClass(Biotope, >Amphibienlaichgebiet))
