@@ -105,6 +105,7 @@ VERSION "2026-08-01" =
       Beschreibung : TEXT;
       Gueltig_von : MANDATORY INTERLIS.XMLDate;
       Gueltig_bis : MANDATORY INTERLIS.XMLDate;
+      last_modified: INTERLIS.XMLDateTime;
     END Messnetz;
 
     !!@ qgis.modelbaker.dispExpression="Parameter"
@@ -118,6 +119,7 @@ VERSION "2026-08-01" =
       Bericht_Pdf_1: TEXT;
       Bericht_Pdf_2: TEXT;
       Bericht_Pdf_3: TEXT;
+      last_modified: INTERLIS.XMLDateTime;
     END Werterhebung;
 	
     !!@ qgis.modelbaker.dispExpression="Code"
@@ -133,13 +135,15 @@ VERSION "2026-08-01" =
       Mittlere_Hoehe : 1 .. 5000 [INTERLIS.m];
       Vergletscherungsgrad : 0.1 .. 100.0;
       URL_Datenblatt_Kanton : INTERLIS.URI;
-      Bemerkungen : TEXT;
+      Bemerkungen : MTEXT;
 
       /* Attribute für StandortMessgruppierung_Werterhebung bei Export in MGDM */
       Standort_Typ : MANDATORY standort_typ_enum; /* Default zu 'Stationsstandort' */
 
       /* Attribute für Standort bei Export in MGDM */
       Geometrie : GeometryCHLV95_V1.Coord2;
+
+      last_modified: INTERLIS.XMLDateTime;
     END Messgruppierung;
 
     !!@ qgis.modelbaker.dispExpression="COALESCE(abkuerzung, organisation)"
@@ -151,13 +155,14 @@ VERSION "2026-08-01" =
       Email : INTERLIS.URI;
       Link : MANDATORY INTERLIS.URI;
 
-      /* Attribute für MGDM-Objekte
+      /* Attribute für die MGDM-Objekte
         VerantwortlichkeitWerterhebung.
         VerantwortlichkeitMessgruppierung,
         VerantwortlichkeitMessnetz,
       */
       Bezeichnung : MANDATORY TEXT; /* Default: Vollzugsstelle*/
       Beschreibung : TEXT;
+      last_modified: INTERLIS.XMLDateTime;
 
       MANDATORY CONSTRAINT DEFINED(Organisation) OR DEFINED(Abkuerzung);
     END Verantwortlichkeit;
@@ -171,11 +176,13 @@ VERSION "2026-08-01" =
       Ort : MANDATORY TEXT;
       Kanton : CHAdminCodes_V1.CHCantonCode;
       Land : MANDATORY CodeISO.CountryCodeISO;
+      last_modified: INTERLIS.XMLDateTime;
     END Adresse;
 	
     CLASS Telefon =
       Nummer : TEXT*20;
       Typ : Prod_Gewaesserzustand_V1.Codelisten.Tel_Typ_CatRef;
+      last_modified: INTERLIS.XMLDateTime;
     END Telefon;
 	
 

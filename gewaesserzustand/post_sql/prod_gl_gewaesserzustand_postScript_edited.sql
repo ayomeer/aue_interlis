@@ -27,9 +27,6 @@ ALTER COLUMN standort_typ TYPE prod_gl_gewaesserzustand.messgruppierung_standort
 -- Add Trigger Setup ------------------------------------------------------------
 
 -- verantwortlichkeit
-ALTER TABLE prod_gl_gewaesserzustand.verantwortlichkeit
-ADD COLUMN last_modified timestamp without time zone;
-
 CREATE FUNCTION prod_gl_gewaesserzustand.verantwortlichkeit_update()
   RETURNS TRIGGER
   LANGUAGE 'plpgsql'
@@ -60,9 +57,6 @@ CREATE TRIGGER verantwortlichkeit_insert
   EXECUTE FUNCTION prod_gl_gewaesserzustand.verantwortlichkeit_update();
 
 -- messnetz
-ALTER TABLE prod_gl_gewaesserzustand.messnetz
-ADD COLUMN last_modified timestamp without time zone;
-
 CREATE FUNCTION prod_gl_gewaesserzustand.messnetz_update()
   RETURNS TRIGGER
   LANGUAGE 'plpgsql'
@@ -93,9 +87,6 @@ CREATE TRIGGER messnetz_insert
   EXECUTE FUNCTION prod_gl_gewaesserzustand.messnetz_update();
 
 -- messgruppierung
-ALTER TABLE prod_gl_gewaesserzustand.messgruppierung
-ADD COLUMN last_modified timestamp without time zone;
-
 CREATE FUNCTION prod_gl_gewaesserzustand.messgruppierung_update()
   RETURNS TRIGGER
   LANGUAGE 'plpgsql'
@@ -126,9 +117,6 @@ CREATE TRIGGER messgruppierung_insert
   EXECUTE FUNCTION prod_gl_gewaesserzustand.messgruppierung_update();
 
 -- werterhebung
-ALTER TABLE prod_gl_gewaesserzustand.werterhebung
-ADD COLUMN last_modified timestamp without time zone;
-
 CREATE FUNCTION prod_gl_gewaesserzustand.werterhebung_update()
   RETURNS TRIGGER
   LANGUAGE 'plpgsql'
@@ -159,9 +147,6 @@ CREATE TRIGGER werterhebung_insert
   EXECUTE FUNCTION prod_gl_gewaesserzustand.werterhebung_update();
 
 -- adresse
-ALTER TABLE prod_gl_gewaesserzustand.adresse
-ADD COLUMN last_modified timestamp without time zone;
-
 CREATE FUNCTION prod_gl_gewaesserzustand.adresse_update()
   RETURNS TRIGGER
   LANGUAGE 'plpgsql'
@@ -192,9 +177,6 @@ CREATE TRIGGER adresse_insert
   EXECUTE FUNCTION prod_gl_gewaesserzustand.adresse_update();
 
 -- telefon
-ALTER TABLE prod_gl_gewaesserzustand.telefon
-ADD COLUMN last_modified timestamp without time zone;
-
 CREATE FUNCTION prod_gl_gewaesserzustand.telefon_update()
   RETURNS TRIGGER
   LANGUAGE 'plpgsql'
@@ -246,17 +228,17 @@ COMMENT ON COLUMN prod_gl_gewaesserzustand.werterhebung.vorgaenger
 -- Other Manually Added SQL ---------------------------------------------------------
 
 ALTER TABLE prod_gl_gewaesserzustand.werterhebung
-ALTER COLUMN t_ili_tid SET DEFAULT '_' || uuid_generate_v4()
+ALTER COLUMN t_ili_tid SET DEFAULT '_' || uuid_generate_v4();
 
 ALTER TABLE prod_gl_gewaesserzustand.messgruppierung
-ALTER COLUMN t_ili_tid SET DEFAULT '_' || uuid_generate_v4()
+ALTER COLUMN t_ili_tid SET DEFAULT '_' || uuid_generate_v4();
 
 ALTER TABLE prod_gl_gewaesserzustand.messnetz
-ALTER COLUMN t_ili_tid SET DEFAULT '_' || uuid_generate_v4()
+ALTER COLUMN t_ili_tid SET DEFAULT '_' || uuid_generate_v4();
 
 ALTER TABLE prod_gl_gewaesserzustand.adresse
-ALTER COLUMN t_ili_tid SET DEFAULT '_' || uuid_generate_v4()
+ALTER COLUMN t_ili_tid SET DEFAULT '_' || uuid_generate_v4();
 
 ALTER TABLE prod_gl_gewaesserzustand.telefon
-ALTER COLUMN t_ili_tid SET DEFAULT '_' || uuid_generate_v4()
+ALTER COLUMN t_ili_tid SET DEFAULT '_' || uuid_generate_v4();
 

@@ -45,12 +45,6 @@ ALTER COLUMN <constraint.column> TYPE <domain_name>;
 {%- for setup in trigger_setup %}
 
 -- <setup.table>
-
-{%- if setup.last_modified %}
-ALTER TABLE <target_schema>.<setup.table>
-ADD COLUMN last_modified timestamp without time zone;
-{%- endif %}
-
 CREATE FUNCTION <target_schema>.<setup.table>__insert_or_update()
   RETURNS TRIGGER
   LANGUAGE 'plpgsql'
