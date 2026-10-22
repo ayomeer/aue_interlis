@@ -227,6 +227,8 @@ COMMENT ON COLUMN prod_gl_gewaesserzustand.werterhebung.vorgaenger
 
 -- Other Manually Added SQL ---------------------------------------------------------
 
+-- Set default values for t_ili_tid colums to generated uuid 
+-- in same format as Model Baker project does (with leading underscore)
 ALTER TABLE prod_gl_gewaesserzustand.werterhebung
 ALTER COLUMN t_ili_tid SET DEFAULT '_' || uuid_generate_v4();
 

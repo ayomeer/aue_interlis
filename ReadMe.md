@@ -20,9 +20,40 @@ Centralized repo for all things schema modelling.
 5) Set up datasets and baskets in QGIS and Model Baker:
     - In Model Baker Import/Export Wizard: Generate QGIS Project from created database schema.
     - In Model Baker Dataset Manager: Add new dataset and baskets.
-      Default dataset naming: `Baseset` 
+      Default dataset naming: `data` 
 
 6) Run corresponding dbt job to populate the schema in dbt workspace. See details in the ReadMe there.
+
+
+## Importing Data into new Schema Version
+
+The INTERLIS XTF data export/import mechanism comes in handy here: It simply matches class and field names when importing the values, so as long as there is a matching target field, the values get imported correctly. 
+
+The general steps are:
+
+1) Import new schema version (IAP)
+
+2) Import catalogues (if applicable)
+
+3) Export data (and only data, not catalogues!) from PROD schema to XTF using Model Baker
+    - If columns changed names -> Search and replace in the XTF
+    
+4) Import data from XTF-Export
+    - Make sure to create a new dataset to import the data into, e.g. `data`
+
+5) Run post-import SQL script
+
+> ⚠️ This workflow sometimes creates issues relating to INTERLIS' caching mechanism. If you get unexpected validation errors in the new schema, try clearing the ilicache under `C:\Users\<username>\.ilicache`
+
+
+### Additive Model Changes
+
+XTF imports have no problem with there being more fields or classes in the target schema than occur in the XTF. So when doing strictly additive model changes, the XTF exported from the live model can be imported straight into the new version to carry over data.
+
+### Changing Field Names
+
+If fields change names, this can be adjusted in the XTF directly using basic search and replace in the editor.
+<!-- TODO: Test this -->
 
 ## Troubleshooting
 
@@ -40,7 +71,9 @@ Don't use `--postScript` and run the post-script manually in pgAdmin.
 
 ## Todo
 
-- [x] Implement argparse for  `utility/render_sql_template.py` 
+`utility/render_sql_template.py`:
+- [x] Implement argparse   
   - path_rendering_args
   - path_out
 
+- [ ] Add Option to add DEFAULT oid generation to `t_ili_tid`
