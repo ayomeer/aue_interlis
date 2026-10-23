@@ -2,7 +2,7 @@ INTERLIS 2.3;
 
 !!@ technicalContact=mailto:geoinformation@gl.ch
 !!@ furtherInformation=none-yet
-!!@ postImportSQL=https://github.com/ayomeer/aue_interlis/blob/main/gewaesserzustand/scripts/post_sql/post_sql_prod_gl_gewaesserzustand.sql
+!!@ postImportSQL=https://github.com/ayomeer/aue_interlis/blob/main/gewaesserzustand/scripts/post_sql/prod_gl_gewaesserzustand_postScript_edited.sql
 !!@ docURL=https://github.com/ayomeer/aue_interlis/tree/main/gewaesserzustand#readme
 
 MODEL Prod_Gewaesserzustand_V1 (de)
@@ -126,7 +126,7 @@ VERSION "2026-08-01" =
     CLASS Messgruppierung =
       Gewaessername : MANDATORY TEXT;
       Ortsbezeichnung : MANDATORY TEXT;
-      Code : MANDATORY TEXT;
+      Code : MANDATORY TEXT; /* Stationsnummer Bund wenn vorhanden oder GL-xxxx Laufnummer */
       Gueltig_von : MANDATORY INTERLIS.XMLDate;
       Gueltig_bis : MANDATORY INTERLIS.XMLDate;
       Art_Gruppierung : Prod_Gewaesserzustand_V1.Codelisten.Art_Gruppierung_CatRef;

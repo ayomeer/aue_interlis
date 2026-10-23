@@ -53,8 +53,8 @@ Wie im Kapitel Modellbeschreibung angetönt, sind vor allem die Objekte `Messgru
 
 - `gueltig_bis=31.12.2999` wird vom MGDM als Standardwert definiert mit der Bedeutung "in Betrieb".
 
-- Code: Hier kann allenfalls ein Code aus der Datenquelle übernommen werden.\
-  ⚠️ Eine Konvention für neue Messstandorte ist noch nicht definiert
+- Code: Für [bereits vom Bund publizierte Messtandorte](https://map.geo.admin.ch/#/map?lang=de&center=2714025.13,1212684.28&z=3.777&topic=ech&layers=ch.swisstopo.zeitreihen@year=1864,f;ch.bfs.gebaeude_wohnungs_register,f;ch.bav.haltestellen-oev,f;ch.swisstopo.swisstlm3d-wanderwege,f;ch.vbs.schiessanzeigen,f;ch.astra.wanderland-sperrungen_umleitungen,f;ch.bafu.hydrologie-gewaesserzustandsmessstationen&bgLayer=ch.swisstopo.pixelkarte-farbe&featureInfo=default) ist die dort aufgeführte `Stationsnummer` auszufüllen.\n
+Für andere Messstandorte wird das Format `GL-xxxx` verwendet, wobei `xxxx` eine vierstellige Laufnummer ist.
 
 
 #### Verknüpfung zu Messnetz und Verantwortlichkeiten
@@ -71,7 +71,7 @@ Es können jedoch ohne weiteres auch neue Messnetze und Verantwortlichkeiten erf
 ## Todo
 
 - [ ] Konvention für Feld `Messgruppierung.Code` festlegen
-  - Anina frägt nach
+  -`GL-xxxx`
 
 
 ## Verwandte Themen
