@@ -22,5 +22,13 @@ https://github.com/ayomeer/aue_dbt/tree/main/src/dbt/dbt_quellkataster
 ## ToDo
 
 Für nächste Schema Version:
+- [ ] Foto-Attributen hinzufügen  
 - [ ] `last_modified'-Feld hinzufügen (modellieren + generiertes trigger-setup)
+- [ ] post-import sql: `rendering_args.json` definieren und post-script generieren
+- [ ] post-import sql für Generierung von `Identifikator`-Werten:
+    ```SQL
+    DEFAULT 'GL_' || nextval('gl_seq')
+    ``` 
+
+
 - [ ] Schema neu importieren mit `--createMetaInfo`, damit Model Baker Projektgenerierung funktioniert -> scripts ordner 
