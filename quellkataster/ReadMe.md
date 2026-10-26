@@ -22,8 +22,10 @@ https://github.com/ayomeer/aue_dbt/tree/main/src/dbt/dbt_quellkataster
 ## ToDo
 
 Für nächste Schema Version:
-- [ ] Foto-Attributen hinzufügen  
-- [ ] `last_modified'-Feld hinzufügen (modellieren + generiertes trigger-setup)
+- [ ] Foto-Attributen zu Objekt `Quellen` hinzufügen  
+- [ ] `last_modified'-Feld hinzufügen 
+    - [ ] modellieren
+    - [ ] generiertes trigger-setup
 - [ ] post-import sql: `rendering_args.json` definieren und post-script generieren
 - [ ] post-import sql für Generierung von `Identifikator`-Werten:
     ```SQL
