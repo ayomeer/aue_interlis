@@ -6,7 +6,7 @@
   "is_pub_schema": true,
   "catref_tables_to_drop": [
   ],
-  "not_null_columns": [],
+  "force_not_null_constraint": [],
   "t_ili_tid_as_uuid": [
     {
       "table": "grundwasserbohrung"

@@ -6,7 +6,7 @@
   "catref_tables_to_drop": [
     "ersatzmassnahme_catref"
   ],
-  "not_null_columns": [],
+  "force_not_null_constraint": [],
   "enum_consraints": [],
   "column_comments": [],
   "trigger_setup": [

@@ -4,7 +4,7 @@
   "read_role": "prod_gl_gewaesserzustand_read",
   "write_role": "prod_gl_gewaesserzustand_write",
   "catref_tables_to_drop": [],
-  "not_null_columns": [],
+  "force_not_null_constraint": [],
   "t_ili_tid_as_uuid": [],
   "enum_consraints": [
     {

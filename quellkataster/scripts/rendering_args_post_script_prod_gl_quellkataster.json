@@ -1,0 +1,34 @@
+{
+  "target_schema": "prod_gl_quellkataster",
+  "owner": "prod_gl_quellkataster_write",
+  "read_role": "prod_gl_quellkataster_read",
+  "write_role": "prod_gl_quellkataster_write",
+  "is_pub_schema": false,
+  "catref_tables_to_drop": [],
+  "force_not_null_constraint": [
+    {
+      "table": "schutzzonen",
+      "column": "status"
+    }
+  ],
+  "t_ili_tid_as_uuid": [],
+  "enum_consraints": [
+    {
+      "name": "quelle_grundwasserleiter_typ_enum",
+      "table": "quelle",
+      "column": "grundwasserleiter_typ",
+      "values": ["Lockergestein", "Kluft","Karst","gemischt", "unbestimmt"] 
+    } 
+  ],
+  "column_comments": [],
+  "trigger_setup": [
+    {
+      "table": "quelle",
+      "last_modified": true
+    },
+    {
+      "table": "to_linie",
+      "last_modified": true
+    }
+  ] 
+}
