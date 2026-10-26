@@ -98,6 +98,11 @@ MODEL Prod_Quellkataster_V1
       Feldbegehung: INTERLIS.XMLDate;
       Objektbereinigung: INTERLIS.XMLDate; 
 
+      !! Fotos
+      Foto_Negativ_Nr_1: TEXT*32;
+      Foto_Negativ_Nr_2: TEXT*32;
+      Foto_Negativ_Nr_3: TEXT*32;
+
       !! Andere
       Schutzzone: TEXT*255;
       Kontaktperson: TEXT*255;
@@ -119,6 +124,35 @@ MODEL Prod_Quellkataster_V1
       Last_Modified: INTERLIS.XMLDateTime;
     END Messdaten;
 
+    ASSOCIATION QuelleMessdaten = 
+      von_quelle -- {1} Quelle;
+      hat_messung -- {0..*} Messdaten;
+    END QuelleMessdaten;
+    
+    CLASS Archiv_Ablage = 
+      Archiv_Klasse: TEXT*255;
+      Archiv_Band: TEXT*255;
+      Archiv_Dossier: TEXT*255;
+    END Archiv_Ablage;
+
+    CLASS Foto = 
+      Bezeichnung: TEXT*255;
+      Pfad: TEXT;
+      
+      MANDATORY CONSTRAINT DEFINED(Bezeichnung) OR DEFINED(Pfad);
+    END Foto;
+
+    ASSOCIATION ArchivFoto = 
+      von_archiv -- {0..1} Archiv_Ablage;
+      hat_foto -- {0..*} Foto;
+    END ArchivFoto;
+
+    ASSOCIATION QuelleFoto = 
+      von_quelle -- {1} Quelle;
+      hat_foto -- {0..*} Foto;
+    END QuelleFoto;
+
+
     CLASS Konzession = 
       !! Empfänger
       Vorname_Empfaenger: TEXT;
@@ -138,26 +172,26 @@ MODEL Prod_Quellkataster_V1
 
     END Konzession;
 
-    CLASS Schutzzonen =
-      Status: MANDATORY REFERENCE TO (EXTERNAL) Prod_Quellkataster_V1.Catalogues.SZ_Status_Catalogue;
-    END Schutzzonen;
-
-
-
-    ASSOCIATION QuelleMessdaten = 
-      von_quelle -- {1} Quelle;
-      hat_messung -- {0..*} Messdaten;
-    END QuelleMessdaten;
-
     ASSOCIATION QuelleKonzession = 
       von_quelle -- {1..*} Quelle;
       hat_konzession -- {0..*} Konzession;
     END QuelleKonzession;
 
+  
+    CLASS Schutzzonen =
+      Status: MANDATORY REFERENCE TO (EXTERNAL) Prod_Quellkataster_V1.Catalogues.SZ_Status_Catalogue;
+      Bemerkungen: MTEXT;   
+    END Schutzzonen;
+
     ASSOCIATION QuelleSchutzzonen = 
       von_quelle -- {1..*} Quelle;
       hat_schutzzonen -- {0..*} Schutzzonen;
     END QuelleSchutzzonen;
+
+
+
+
+
 
   END Grundwasseraustritte; !! End Topic
 END Prod_Quellkataster_V1. !! End Model
