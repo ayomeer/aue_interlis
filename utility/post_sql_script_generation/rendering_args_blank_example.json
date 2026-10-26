@@ -7,7 +7,7 @@
   "catref_tables_to_drop": [
     "_catref"
   ],
-  "not_null_columns": [
+  "force_not_null_constraint": [
     {
       "table": "",
       "column": ""

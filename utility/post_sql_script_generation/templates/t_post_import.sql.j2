@@ -17,7 +17,7 @@ DROP TABLE <target_schema>.<catref_table>;
 {%- endfor %}
 
 -- Add NOT NULL constraints ------------------------------------------------------------
-{%- for constraint in not_null_columns %}
+{%- for constraint in force_not_null_constraint %}
 ALTER TABLE <target_schema>.<constraint.table>
 ALTER COLUMN <constraint.column> SET NOT NULL;
 {%- endfor %}
@@ -45,7 +45,7 @@ ALTER COLUMN <constraint.column> TYPE <domain_name>;
 {%- for setup in trigger_setup %}
 
 -- <setup.table>
-CREATE FUNCTION <target_schema>.<setup.table>__insert_or_update()
+CREATE FUNCTION <target_schema>.<setup.table>_update_last_modified()
   RETURNS TRIGGER
   LANGUAGE 'plpgsql'
 AS $BODY$
@@ -65,20 +65,21 @@ RETURN NEW;
 END;
 $BODY$;
 
-ALTER FUNCTION <target_schema>.<setup.table>__insert_or_update()
+
+ALTER FUNCTION <target_schema>.<setup.table>_update_last_modified()
   OWNER TO <owner>;
 
-CREATE TRIGGER <setup.table>__insert_or_update
+CREATE TRIGGER <setup.table>_update
   BEFORE UPDATE
   ON <target_schema>.<setup.table>
   FOR EACH ROW
-  EXECUTE FUNCTION <target_schema>.<setup.table>__insert_or_update();
+  EXECUTE FUNCTION <target_schema>.<setup.table>_update_last_modified();
 
 CREATE TRIGGER <setup.table>_insert
   BEFORE INSERT
   ON <target_schema>.<setup.table>
   FOR EACH ROW
-  EXECUTE FUNCTION <target_schema>.<setup.table>__insert_or_update();
+  EXECUTE FUNCTION <target_schema>.<setup.table>_update_last_modified();
 {%- endfor %}
 
 -- Set up priviledges for schema and its tables ---------------------------------------
