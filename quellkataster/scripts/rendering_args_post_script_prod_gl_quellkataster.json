@@ -8,17 +8,32 @@
   "force_not_null_constraint": [
     {
       "table": "schutzzonen",
-      "column": "status"
+      "column": "schutzzonenstatus"
     }
   ],
   "t_ili_tid_as_uuid": [],
-  "enum_consraints": [
+  "enum_types": [
     {
-      "name": "quelle_grundwasserleiter_typ_enum",
+      "table": "quelle",
+      "column": "fassungsart",
+      "values": [
+        "ungefasst", 
+        "gefasst direkt",
+        "gefasst Fassungsstrang",
+        "gefasst Fassungsstollen", 
+        "gefasst unbestimmt"
+      ]
+    },
+    {
       "table": "quelle",
       "column": "grundwasserleiter_typ",
       "values": ["Lockergestein", "Kluft","Karst","gemischt", "unbestimmt"] 
-    } 
+    },
+    {
+      "table": "schutzzonen",
+      "column": "schutzzonenstatus",
+      "values": ["keine Schutzzonenpflicht", "Bearbeitung hängig","in Bearbeitung","abgeschlossen", "in Kraft"] 
+    }  
   ],
   "column_comments": [],
   "trigger_setup": [
@@ -27,7 +42,15 @@
       "last_modified": true
     },
     {
-      "table": "to_linie",
+      "table": "messdaten",
+      "last_modified": true
+    },
+    {
+      "table": "konzession",
+      "last_modified": true
+    },
+    {
+      "table": "schutzzonen",
       "last_modified": true
     }
   ] 

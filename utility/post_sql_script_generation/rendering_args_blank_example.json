@@ -18,9 +18,8 @@
       "table": ""
     }
   ],
-  "enum_consraints": [
+  "enum_types": [
     {
-      "name": "",
       "table": "",
       "column": "",
       "values": ["", ""] 

@@ -31,15 +31,15 @@ ALTER TABLE <target_schema>.<e.table>
 ALTER COLUMN t_ili_tid SET DEFAULT uuid_generate_v4();
 {%- endfor %}
 
--- Create Domains for custom Enum-Types ------------------------------------------------
-{%- for constraint in enum_consraints %}
-{% set domain_name = target_schema ~'.' ~ constraint.table ~ '_' ~ constraint.name -%}
-CREATE DOMAIN <domain_name> as TEXT
-CHECK (VALUE IN ('< constraint["values"] | join("','") >'));
+-- Create Enum-Types -------------------------------------------------------------------
+{%- for type in enum_types %}
+{% set type_name = target_schema ~ '.' ~ type.table ~ '_type' -%}
+-- create <type.name>
+CREATE TYPE <type_name> as ENUM ('< type["values"] | join("','") >')
 
-ALTER TABLE <target_schema>.<constraint.table>
-ALTER COLUMN <constraint.column> TYPE <domain_name>;
-{%- endfor %}
+ALTER TABLE <target_schema>.<type.table>
+ALTER COLUMN <type.column> SET DATA TYPE <type_name>;
+{% endfor %}
 
 -- Add Trigger Setup -------------------------------------------------------------------
 {%- for setup in trigger_setup %}
