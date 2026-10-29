@@ -1,0 +1,26 @@
+java -jar ili2pg-5.5.1.jar --schemaimport \
+  --dbhost srv-gisiap-02.glnet.ch \
+  --dbport 5432 \
+  --dbdatabase glarus \
+  --dbusr gisuploadmanager \
+  --dbpwd $DB_PASSWORD \
+  --dbschema prod_gl_quellkataster \
+  --defaultSrsAuth EPSG \
+  --defaultSrsCode 2056 \
+  --createFkIdx \
+  --createGeomIdx \
+  --createTidCol \
+  --createBasketCol \
+  --createNumChecks \
+  --createUnique \
+  --setupPgExt \
+  --strokeArcs \
+  --coalesceCatalogueRef \
+  --coalesceMultiSurface \
+  --coalesceMultiPoint \
+  --coalesceMultiLine \
+  --smart2Inheritance \
+  --createMetaInfo \
+  --iliMetaAttrs iliMetaAttrs.toml \
+  --preScript quellkataster/scripts/prod_gl_quellkataster_preScript.sql \
+  quellkataster/model/prod_quellkataster_V1_1.ili # path to ili model passed as first argument when calling the script
