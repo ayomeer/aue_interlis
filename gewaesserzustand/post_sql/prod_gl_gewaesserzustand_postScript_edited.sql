@@ -244,3 +244,77 @@ ALTER COLUMN t_ili_tid SET DEFAULT '_' || uuid_generate_v4();
 ALTER TABLE prod_gl_gewaesserzustand.telefon
 ALTER COLUMN t_ili_tid SET DEFAULT '_' || uuid_generate_v4();
 
+
+-- Add insert trigger function for Werterhebung and Messgruppierung
+
+-- Werterhebung --
+CREATE OR REPLACE FUNCTION prod_gl_gewaesserzustand.werterhebung_insert()
+    RETURNS trigger
+    LANGUAGE 'plpgsql'
+    COST 100
+    VOLATILE NOT LEAKPROOF
+AS $BODY$
+
+BEGIN
+
+NEW.last_modified = localtimestamp(0);
+
+-- re-generate t_ili_tid unconditionally to catch copy paste duplicates
+NEW.t_ili_tid := '_' || uuid_generate_v4();
+
+RETURN NEW;
+END;
+$BODY$;
+
+ALTER FUNCTION prod_gl_gewaesserzustand.werterhebung_insert()
+    OWNER TO prod_gl_gewaesserzustand_write;
+
+GRANT EXECUTE ON FUNCTION prod_gl_gewaesserzustand.werterhebung_insert() TO PUBLIC;
+
+GRANT EXECUTE ON FUNCTION prod_gl_gewaesserzustand.werterhebung_insert() TO gisuploadmanager;
+
+GRANT EXECUTE ON FUNCTION prod_gl_gewaesserzustand.werterhebung_insert() TO prod_gl_gewaesserzustand_write;
+
+-- replace auto-generated trigger
+CREATE OR REPLACE TRIGGER werterhebung_insert
+    BEFORE INSERT
+    ON prod_gl_gewaesserzustand.werterhebung
+    FOR EACH ROW
+    EXECUTE FUNCTION prod_gl_gewaesserzustand.werterhebung_insert();
+
+
+-- Messgruppierung --
+CREATE OR REPLACE FUNCTION prod_gl_gewaesserzustand.messgruppierung_insert()
+    RETURNS trigger
+    LANGUAGE 'plpgsql'
+    COST 100
+    VOLATILE NOT LEAKPROOF
+AS $BODY$
+
+BEGIN
+
+NEW.last_modified = localtimestamp(0);
+
+-- re-generate t_ili_tid unconditionally to catch copy paste duplicates
+NEW.t_ili_tid := '_' || uuid_generate_v4();
+
+
+RETURN NEW;
+END;
+$BODY$;
+
+ALTER FUNCTION prod_gl_gewaesserzustand.messgruppierung_insert()
+    OWNER TO prod_gl_gewaesserzustand_write;
+
+GRANT EXECUTE ON FUNCTION prod_gl_gewaesserzustand.messgruppierung_insert() TO PUBLIC;
+
+GRANT EXECUTE ON FUNCTION prod_gl_gewaesserzustand.messgruppierung_insert() TO gisuploadmanager;
+
+GRANT EXECUTE ON FUNCTION prod_gl_gewaesserzustand.messgruppierung_insert() TO prod_gl_gewaesserzustand_write;
+
+-- replace auto-generated trigger
+CREATE OR REPLACE TRIGGER messgruppierung_insert
+    BEFORE INSERT
+    ON prod_gl_gewaesserzustand.werterhebung
+    FOR EACH ROW
+    EXECUTE FUNCTION prod_gl_gewaesserzustand.messgruppierung_insert();
