@@ -72,8 +72,6 @@ Don't use `--postScript` and run the post-script manually in pgAdmin.
 ## Todo
 
 `utility/render_sql_template.py`:
-- [x] Implement argparse   
-  - path_rendering_args
-  - path_out
+- [ ] Change trigger setup, so individual insert and update trigger-trigger_function pairs are created for each table listed in the `trigger_setup` key.
 
 - [ ] Add Option to add DEFAULT oid generation to `t_ili_tid`

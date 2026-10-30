@@ -1,5 +1,7 @@
 INTERLIS 2.3;
 
+!! Stand Modell Offerte BTG
+
 MODEL Prod_Quellkataster_V1
   AT "https://dummy.com"
   VERSION "2026-04-07" =

@@ -10,20 +10,8 @@ MODEL Prod_Quellkataster_V1
   IMPORTS Grundwasseraustritte_V2_0, GeometryCHLV95_V1, CatalogueObjects_V1;
   IMPORTS Units;
 
-  TOPIC Catalogues EXTENDS CatalogueObjects_V1.Catalogues = 
-    OID AS INTERLIS.UUIDOID;
-
-    CLASS SZ_Status_Catalogue EXTENDS CatalogueObjects_V1.Catalogues.Item = 
-      Status: MANDATORY TEXT*255;
-
-    END SZ_Status_Catalogue;
-
-  END Catalogues;
-
   TOPIC Grundwasseraustritte =
   OID AS INTERLIS.UUIDOID;
-
-  DEPENDS ON Prod_Quellkataster_V1.Catalogues;
 
     UNIT
       LiterProMinute [lmin] = (Units.L / Units.min);
@@ -33,13 +21,15 @@ MODEL Prod_Quellkataster_V1
       NumericOK = 0 .. 2999;
       NumericSchachtueberstand = 0 .. 1000 [Units.cm];
   
+
+    /* Individueller Grundwasseraustritt */  
     CLASS Quelle =
       !! --- MGDM Attributen -------------------------------------------------------- !!
       !! (Kopiert von Grundwasseraustritte_V2_0.Grundwasseraustritte.Quelle)
 
       Identifikator : MANDATORY Grundwasseraustritte_V2_0.IdentifikatorTyp;
       Name : TEXT*255;
-      Grundwasserleiter_Typ : MANDATORY(Lockergestein,Kluft,Karst,gemischt,unbestimmt);
+      Grundwasserleiter_Typ : MANDATORY (Lockergestein,Kluft,Karst,gemischt,unbestimmt);
       Quelltyp: TEXT*255;
       Fassungsart : MANDATORY (ungefasst,
                                gefasst(
@@ -60,17 +50,21 @@ MODEL Prod_Quellkataster_V1
       Name_WV : TEXT*255;
 
       !! --- Interen Attributen ----------------------------------------------------- !!
-      !! Identifikation
-      Ordnungs_Nr: TEXT*255;
+      /* Identifikation */ 
+      !! Format: xxxyyy-##. Bezieht sich auf Ablage physischer Quellkataster (Koordinaten inLV03).
+      Ordnungs_Nr: TEXT*255; 
     
-      !! Position
+      !! Format: Manuell vergebene Laufnummer (funktionell Ablagenummer)
+      Quellgruppe_Nr: TEXT*31; !! Nur Zahlen (integer) vorgesehen
+
+      /* Position */ 
       Ortschaft: TEXT*255;
       Postleitzahl: TEXT*255;
       Parz_Nr: TEXT*255;
       Hoehe: 0 .. 2999 [INTERLIS.m];
       Lagegenauigkeit: TEXT*255;
       
-      !! Fassung
+      /* Fassung */ 
       Schachtueberstand: 0 .. 1000 [Units.cm];
       Fassungsart_beschreibung: TEXT*255;
       Fassungsabdeckung: TEXT*255;
@@ -80,40 +74,43 @@ MODEL Prod_Quellkataster_V1
       Schloss: BOOLEAN;
       Fassungseigentuemer: TEXT*255;
 
-      !! Verwendung
+      /* Verwendung */ 
       Verwendungsart: TEXT*255;
       Verwendungszweck_beschreibung: TEXT*255;
       Notwasserversorgung: (ja, nein, unbestimmt);
 
-      !! WVA 
+      /* WVA */  
       WVA_Nutzung: BOOLEAN;
       WVA_Nutzung_ergaenzen: BOOLEAN;
       WVA_Nutzung_streichen: BOOLEAN;
       WVA_Nutzung_lage_neu: BOOLEAN; 
 
-      !! Datenherkunft
+      /* Datenherkunft */ 
       Datenherkunft: TEXT*255;
       Aufgenommen_durch: TEXT*255; 
       Erhebungsdatum: INTERLIS.XMLDate;
       Feldbegehung: INTERLIS.XMLDate;
       Objektbereinigung: INTERLIS.XMLDate; 
 
-      !! Fotos
-      Foto_Negativ_Nr_1: TEXT*32;
-      Foto_Negativ_Nr_2: TEXT*32;
-      Foto_Negativ_Nr_3: TEXT*32;
+      /* Fotos */ 
+      Foto_Negativ_Nr_1: TEXT*31;
+      Foto_Negativ_Nr_2: TEXT*31;
+      Foto_Negativ_Nr_3: TEXT*31;
 
-      !! Andere
+      /* Andere */ 
       Schutzzone: TEXT*255;
       Kontaktperson: TEXT*255;
       Bemerkungen: MTEXT*1023;
       Last_Modified: INTERLIS.XMLDateTime;
+
     END Quelle; !! End Class
 
+    /* Messungen an Quelle */
     CLASS Messdaten =
       Entnahmedatum: INTERLIS.XMLDate;
       Entnahmezeit: INTERLIS.XMLTime;
       Witterung: TEXT*255;
+
       Schuettungsmenge: Grundwasseraustritte_V2_0.LiterMinute;
       Wassertemperatur: -100.0 .. 100.0;
       pH_Wert: TEXT*255; !! nur handvoll Werte
@@ -123,18 +120,15 @@ MODEL Prod_Quellkataster_V1
       Bemerkungen: TEXT*255;
       Last_Modified: INTERLIS.XMLDateTime;
     END Messdaten;
-
-    ASSOCIATION QuelleMessdaten = 
-      von_quelle -- {1} Quelle;
-      hat_messung -- {0..*} Messdaten;
-    END QuelleMessdaten;
     
+    /* Informationen zu physischen Ablagen im Landesarchiv */
     CLASS Archiv_Ablage = 
       Archiv_Klasse: TEXT*255;
       Archiv_Band: TEXT*255;
       Archiv_Dossier: TEXT*255;
     END Archiv_Ablage;
 
+    /* Foto von Quelle */
     CLASS Foto = 
       Bezeichnung: TEXT*255;
       Pfad: TEXT;
@@ -142,17 +136,7 @@ MODEL Prod_Quellkataster_V1
       MANDATORY CONSTRAINT DEFINED(Bezeichnung) OR DEFINED(Pfad);
     END Foto;
 
-    ASSOCIATION ArchivFoto = 
-      von_archiv -- {0..1} Archiv_Ablage;
-      hat_foto -- {0..*} Foto;
-    END ArchivFoto;
-
-    ASSOCIATION QuelleFoto = 
-      von_quelle -- {1} Quelle;
-      hat_foto -- {0..*} Foto;
-    END QuelleFoto;
-
-
+    /* Informationen zu zugehöhrigen Konzessionen */
     CLASS Konzession = 
       !! Empfänger
       Vorname_Empfaenger: TEXT;
@@ -169,6 +153,7 @@ MODEL Prod_Quellkataster_V1
       Entnahme: 0.00 .. 99999.99 [lmin];
 
       Bemerkungen: MTEXT;
+      Last_Modified: INTERLIS.XMLDateTime;
 
     END Konzession;
 
@@ -179,18 +164,32 @@ MODEL Prod_Quellkataster_V1
 
   
     CLASS Schutzzonen =
-      Status: MANDATORY REFERENCE TO (EXTERNAL) Prod_Quellkataster_V1.Catalogues.SZ_Status_Catalogue;
-      Bemerkungen: MTEXT;   
+      Schutzzonenstatus: TEXT*31; !! Werte in post-schemaimport sql script definiert (constraint)
+      Bemerkungen: MTEXT;
+      Last_Modified: INTERLIS.XMLDateTime;  
+       
     END Schutzzonen;
+
+    ASSOCIATION ArchivFoto = 
+      von_archiv -- {0..1} Archiv_Ablage;
+      hat_foto -- {0..*} Foto;
+    END ArchivFoto;
+
+    ASSOCIATION QuelleFoto = 
+      von_quelle -- {1} Quelle;
+      hat_foto -- {0..*} Foto;
+    END QuelleFoto;
+
+
+    ASSOCIATION QuelleMessdaten = 
+      von_quelle -- {1} Quelle;
+      hat_messung -- {0..*} Messdaten;
+    END QuelleMessdaten;
 
     ASSOCIATION QuelleSchutzzonen = 
       von_quelle -- {1..*} Quelle;
-      hat_schutzzonen -- {0..*} Schutzzonen;
+      hat_schutzzonen -- {0..1} Schutzzonen;
     END QuelleSchutzzonen;
-
-
-
-
 
 
   END Grundwasseraustritte; !! End Topic
